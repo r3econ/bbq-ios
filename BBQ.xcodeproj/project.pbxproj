@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8631AC6718CE55D400F45405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6618CE55D400F45405 /* Foundation.framework */; };
+		8631AC6918CE55D400F45405 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6818CE55D400F45405 /* CoreGraphics.framework */; };
+		8631AC6B18CE55D400F45405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6A18CE55D400F45405 /* UIKit.framework */; };
+		8631AC7118CE55D400F45405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC6F18CE55D400F45405 /* InfoPlist.strings */; };
+		8631AC7318CE55D400F45405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7218CE55D400F45405 /* main.m */; };
+		8631AC7718CE55D400F45405 /* RAFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7618CE55D400F45405 /* RAFAppDelegate.m */; };
+		8631AC7A18CE55D400F45405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC7818CE55D400F45405 /* Main.storyboard */; };
+		8631AC7D18CE55D400F45405 /* RAFFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7C18CE55D400F45405 /* RAFFirstViewController.m */; };
+		8631AC8018CE55D400F45405 /* RAFSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7F18CE55D400F45405 /* RAFSecondViewController.m */; };
+		8631AC8218CE55D400F45405 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC8118CE55D400F45405 /* Images.xcassets */; };
+		8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC8818CE55D400F45405 /* XCTest.framework */; };
+		8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6618CE55D400F45405 /* Foundation.framework */; };
+		8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6A18CE55D400F45405 /* UIKit.framework */; };
+		8631AC9318CE55D400F45405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC9118CE55D400F45405 /* InfoPlist.strings */; };
+		8631AC9518CE55D400F45405 /* BBQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC9418CE55D400F45405 /* BBQTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8631AC8C18CE55D400F45405 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8631AC5B18CE55D400F45405 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8631AC6218CE55D400F45405;
+			remoteInfo = BBQ;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8631AC6318CE55D400F45405 /* BBQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8631AC6618CE55D400F45405 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8631AC6818CE55D400F45405 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8631AC6A18CE55D400F45405 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8631AC6E18CE55D400F45405 /* BBQ-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBQ-Info.plist"; sourceTree = "<group>"; };
+		8631AC7018CE55D400F45405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8631AC7218CE55D400F45405 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8631AC7418CE55D400F45405 /* BBQ-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBQ-Prefix.pch"; sourceTree = "<group>"; };
+		8631AC7518CE55D400F45405 /* RAFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFAppDelegate.h; sourceTree = "<group>"; };
+		8631AC7618CE55D400F45405 /* RAFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFAppDelegate.m; sourceTree = "<group>"; };
+		8631AC7918CE55D400F45405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8631AC7B18CE55D400F45405 /* RAFFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFFirstViewController.h; sourceTree = "<group>"; };
+		8631AC7C18CE55D400F45405 /* RAFFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFFirstViewController.m; sourceTree = "<group>"; };
+		8631AC7E18CE55D400F45405 /* RAFSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFSecondViewController.h; sourceTree = "<group>"; };
+		8631AC7F18CE55D400F45405 /* RAFSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFSecondViewController.m; sourceTree = "<group>"; };
+		8631AC8118CE55D400F45405 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8631AC8718CE55D400F45405 /* BBQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8631AC8818CE55D400F45405 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8631AC9018CE55D400F45405 /* BBQTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBQTests-Info.plist"; sourceTree = "<group>"; };
+		8631AC9218CE55D400F45405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8631AC9418CE55D400F45405 /* BBQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBQTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8631AC6018CE55D400F45405 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8631AC6918CE55D400F45405 /* CoreGraphics.framework in Frameworks */,
+				8631AC6B18CE55D400F45405 /* UIKit.framework in Frameworks */,
+				8631AC6718CE55D400F45405 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8631AC8418CE55D400F45405 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */,
+				8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */,
+				8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8631AC5A18CE55D300F45405 = {
+			isa = PBXGroup;
+			children = (
+				8631AC6C18CE55D400F45405 /* BBQ */,
+				8631AC8E18CE55D400F45405 /* BBQTests */,
+				8631AC6518CE55D400F45405 /* Frameworks */,
+				8631AC6418CE55D400F45405 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8631AC6418CE55D400F45405 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC6318CE55D400F45405 /* BBQ.app */,
+				8631AC8718CE55D400F45405 /* BBQTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8631AC6518CE55D400F45405 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC6618CE55D400F45405 /* Foundation.framework */,
+				8631AC6818CE55D400F45405 /* CoreGraphics.framework */,
+				8631AC6A18CE55D400F45405 /* UIKit.framework */,
+				8631AC8818CE55D400F45405 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8631AC6C18CE55D400F45405 /* BBQ */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC7518CE55D400F45405 /* RAFAppDelegate.h */,
+				8631AC7618CE55D400F45405 /* RAFAppDelegate.m */,
+				8631AC7818CE55D400F45405 /* Main.storyboard */,
+				8631AC7B18CE55D400F45405 /* RAFFirstViewController.h */,
+				8631AC7C18CE55D400F45405 /* RAFFirstViewController.m */,
+				8631AC7E18CE55D400F45405 /* RAFSecondViewController.h */,
+				8631AC7F18CE55D400F45405 /* RAFSecondViewController.m */,
+				8631AC8118CE55D400F45405 /* Images.xcassets */,
+				8631AC6D18CE55D400F45405 /* Supporting Files */,
+			);
+			path = BBQ;
+			sourceTree = "<group>";
+		};
+		8631AC6D18CE55D400F45405 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC6E18CE55D400F45405 /* BBQ-Info.plist */,
+				8631AC6F18CE55D400F45405 /* InfoPlist.strings */,
+				8631AC7218CE55D400F45405 /* main.m */,
+				8631AC7418CE55D400F45405 /* BBQ-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8631AC8E18CE55D400F45405 /* BBQTests */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC9418CE55D400F45405 /* BBQTests.m */,
+				8631AC8F18CE55D400F45405 /* Supporting Files */,
+			);
+			path = BBQTests;
+			sourceTree = "<group>";
+		};
+		8631AC8F18CE55D400F45405 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC9018CE55D400F45405 /* BBQTests-Info.plist */,
+				8631AC9118CE55D400F45405 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8631AC6218CE55D400F45405 /* BBQ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8631AC9818CE55D400F45405 /* Build configuration list for PBXNativeTarget "BBQ" */;
+			buildPhases = (
+				8631AC5F18CE55D400F45405 /* Sources */,
+				8631AC6018CE55D400F45405 /* Frameworks */,
+				8631AC6118CE55D400F45405 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BBQ;
+			productName = BBQ;
+			productReference = 8631AC6318CE55D400F45405 /* BBQ.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8631AC8618CE55D400F45405 /* BBQTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8631AC9B18CE55D400F45405 /* Build configuration list for PBXNativeTarget "BBQTests" */;
+			buildPhases = (
+				8631AC8318CE55D400F45405 /* Sources */,
+				8631AC8418CE55D400F45405 /* Frameworks */,
+				8631AC8518CE55D400F45405 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8631AC8D18CE55D400F45405 /* PBXTargetDependency */,
+			);
+			name = BBQTests;
+			productName = BBQTests;
+			productReference = 8631AC8718CE55D400F45405 /* BBQTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8631AC5B18CE55D400F45405 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RAF;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Rafal Sroka";
+				TargetAttributes = {
+					8631AC8618CE55D400F45405 = {
+						TestTargetID = 8631AC6218CE55D400F45405;
+					};
+				};
+			};
+			buildConfigurationList = 8631AC5E18CE55D400F45405 /* Build configuration list for PBXProject "BBQ" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8631AC5A18CE55D300F45405;
+			productRefGroup = 8631AC6418CE55D400F45405 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8631AC6218CE55D400F45405 /* BBQ */,
+				8631AC8618CE55D400F45405 /* BBQTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8631AC6118CE55D400F45405 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8631AC8218CE55D400F45405 /* Images.xcassets in Resources */,
+				8631AC7118CE55D400F45405 /* InfoPlist.strings in Resources */,
+				8631AC7A18CE55D400F45405 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8631AC8518CE55D400F45405 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8631AC9318CE55D400F45405 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8631AC5F18CE55D400F45405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8631AC8018CE55D400F45405 /* RAFSecondViewController.m in Sources */,
+				8631AC7718CE55D400F45405 /* RAFAppDelegate.m in Sources */,
+				8631AC7318CE55D400F45405 /* main.m in Sources */,
+				8631AC7D18CE55D400F45405 /* RAFFirstViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8631AC8318CE55D400F45405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8631AC9518CE55D400F45405 /* BBQTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8631AC8D18CE55D400F45405 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8631AC6218CE55D400F45405 /* BBQ */;
+			targetProxy = 8631AC8C18CE55D400F45405 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8631AC6F18CE55D400F45405 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8631AC7018CE55D400F45405 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8631AC7818CE55D400F45405 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8631AC7918CE55D400F45405 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8631AC9118CE55D400F45405 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8631AC9218CE55D400F45405 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8631AC9618CE55D400F45405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8631AC9718CE55D400F45405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8631AC9918CE55D400F45405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
+				INFOPLIST_FILE = "BBQ/BBQ-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8631AC9A18CE55D400F45405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
+				INFOPLIST_FILE = "BBQ/BBQ-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8631AC9C18CE55D400F45405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BBQ.app/BBQ";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BBQTests/BBQTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8631AC9D18CE55D400F45405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BBQ.app/BBQ";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
+				INFOPLIST_FILE = "BBQTests/BBQTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8631AC5E18CE55D400F45405 /* Build configuration list for PBXProject "BBQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8631AC9618CE55D400F45405 /* Debug */,
+				8631AC9718CE55D400F45405 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8631AC9818CE55D400F45405 /* Build configuration list for PBXNativeTarget "BBQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8631AC9918CE55D400F45405 /* Debug */,
+				8631AC9A18CE55D400F45405 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8631AC9B18CE55D400F45405 /* Build configuration list for PBXNativeTarget "BBQTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8631AC9C18CE55D400F45405 /* Debug */,
+				8631AC9D18CE55D400F45405 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8631AC5B18CE55D400F45405 /* Project object */;
+}
