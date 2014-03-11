@@ -1,21 +1,174 @@
-//
-//  RAFAppDelegate.m
-//  BBQ
-//
-//  Created by Rafal Sroka on 10.03.14.
-//  Copyright (c) 2014 Rafal Sroka. All rights reserved.
-//
-
 #import "RAFAppDelegate.h"
 
 @implementation RAFAppDelegate
 
+
+#pragma mark - Core Data
+
+
+- (NSManagedObjectContext *) managedObjectContext
+{
+    if (_managedObjectContext != nil)
+    {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    
+    if (coordinator != nil)
+    {
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    }
+    
+    return _managedObjectContext;
+}
+
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (_persistentStoreCoordinator != nil)
+    {
+        return _persistentStoreCoordinator;
+    }
+    
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    
+    return _persistentStoreCoordinator;
+}
+
+
+- (void)createPersistentStore
+{
+    NSError *error = nil;
+    NSURL *storeUrl = [NSURL fileURLWithPath:[self databasePath]];
+    
+    if([self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                     configuration:nil
+                                                               URL:storeUrl
+                                                           options:nil
+                                                             error:&error])
+    {
+        // Check if it's the first launch. If so, create a database.
+        if ([self isFirstLaunch])
+        {
+            NSError *error = nil;
+            NSData *JSONData = [NSData dataWithContentsOfURL:[self URLForJSONWithDatabaseContent]];
+            
+            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
+            NSString *locale = dictionary[@"locale"];
+            NSArray *placemarks = dictionary[@"placemarks"];
+            
+            NSLog(@"Locale: %@", locale);
+            
+            [placemarks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+             {
+                 Placemark *placemark = [NSEntityDescription insertNewObjectForEntityForName:@"Placemark"
+                                                                      inManagedObjectContext:self.managedObjectContext];
+                 
+                 placemark.name = [obj objectForKey:@"name"];
+                 placemark.longitude = [obj objectForKey:@"longitude"];
+                 placemark.latitude = [obj objectForKey:@"latitude"];
+                 placemark.district = [obj objectForKey:@"district"];
+                 placemark.placeDescription = [obj objectForKey:@"district"];
+                 
+                 NSError *error;
+                 
+                 if (![self.managedObjectContext save:&error])
+                 {
+                     NSLog(@"Couldn't save: %@", [error localizedDescription]);
+                 }
+             }];
+        }
+    }
+    else
+    {
+        /*Error for store creation should be handled in here*/
+        NSLog(@"Error %@", error.localizedDescription);
+    }
+}
+
+
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel != nil)
+    {
+        return _managedObjectModel;
+    }
+    
+    _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    
+    return _managedObjectModel;
+}
+
+
+#pragma mark - Configuration
+
+
+- (NSURL *)URLForJSONWithDatabaseContent
+{
+    return [[NSBundle mainBundle] URLForResource:@"Berlin" withExtension:@"json"];
+}
+
+
+- (NSString *)databasePath
+{
+    return [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Berlin.sqlite"];
+}
+
+
+#pragma mark - Helper methods
+
+
++ (RAFAppDelegate *)delegate
+{
+    return [UIApplication sharedApplication].delegate;
+}
+
+
++ (NSManagedObjectContext *)managedObjectContext
+{
+    return [RAFAppDelegate delegate].managedObjectContext;
+}
+
+
+- (NSString *)applicationDocumentsDirectory
+{
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                NSUserDomainMask,
+                                                YES)
+            objectAtIndex:0];
+}
+
+
+- (BOOL)isFirstLaunch
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        return NO;
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        // This is the first launch ever
+        return YES;
+    }
+}
+
+
+#pragma mark - UIApplicationDelegate
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self createPersistentStore];
+    
     return YES;
 }
-							
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

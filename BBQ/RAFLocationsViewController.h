@@ -1,0 +1,3 @@
+@interface RAFLocationsViewController : UITableViewController
+
+@end

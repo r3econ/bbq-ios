@@ -1,0 +1,131 @@
+{
+    "locale": "de",
+    "placemarks": [
+                   {
+                   "name": "Monbijoupark",
+                   "description": "Nähe Oranienburger Strasse.",
+                   "district": "Mitte",
+                   "latitude": 52.5238,
+                   "longitude": 13.396397
+                   },
+                   {
+                   "name": "Volkspark Friedrichshain",
+                   "description": "Kleiner Bunkerberg.",
+                   "district": "Friedrichshain",
+                   "latitude": 52.528008,
+                   "longitude": 13.437026
+                   },
+                   {
+                   "name": "Görlitzer Park",
+                   "description": "Wiesen gegenüber dem Kunststoffrasenplatz und dem Rodelberg im südöstlichen Teil des Parks.",
+                   "district": "Kreuzberg",
+                   "latitude": 52.494425,
+                   "longitude": 13.44261
+                   },
+                   {
+                   "name": "Blücherplatz",
+                   "description": "Wiese zum Waterlooufer",
+                   "district": "Kreuzberg",
+                   "latitude": 52.497267,
+                   "longitude": 13.392374
+                   },
+                   {
+                   "name": "Mauerpark",
+                   "description": "Fläche entlang der Schwedter Straße mit Ausnahme der Spielplätze und des Birkenwäldchens.",
+                   "district": "Prenzlauer Berg",
+                   "latitude": 52.543356,
+                   "longitude": 13.402477
+                   },
+                   {
+                   "name": "Goslarer Ufer",
+                   "description": "Ausgewiesene Grillfläche im Bereich zwischen altem Gaswerk Charlottenburg und Verbindungskanal.",
+                   "district": "Charlottenburg",
+                   "latitude": 52.531153,
+                   "longitude": 13.312986
+                   },
+                   {
+                   "name": "Rudolf-Mosse-Platz",
+                   "description": "Mecklenburgische Strasse.",
+                   "district": "Wilmersdorf",
+                   "latitude": 52.475438,
+                   "longitude": 13.302424
+                   },
+                   {
+                   "name": "Preußenpark",
+                   "description": "Württembergische Straße - eingezäuntes Areal neben dem Parkcafé.",
+                   "district": "Wilmersdorf",
+                   "latitude": 52.49194,
+                   "longitude": 13.313568
+                   },
+                   {
+                   "name": "Zehlendorf Süd",
+                   "description": "Ludwigsfelder Str./Neuruppiner Str. - Zehlendorf Süd.",
+                   "district": "Zehlendorf",
+                   "latitude": 52.420981,
+                   "longitude": 13.244935
+                   },
+                   {
+                   "name": "Landschaftspark Johannisthal / Ostfuge",
+                   "description": "Nähe Technologiepark Adlershof, erreichbar über Groß-Berliner-Damm / Hermann-Dorner-Allee.",
+                   "district": "Treptow",
+                   "latitude": 52.437457,
+                   "longitude": 13.521779
+                   },
+                   {
+                   "name": "Schlesischer Busch",
+                   "description": "Am Flutgraben.",
+                   "district": "Treptow",
+                   "latitude": 52.49541,
+                   "longitude": 13.449512
+                   },
+                   {
+                   "name": "Stadtpark",
+                   "description": "Nähe Sprühplatte.",
+                   "district": "Lichtenberg",
+                   "latitude": 52.518037,
+                   "longitude": 13.476212
+                   },
+                   {
+                   "name": "Rudolf-Seiffert-Grünzug",
+                   "description": "Storkower Strasse/Karl-Lade-Strasse.",
+                   "district": "Lichtenberg",
+                   "latitude": 52.524939,
+                   "longitude": 13.471571
+                   },
+                   {
+                   "name": "Fennpfuhlpark",
+                   "description": "Südöstlich des Fennpfuhls.",
+                   "district": "Lichtenberg",
+                   "latitude": 52.528085,
+                   "longitude": 13.475812
+                   },
+                   {
+                   "name": "An der Landmarke - Ahornallee",
+                   "description": "Erreichbar über Hagenower Ring/Hechtgraben). Die Anfahrt/ Anlieferung mit PKW ist nach Antragstellung beim Gartenamt als Sondernutzung möglich.",
+                   "district": "Hohenschönhausen",
+                   "latitude": 52.578234,
+                   "longitude": 13.505514
+                   },
+                   {
+                   "name": "Nähe Sportplätze Columbiadamm",
+                   "description": "Tempelhofer Freiheit. Nähe Sportplätze Columbiadamm. Haupteingang Columbiadamm.",
+                   "district": "Tempelhof",
+                   "latitude": 52.480161,
+                   "longitude": 13.404028
+                   },
+                   {
+                   "name": "Nähe Oderstraße/Leinestraße",
+                   "description": "Tempelhofer Freiheit. Nähe Oderstraße/Leinestraße. Eingänge Oderstraße.",
+                   "district": "Tempelhof",
+                   "latitude": 52.471783,
+                   "longitude": 13.416152
+                   },
+                   {
+                   "name": "Nähe Tempelhofer Damm",
+                   "description": "Tempelhofer Freiheit. Nähe Tempelhofer Damm. Eingang Tempelhofer Damm.",
+                   "district": "Tempelhof",
+                   "latitude": 52.470489,
+                   "longitude": 13.393192
+                   }
+                   ]
+}

@@ -14,14 +14,22 @@
 		8631AC7318CE55D400F45405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7218CE55D400F45405 /* main.m */; };
 		8631AC7718CE55D400F45405 /* RAFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7618CE55D400F45405 /* RAFAppDelegate.m */; };
 		8631AC7A18CE55D400F45405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC7818CE55D400F45405 /* Main.storyboard */; };
-		8631AC7D18CE55D400F45405 /* RAFFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7C18CE55D400F45405 /* RAFFirstViewController.m */; };
-		8631AC8018CE55D400F45405 /* RAFSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7F18CE55D400F45405 /* RAFSecondViewController.m */; };
+		8631AC7D18CE55D400F45405 /* RAFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7C18CE55D400F45405 /* RAFMapViewController.m */; };
+		8631AC8018CE55D400F45405 /* RAFLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC7F18CE55D400F45405 /* RAFLocationsViewController.m */; };
 		8631AC8218CE55D400F45405 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC8118CE55D400F45405 /* Images.xcassets */; };
 		8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC8818CE55D400F45405 /* XCTest.framework */; };
 		8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6618CE55D400F45405 /* Foundation.framework */; };
 		8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6A18CE55D400F45405 /* UIKit.framework */; };
 		8631AC9318CE55D400F45405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC9118CE55D400F45405 /* InfoPlist.strings */; };
 		8631AC9518CE55D400F45405 /* BBQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC9418CE55D400F45405 /* BBQTests.m */; };
+		8631AC9F18CE5A6700F45405 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC9E18CE5A6700F45405 /* MapKit.framework */; };
+		8631ACA118CE5CF200F45405 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631ACA018CE5CF200F45405 /* CoreData.framework */; };
+		8631ACA718CE5E3900F45405 /* BBQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACA518CE5E3900F45405 /* BBQ.xcdatamodeld */; };
+		8631ACA818CE5E3900F45405 /* BBQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACA518CE5E3900F45405 /* BBQ.xcdatamodeld */; };
+		8631ACAB18CE60C100F45405 /* Placemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACAA18CE60C100F45405 /* Placemark.m */; };
+		8631ACAC18CE60C100F45405 /* Placemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACAA18CE60C100F45405 /* Placemark.m */; };
+		8631ACAE18CE77E900F45405 /* Berlin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACAD18CE77E900F45405 /* Berlin.json */; };
+		8631ACAF18CE77E900F45405 /* Berlin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACAD18CE77E900F45405 /* Berlin.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +54,22 @@
 		8631AC7518CE55D400F45405 /* RAFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFAppDelegate.h; sourceTree = "<group>"; };
 		8631AC7618CE55D400F45405 /* RAFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFAppDelegate.m; sourceTree = "<group>"; };
 		8631AC7918CE55D400F45405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8631AC7B18CE55D400F45405 /* RAFFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFFirstViewController.h; sourceTree = "<group>"; };
-		8631AC7C18CE55D400F45405 /* RAFFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFFirstViewController.m; sourceTree = "<group>"; };
-		8631AC7E18CE55D400F45405 /* RAFSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFSecondViewController.h; sourceTree = "<group>"; };
-		8631AC7F18CE55D400F45405 /* RAFSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFSecondViewController.m; sourceTree = "<group>"; };
+		8631AC7B18CE55D400F45405 /* RAFMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFMapViewController.h; sourceTree = "<group>"; };
+		8631AC7C18CE55D400F45405 /* RAFMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFMapViewController.m; sourceTree = "<group>"; };
+		8631AC7E18CE55D400F45405 /* RAFLocationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFLocationsViewController.h; sourceTree = "<group>"; };
+		8631AC7F18CE55D400F45405 /* RAFLocationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFLocationsViewController.m; sourceTree = "<group>"; };
 		8631AC8118CE55D400F45405 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8631AC8718CE55D400F45405 /* BBQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8631AC8818CE55D400F45405 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8631AC9018CE55D400F45405 /* BBQTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBQTests-Info.plist"; sourceTree = "<group>"; };
 		8631AC9218CE55D400F45405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8631AC9418CE55D400F45405 /* BBQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBQTests.m; sourceTree = "<group>"; };
+		8631AC9E18CE5A6700F45405 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8631ACA018CE5CF200F45405 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8631ACA618CE5E3900F45405 /* BBQ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BBQ.xcdatamodel; sourceTree = "<group>"; };
+		8631ACA918CE60C100F45405 /* Placemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Placemark.h; sourceTree = "<group>"; };
+		8631ACAA18CE60C100F45405 /* Placemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Placemark.m; sourceTree = "<group>"; };
+		8631ACAD18CE77E900F45405 /* Berlin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Berlin.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8631ACA118CE5CF200F45405 /* CoreData.framework in Frameworks */,
+				8631AC9F18CE5A6700F45405 /* MapKit.framework in Frameworks */,
 				8631AC6918CE55D400F45405 /* CoreGraphics.framework in Frameworks */,
 				8631AC6B18CE55D400F45405 /* UIKit.framework in Frameworks */,
 				8631AC6718CE55D400F45405 /* Foundation.framework in Frameworks */,
@@ -104,6 +120,8 @@
 		8631AC6518CE55D400F45405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8631ACA018CE5CF200F45405 /* CoreData.framework */,
+				8631AC9E18CE5A6700F45405 /* MapKit.framework */,
 				8631AC6618CE55D400F45405 /* Foundation.framework */,
 				8631AC6818CE55D400F45405 /* CoreGraphics.framework */,
 				8631AC6A18CE55D400F45405 /* UIKit.framework */,
@@ -117,12 +135,9 @@
 			children = (
 				8631AC7518CE55D400F45405 /* RAFAppDelegate.h */,
 				8631AC7618CE55D400F45405 /* RAFAppDelegate.m */,
-				8631AC7818CE55D400F45405 /* Main.storyboard */,
-				8631AC7B18CE55D400F45405 /* RAFFirstViewController.h */,
-				8631AC7C18CE55D400F45405 /* RAFFirstViewController.m */,
-				8631AC7E18CE55D400F45405 /* RAFSecondViewController.h */,
-				8631AC7F18CE55D400F45405 /* RAFSecondViewController.m */,
-				8631AC8118CE55D400F45405 /* Images.xcassets */,
+				8631ACA418CE5E0C00F45405 /* Model */,
+				8631ACA318CE5DFF00F45405 /* Resources */,
+				8631ACA218CE5DEF00F45405 /* View Controllers */,
 				8631AC6D18CE55D400F45405 /* Supporting Files */,
 			);
 			path = BBQ;
@@ -155,6 +170,37 @@
 				8631AC9118CE55D400F45405 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8631ACA218CE5DEF00F45405 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC7B18CE55D400F45405 /* RAFMapViewController.h */,
+				8631AC7C18CE55D400F45405 /* RAFMapViewController.m */,
+				8631AC7E18CE55D400F45405 /* RAFLocationsViewController.h */,
+				8631AC7F18CE55D400F45405 /* RAFLocationsViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8631ACA318CE5DFF00F45405 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8631ACAD18CE77E900F45405 /* Berlin.json */,
+				8631AC7818CE55D400F45405 /* Main.storyboard */,
+				8631AC8118CE55D400F45405 /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8631ACA418CE5E0C00F45405 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8631ACA518CE5E3900F45405 /* BBQ.xcdatamodeld */,
+				8631ACA918CE60C100F45405 /* Placemark.h */,
+				8631ACAA18CE60C100F45405 /* Placemark.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +283,7 @@
 				8631AC8218CE55D400F45405 /* Images.xcassets in Resources */,
 				8631AC7118CE55D400F45405 /* InfoPlist.strings in Resources */,
 				8631AC7A18CE55D400F45405 /* Main.storyboard in Resources */,
+				8631ACAE18CE77E900F45405 /* Berlin.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8631AC9318CE55D400F45405 /* InfoPlist.strings in Resources */,
+				8631ACAF18CE77E900F45405 /* Berlin.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,10 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8631AC8018CE55D400F45405 /* RAFSecondViewController.m in Sources */,
+				8631ACAB18CE60C100F45405 /* Placemark.m in Sources */,
+				8631AC8018CE55D400F45405 /* RAFLocationsViewController.m in Sources */,
 				8631AC7718CE55D400F45405 /* RAFAppDelegate.m in Sources */,
 				8631AC7318CE55D400F45405 /* main.m in Sources */,
-				8631AC7D18CE55D400F45405 /* RAFFirstViewController.m in Sources */,
+				8631ACA718CE5E3900F45405 /* BBQ.xcdatamodeld in Sources */,
+				8631AC7D18CE55D400F45405 /* RAFMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +316,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8631ACAC18CE60C100F45405 /* Placemark.m in Sources */,
 				8631AC9518CE55D400F45405 /* BBQTests.m in Sources */,
+				8631ACA818CE5E3900F45405 /* BBQ.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +529,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8631ACA518CE5E3900F45405 /* BBQ.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8631ACA618CE5E3900F45405 /* BBQ.xcdatamodel */,
+			);
+			currentVersion = 8631ACA618CE5E3900F45405 /* BBQ.xcdatamodel */;
+			path = BBQ.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8631AC5B18CE55D400F45405 /* Project object */;
 }
