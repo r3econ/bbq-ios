@@ -30,6 +30,8 @@
 		8631ACAC18CE60C100F45405 /* Placemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACAA18CE60C100F45405 /* Placemark.m */; };
 		8631ACAE18CE77E900F45405 /* Berlin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACAD18CE77E900F45405 /* Berlin.json */; };
 		8631ACAF18CE77E900F45405 /* Berlin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACAD18CE77E900F45405 /* Berlin.json */; };
+		8631ACB218CFD54500F45405 /* RAFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACB118CFD54500F45405 /* RAFDetailViewController.m */; };
+		8631ACB318CFD54500F45405 /* RAFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACB118CFD54500F45405 /* RAFDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		8631ACA918CE60C100F45405 /* Placemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Placemark.h; sourceTree = "<group>"; };
 		8631ACAA18CE60C100F45405 /* Placemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Placemark.m; sourceTree = "<group>"; };
 		8631ACAD18CE77E900F45405 /* Berlin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Berlin.json; sourceTree = "<group>"; };
+		8631ACB018CFD54500F45405 /* RAFDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFDetailViewController.h; sourceTree = "<group>"; };
+		8631ACB118CFD54500F45405 /* RAFDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,8 @@
 				8631AC7C18CE55D400F45405 /* RAFMapViewController.m */,
 				8631AC7E18CE55D400F45405 /* RAFLocationsViewController.h */,
 				8631AC7F18CE55D400F45405 /* RAFLocationsViewController.m */,
+				8631ACB018CFD54500F45405 /* RAFDetailViewController.h */,
+				8631ACB118CFD54500F45405 /* RAFDetailViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				8631AC8018CE55D400F45405 /* RAFLocationsViewController.m in Sources */,
 				8631AC7718CE55D400F45405 /* RAFAppDelegate.m in Sources */,
 				8631AC7318CE55D400F45405 /* main.m in Sources */,
+				8631ACB218CFD54500F45405 /* RAFDetailViewController.m in Sources */,
 				8631ACA718CE5E3900F45405 /* BBQ.xcdatamodeld in Sources */,
 				8631AC7D18CE55D400F45405 /* RAFMapViewController.m in Sources */,
 			);
@@ -319,6 +326,7 @@
 				8631ACAC18CE60C100F45405 /* Placemark.m in Sources */,
 				8631AC9518CE55D400F45405 /* BBQTests.m in Sources */,
 				8631ACA818CE5E3900F45405 /* BBQ.xcdatamodeld in Sources */,
+				8631ACB318CFD54500F45405 /* RAFDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +527,7 @@
 				8631AC9A18CE55D400F45405 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8631AC9B18CE55D400F45405 /* Build configuration list for PBXNativeTarget "BBQTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +536,7 @@
 				8631AC9D18CE55D400F45405 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

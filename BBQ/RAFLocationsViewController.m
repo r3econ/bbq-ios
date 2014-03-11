@@ -1,4 +1,5 @@
 #import "RAFLocationsViewController.h"
+#import "RAFDetailViewController.h"
 
 
 @interface RAFLocationsViewController ()<NSFetchedResultsControllerDelegate>
@@ -58,6 +59,7 @@
     return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
 }
 
+
 // Customize the appearance of table view cells.
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
@@ -80,12 +82,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  /*  Placemark *placemark = (Placemark *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+    Placemark *placemark = (Placemark *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
     
-    // Pass the selected book to the new view controller.
-    DetailViewController *detailViewController = (DetailViewController *)[segue destinationViewController];
-    detailViewController.book = selectedBook;
-   */
+    RAFDetailViewController *vc = [RAFDetailViewController controllerWithPlacemark:placemark];
+    vc.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 }
 
 

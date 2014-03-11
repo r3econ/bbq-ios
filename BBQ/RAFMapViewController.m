@@ -1,5 +1,7 @@
 
 #import "RAFMapViewController.h"
+#import "RAFDetailViewController.h"
+
 
 @interface RAFMapViewController ()
 @property(nonatomic, weak) IBOutlet MKMapView *mapView;
@@ -102,7 +104,13 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-
+    Placemark *placemark = (Placemark *)view.annotation;
+    
+    RAFDetailViewController *vc = [RAFDetailViewController controllerWithPlacemark:placemark];
+    vc.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 }
 
 
