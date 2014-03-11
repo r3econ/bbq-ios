@@ -78,6 +78,17 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  /*  Placemark *placemark = (Placemark *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+    
+    // Pass the selected book to the new view controller.
+    DetailViewController *detailViewController = (DetailViewController *)[segue destinationViewController];
+    detailViewController.book = selectedBook;
+   */
+}
+
+
 #pragma mark - Fetched results controller
 
 /*
