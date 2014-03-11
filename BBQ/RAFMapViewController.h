@@ -1,6 +1,5 @@
-@import MapKit;
+#import <MapKit/MapKit.h>
 
-
-@interface RAFMapViewController : UIViewController
+@interface RAFMapViewController : UIViewController<MKMapViewDelegate>
 
 @end

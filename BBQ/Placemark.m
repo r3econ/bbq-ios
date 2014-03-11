@@ -1,11 +1,3 @@
-//
-//  Placemark.m
-//  BBQ
-//
-//  Created by Rafal Sroka on 10.03.14.
-//  Copyright (c) 2014 Rafal Sroka. All rights reserved.
-//
-
 #import "Placemark.h"
 
 
@@ -16,4 +8,24 @@
 @dynamic longitude;
 @dynamic latitude;
 @dynamic placeDescription;
+
+
+- (NSString *)title
+{
+    return self.name;
+}
+
+- (NSString *)subtitle
+{
+    return self.placeDescription;
+}
+
+- (CLLocationCoordinate2D)coordinate
+{
+    CLLocationCoordinate2D coord;
+    coord.latitude = [self.latitude doubleValue];
+    coord.longitude = [self.longitude doubleValue];
+    return coord;
+}
+
 @end
