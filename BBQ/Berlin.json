@@ -13,14 +13,16 @@
                    "description": "Kleiner Bunkerberg.",
                    "district": "Friedrichshain",
                    "latitude": 52.528008,
-                   "longitude": 13.437026
+                   "longitude": 13.437026,
+                   "public_transport": "S-Bahn: Landsberger Allee, U-Bahn: Strausberger Platz, Bus 200"
                    },
                    {
                    "name": "Görlitzer Park",
                    "description": "Wiesen gegenüber dem Kunststoffrasenplatz und dem Rodelberg im südöstlichen Teil des Parks.",
                    "district": "Kreuzberg",
                    "latitude": 52.494425,
-                   "longitude": 13.44261
+                   "longitude": 13.44261,
+                   "public_transport": "U-Bahn: Görlitzer Bahnhof oder Schlesisches Tor"
                    },
                    {
                    "name": "Blücherplatz",
@@ -34,7 +36,8 @@
                    "description": "Fläche entlang der Schwedter Straße mit Ausnahme der Spielplätze und des Birkenwäldchens.",
                    "district": "Prenzlauer Berg",
                    "latitude": 52.543356,
-                   "longitude": 13.402477
+                   "longitude": 13.402477,
+                   "public_transport": "Tram M10: Friedrich-Ludwig-Jahn-Sportpark, Tram 12: Eberswalder Str. U-Bahn: U2 Eberswalder Str."
                    },
                    {
                    "name": "Goslarer Ufer",
@@ -65,7 +68,7 @@
                    "longitude": 13.244935
                    },
                    {
-                   "name": "Landschaftspark Johannisthal / Ostfuge",
+                   "name": "Landschaftspark Johannisthal",
                    "description": "Nähe Technologiepark Adlershof, erreichbar über Groß-Berliner-Damm / Hermann-Dorner-Allee.",
                    "district": "Treptow",
                    "latitude": 52.437457,
@@ -100,8 +103,8 @@
                    "longitude": 13.475812
                    },
                    {
-                   "name": "An der Landmarke - Ahornallee",
-                   "description": "Erreichbar über Hagenower Ring/Hechtgraben). Die Anfahrt/ Anlieferung mit PKW ist nach Antragstellung beim Gartenamt als Sondernutzung möglich.",
+                   "name": "An der Landmarke",
+                   "description": "Ahornallee. Erreichbar über Hagenower Ring oder Hechtgraben. Die Anfahrt mit PKW ist nach Antragstellung beim Gartenamt als Sondernutzung möglich.",
                    "district": "Hohenschönhausen",
                    "latitude": 52.578234,
                    "longitude": 13.505514
