@@ -15,8 +15,27 @@
                     <view key="view" contentMode="scaleToFill" id="vFv-59-LoA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tiB-Rn-bIz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fQ0-WK-AAR" id="DEH-9X-32J"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tiB-Rn-bIz" firstAttribute="leading" secondItem="vFv-59-LoA" secondAttribute="leading" id="M1L-Rs-Jpr"/>
+                            <constraint firstAttribute="trailing" secondItem="tiB-Rn-bIz" secondAttribute="trailing" id="qDb-aq-MI6"/>
+                            <constraint firstItem="ihl-iD-SU4" firstAttribute="top" secondItem="tiB-Rn-bIz" secondAttribute="bottom" id="qOm-VT-3C1"/>
+                            <constraint firstItem="tiB-Rn-bIz" firstAttribute="top" secondItem="vFv-59-LoA" secondAttribute="top" id="wFP-fh-JaP"/>
+                        </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="tiB-Rn-bIz" id="qeO-hv-zQ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBu-S6-F64" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,13 +61,13 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcY-8U-dGI">
-                                <rect key="frame" x="10" y="470" width="40" height="40"/>
+                                <rect key="frame" x="270" y="470" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ECL-8t-MVF"/>
-                                    <constraint firstAttribute="width" constant="40" id="l4H-lk-FWf"/>
+                                    <constraint firstAttribute="width" constant="40" id="9vl-iT-eFK"/>
+                                    <constraint firstAttribute="height" constant="40" id="M1O-Mk-q9J"/>
                                 </constraints>
-                                <state key="normal" image="first"/>
+                                <state key="normal" image="user_location.png"/>
                                 <connections>
                                     <action selector="centerAtUserLocationButtonTapped:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="yWY-ba-2b3"/>
                                 </connections>
@@ -60,8 +79,8 @@
                             <constraint firstAttribute="bottom" secondItem="Cef-Pe-ajg" secondAttribute="bottom" id="9b3-Lt-paD"/>
                             <constraint firstItem="Cef-Pe-ajg" firstAttribute="top" secondItem="2VE-Yg-loa" secondAttribute="top" id="Xme-WQ-IRN"/>
                             <constraint firstAttribute="trailing" secondItem="Cef-Pe-ajg" secondAttribute="trailing" id="mIm-rR-7bx"/>
-                            <constraint firstItem="pcY-8U-dGI" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="10" id="pSF-8a-rMK"/>
-                            <constraint firstItem="Ma2-dk-5Rf" firstAttribute="top" secondItem="pcY-8U-dGI" secondAttribute="bottom" constant="9" id="w0I-MU-dwv"/>
+                            <constraint firstItem="Ma2-dk-5Rf" firstAttribute="top" secondItem="pcY-8U-dGI" secondAttribute="bottom" constant="9" id="ojd-da-qyS"/>
+                            <constraint firstAttribute="trailing" secondItem="pcY-8U-dGI" secondAttribute="trailing" constant="10" id="wYh-l9-8w9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dzG-cN-kIw"/>
@@ -92,11 +111,11 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Navigation Controller - First-->
+        <!--Navigation Controller - BBQ-->
         <scene sceneID="8Mb-IQ-5EO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bL9-Dt-1k7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="BBQ" image="map.png" id="u1e-5L-l1D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iqA-6Y-4Ps">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -111,11 +130,11 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <!--Navigation Controller - Second-->
+        <!--Navigation Controller - Places-->
         <scene sceneID="pfC-RP-IgH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h9O-4D-8p6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="Places" image="list.png" id="Z7h-1E-pvt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HGy-4W-GS4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -170,8 +189,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="list.png" width="25" height="25"/>
+        <image name="map.png" width="25" height="25"/>
+        <image name="user_location.png" width="35" height="35"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

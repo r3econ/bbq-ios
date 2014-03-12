@@ -6,8 +6,9 @@
         <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="placeDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publicTransportation" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Placemark" positionX="160" positionY="183" width="128" height="118"/>
+        <element name="Placemark" positionX="160" positionY="183" width="128" height="133"/>
     </elements>
 </model>

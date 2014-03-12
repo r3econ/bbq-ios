@@ -3,7 +3,7 @@
 #import "RAFDetailViewController.h"
 
 
-@interface RAFMapViewController ()
+@interface RAFMapViewController () <MKMapViewDelegate>
 @property(nonatomic, weak) IBOutlet MKMapView *mapView;
 @property(nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
@@ -19,7 +19,12 @@
 {
     [super viewDidLoad];
 
+    self.title = NSLocalizedString(@"map_view_title", nil);
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
     [self configureAnnotations];
 }
 
@@ -86,13 +91,13 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation
 {
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
     
     if (!annotationView)
     {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = YES;
-        annotationView.animatesDrop = YES;
+        annotationView.image = [UIImage imageNamed:@"pin"];
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
     

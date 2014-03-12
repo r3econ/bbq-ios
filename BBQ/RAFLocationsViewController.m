@@ -16,6 +16,12 @@
 {
     [super viewDidLoad];
     
+    self.title = NSLocalizedString(@"locations_view_title", nil);
+
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
 	NSError *error;
     if (![[self fetchedResultsController] performFetch:&error])
     {

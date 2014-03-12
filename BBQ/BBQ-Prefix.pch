@@ -16,4 +16,6 @@
     #import <CoreData/CoreData.h>
     #import "Placemark.h"
     #import "RAFAppDelegate.h"
+    #import "UIColor+Extensions.h"
+
 #endif
