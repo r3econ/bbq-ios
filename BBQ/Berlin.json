@@ -3,111 +3,138 @@
     "placemarks": [
                    {
                    "name": "Monbijoupark",
-                   "description": "Nähe Oranienburger Strasse. Das Grillen ist nicht im gesamten Monbijoupark erlaubt, sondern lediglich auf einer kleinen, ausgeschilderten Grillfläche. Der Monbijoupark liegt mit schönem Ausblick zur Museumsinsel und der Neuen Synagoge Berlin. Spielplatz, Tischtennisplatten, Basketball-Platz.",
+                   "description": "Nähe Oranienburger Strasse. Das Grillen ist nicht im gesamten Monbijoupark erlaubt, sondern lediglich auf einer kleinen, ausgeschilderten Grillfläche. Der Monbijoupark liegt mit schönem Ausblick zur Museumsinsel und der Neuen Synagoge Berlin.",
                    "district": "Mitte",
                    "latitude": 52.5238,
-                   "longitude": 13.396397
+                   "longitude": 13.396397,
+                   "public_transport": "S-Bahn: Hackescher Markt und Oranienburger Str.",
+                   "activities": "Spielplatz, Tischtennisplatten, Basketball-Platz."
                    },
                    {
                    "name": "Volkspark Friedrichshain",
-                   "description": "Grillen ist nur auf dem Kleinen Bunkerberg erlaubt. Spielplätze, Planschbecken am Märchenbrunnen, Basketballplatz, Tennisplätze, Beachvolleyball-Platz, Halfpipe für Skateboarder und Inline-Skater, Freiluftkino, Boccia Bahn, Duftgarten, umzäunter Hundeauslauf im neuen Hain.",
+                   "description": "Grillen ist nur auf dem Kleinen Bunkerberg erlaubt.",
                    "district": "Friedrichshain",
                    "latitude": 52.528008,
                    "longitude": 13.437026,
-                   "public_transport": "S-Bahn: Landsberger Allee, U-Bahn: Strausberger Platz, Bus 200"
+                   "public_transport": "S-Bahn: Landsberger Allee, U-Bahn: Strausberger Platz, Tram    M5, M6, M8 (Platz der Vereinten Nationen), Bus 200, 240 (Am Friedrichshain)",
+                   "activities": "Spielplätze, Planschbecken am Märchenbrunnen, Basketballplatz, Tennisplätze, Beachvolleyball-Platz, Halfpipe für Skateboarder und Inline-Skater, Freiluftkino, Boccia Bahn, Duftgarten"
                    },
                    {
                    "name": "Görlitzer Park",
-                   "description": "Wiesen gegenüber dem Kunststoffrasenplatz und dem Rodelberg im südöstlichen Teil des Parks. Zwei ausgewiesene Grillflächen in Höhe der Cuvrystraße und an der Ecke Sorauer Straße. Kinderbauernhof, Skateranlage",
+                   "description": "Wiesen gegenüber dem Kunststoffrasenplatz und dem Rodelberg im südöstlichen Teil des Parks. Zwei ausgewiesene Grillflächen in Höhe der Cuvrystraße und an der Ecke Sorauer Straße.",
                    "district": "Kreuzberg",
                    "latitude": 52.494425,
                    "longitude": 13.44261,
-                   "public_transport": "U-Bahn: Görlitzer Bahnhof oder Schlesisches Tor"
+                   "public_transport": "U-Bahn: Görlitzer Bahnhof oder Schlesisches Tor",
+                   "activities": "Kinderbauernhof, Skateranlage"
                    },
                    {
                    "name": "Blücherplatz",
-                   "description": "Wiese zum Waterlooufer",
+                   "description": "Der Grillplatz befindet sich direkt auf der Wiese zum Waterlooufer.",
                    "district": "Kreuzberg",
                    "latitude": 52.497267,
-                   "longitude": 13.392374
+                   "longitude": 13.392374,
+                   "public_transport": "U-Bahn: U6 Hallesches Tor",
+                   "activities": ""
                    },
                    {
-                   "name": "Mauerpark",
-                   "description": "Fläche entlang der Schwedter Straße mit Ausnahme der Spielplätze und des Birkenwäldchens. Eine Basketball-Anlage, ein Spielplatz, eine Graffiti-Mauer, am Wochenende locken der Flohmarkt, und viele Musiker, die kostenlos auftreten, in den Park, außerdem grenzt direkt der Friedrich-Ludwig-Jahn-Sportpark an den Mauerpark an.",
+                   "name": "Mauerpark / Falkplatz",
+                   "description": "Fläche entlang der Schwedter Straße mit Ausnahme der Spielplätze und des Birkenwäldchens.",
                    "district": "Prenzlauer Berg",
                    "latitude": 52.543356,
                    "longitude": 13.402477,
-                   "public_transport": "Tram M10: Friedrich-Ludwig-Jahn-Sportpark, Tram 12: Eberswalder Str. U-Bahn: U2 Eberswalder Str."
+                   "public_transport": "Tram M10: Friedrich-Ludwig-Jahn-Sportpark, Tram 12: Eberswalder Str. U-Bahn: U2 Eberswalder Str.",
+                   "activities": "Eine Basketball-Anlage, ein Spielplatz, eine Graffiti-Mauer, am Wochenende locken der Flohmarkt, und viele Musiker, die kostenlos auftreten"
                    },
                    {
                    "name": "Goslarer Ufer",
-                   "description": "Ausgewiesene Grillfläche im Bereich zwischen altem Gaswerk Charlottenburg und Verbindungskanal.",
+                   "description": "Goslarer Ufer / Ecke Gaußstraße. Ausgewiesene Grillfläche im Bereich zwischen altem Gaswerk Charlottenburg und Verbindungskanal.",
                    "district": "Charlottenburg",
                    "latitude": 52.531153,
-                   "longitude": 13.312986
+                   "longitude": 13.312986,
+                   "public_transport": "S-Bahn: Jungfernheide",
+                   "activities": ""
                    },
                    {
                    "name": "Rudolf-Mosse-Platz",
                    "description": "Mecklenburgische Strasse.",
                    "district": "Wilmersdorf",
                    "latitude": 52.475438,
-                   "longitude": 13.302424
+                   "longitude": 13.302424,
+                   "public_transport": "Bus 249 (Rudolf-Mosse-Platz)",
+                   "activities": "Sandspielfläche und eine Basketball-Anlage."
                    },
                    {
                    "name": "Preußenpark",
                    "description": "Württembergische Straße - eingezäuntes Areal neben dem Parkcafé.",
                    "district": "Wilmersdorf",
                    "latitude": 52.49194,
-                   "longitude": 13.313568
+                   "longitude": 13.313568,
+                   "public_transport": "U-Bahn: Fehrbelliner Platz",
+                   "activities": "Senioren-Aktivplatz"
                    },
                    {
                    "name": "Zehlendorf Süd",
-                   "description": "Ludwigsfelder Str./Neuruppiner Str. - Zehlendorf Süd.",
+                   "description": "Grills können direkt an der Landesgrenze zu Brandenburg aufgebaut werden auf der Grünfläche Neuruppiner Straße Ecke Ludwigsfelder Straße.",
                    "district": "Zehlendorf",
                    "latitude": 52.420981,
-                   "longitude": 13.244935
+                   "longitude": 13.244935,
+                   "public_transport": "S-Bahn: Zehlendorf-Süd",
+                   "activities": ""
                    },
                    {
                    "name": "Landschaftspark Johannisthal",
-                   "description": "Nähe Technologiepark Adlershof, erreichbar über Groß-Berliner-Damm / Hermann-Dorner-Allee. Der Grillplatz liegt im westlichen Zipfel des Parks und ist erreichbar über den Parkzugang Groß-Berliner-Damm/Hermann-Dorner Allee. Skaterbahn (Rollfeld), Beachvolleyball, Dirt-Bike-Parcours, Joggen, Picknick",
+                   "description": "Nähe Technologiepark Adlershof. Der Grillplatz liegt im westlichen Zipfel des Parks und ist erreichbar über den Parkzugang Groß-Berliner-Damm/Hermann-Dorner Allee.",
                    "district": "Treptow",
                    "latitude": 52.437457,
-                   "longitude": 13.521779
+                   "longitude": 13.521779,
+                   "public_transport": "Bus 163 (Groß-Berliner Damm Mitte)",
+                   "activities": "Skaterbahn (Rollfeld), Beachvolleyball, Dirt-Bike-Parcours"
                    },
                    {
                    "name": "Schlesischer Busch",
                    "description": "Grillplatz an der Straße \"Am Flutgraben\". Wer Abwechslung sucht, kann im Badeschiff und rund um die Arena Treptow entspannen.",
                    "district": "Treptow",
                    "latitude": 52.49541,
-                   "longitude": 13.449512
+                   "longitude": 13.449512,
+                   "public_transport": "S-Bahn: Treptower Park, U-Bahn: Schlesisches Tor",
+                   "activities": ""
                    },
                    {
                    "name": "Stadtpark",
-                   "description": "Nähe Sprühplatte. Man darf Radfahren. Es gibt Plätze für Fuss-,Hand- und Volleyball. Sonderflächen zum Mini Golf und Boccia spielen. Zum Joggen geeignet. Hunde erlaubt. Auf der Freilichtbühne finden im Sommer des Öfteren kleine Konzerte statt.",
+                   "description": "Nähe Sprühplatte. Gegrillt werden darf, auf dem 5,3 ha großen Gelände, in mehreren Bereichen des Parks.",
                    "district": "Lichtenberg",
                    "latitude": 52.518037,
-                   "longitude": 13.476212
+                   "longitude": 13.476212,
+                   "public_transport": "S-Bahn, U-Bahn: Frankfurter Allee",
+                   "activities": "Spazierwege, Spiel- und Ballspielplatz, Liegewiesen, verschiedene Skulpturen, Ruhebereiche."
                    },
                    {
                    "name": "Rudolf-Seiffert-Grünzug",
-                   "description": "Storkower Strasse/Karl-Lade-Strasse.",
+                   "description": "Am Rudolf-Seifert-Grünzug an der Storkower Straße ist überall an den vom Bezirksamt ausgeschilderten Orten das Grillen erlaubt.",
                    "district": "Lichtenberg",
                    "latitude": 52.524939,
-                   "longitude": 13.471571
+                   "longitude": 13.471571,
+                   "public_transport": "S-Bahn: Storkower Strasse",
+                   "activities": ""
                    },
                    {
                    "name": "Fennpfuhlpark",
-                   "description": "Der Grillplatz liegt in der Nähe des Anton-Saefkow-Platzes. Südöstlich des Fennpfuhls. Sehr sattes, grünes Gras, gepflegt. Freizeitangebot: Spielplätze, Basketball-Platz, Tischtennis, Halfpipe und Skateplatz.",
+                   "description": "Der Grillplatz liegt in der Nähe des Anton-Saefkow-Platzes. Südöstlich des Fennpfuhls. Sehr sattes, grünes Gras, gepflegt.",
                    "district": "Lichtenberg",
                    "latitude": 52.528085,
-                   "longitude": 13.475812
+                   "longitude": 13.475812,
+                   "public_transport": "S-Bahn: Storkower Straße",
+                   "activities": "Spielplätze, Basketball-Platz, Tischtennis, Halfpipe und Skateplatz."
                    },
                    {
                    "name": "An der Landmarke",
-                   "description": "Darüber hinaus liegen der Malchower See und Berlins schönste Kleingartenanlage „Falkenhöhe Nord” mit Biotop sowie Insektenhotel nicht weit entfernt. Spielplatz, gut ausgebaute Fahrrad- und Inliner-Strecken, Malchower See nur knapp 2 km entfernt. Erreichbar über Hagenower Ring/Hechtgraben). Die Anfahrt/ Anlieferung mit PKW ist nach Antragstellung beim Gartenamt als Sondernutzung möglich.",
+                   "description": "Der Grillplatz liegt zwar kurz vor Brandenburg und ist über Hagenower Ring und Zum Hechtgraben erreichbar.",
                    "district": "Hohenschönhausen",
                    "latitude": 52.578234,
-                   "longitude": 13.505514
+                   "longitude": 13.505514,
+                   "public_transport": "Hagenower / Ückeritzer Ring,",
+                   "activities": "Spielplatz, gut ausgebaute Fahrrad- und Inliner-Strecken."
                    },
                    {
                    "name": "Nähe Sportplätze Columbiadamm",
@@ -115,7 +142,7 @@
                    "district": "Tempelhof",
                    "latitude": 52.480161,
                    "longitude": 13.404028,
-                   "public_transport": "U7 U-Bhf Südstern 10 Minuten bis zum Haupteingang Columbiadamm. Bus 104 Haltestellen Friedhöfe Columbiadamm oder Golßener Straße 1-3 Minuten zu den Eingängen am Columbiadam."
+                   "public_transport": "U7 U-Bhf Südstern, Bus 104 Haltestellen Friedhöfe Columbiadamm oder Golßener Straße"
                    },
                    {
                    "name": "Nähe Oderstraße/Leinestraße",
@@ -123,7 +150,7 @@
                    "district": "Tempelhof",
                    "latitude": 52.471783,
                    "longitude": 13.416152,
-                   "public_transport": "U8 U-Bhf. Hermannplatz, Leinestraße, Boddinstraße. 10 Minuten bis. zum Haupteingang Oderstraße"
+                   "public_transport": "U8 U-Bhf. Hermannplatz, Leinestraße, Boddinstraße."
                    },
                    {
                    "name": "Nähe Tempelhofer Damm",
@@ -131,7 +158,7 @@
                    "district": "Tempelhof",
                    "latitude": 52.470489,
                    "longitude": 13.393192,
-                   "public_transport": "S41, S42, S46, S47 S-Bhf Tempelhof. 3 Minuten bis zum Haupteingang Tempelhofer Damm. U6 U-Bhf Tempelhof oder Paradestraße. 3 Minuten bzw. 5 Minuten bis zum Haupteingang Tempelhofer Damm"
+                   "public_transport": "S41, S42, S46, S47 S-Bhf Tempelhof. U6 U-Bhf Tempelhof oder Paradestraße."
                    }
                    ]
 }
