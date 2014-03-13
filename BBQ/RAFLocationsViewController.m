@@ -123,7 +123,7 @@
     NSSortDescriptor *districtDescriptor = [[NSSortDescriptor alloc] initWithKey:@"district"
                                                                        ascending:YES];
 
-    [fetchRequest setSortDescriptors:@[nameDescriptor, districtDescriptor]];
+    [fetchRequest setSortDescriptors:@[districtDescriptor, nameDescriptor]];
     
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest

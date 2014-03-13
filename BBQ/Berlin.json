@@ -16,8 +16,8 @@
                    "district": "Friedrichshain",
                    "latitude": 52.528008,
                    "longitude": 13.437026,
-                   "public_transport": "S-Bahn: Landsberger Allee, U-Bahn: Strausberger Platz, Tram    M5, M6, M8 (Platz der Vereinten Nationen), Bus 200, 240 (Am Friedrichshain)",
-                   "activities": "Spielplätze, Planschbecken am Märchenbrunnen, Basketballplatz, Tennisplätze, Beachvolleyball-Platz, Halfpipe für Skateboarder und Inline-Skater, Freiluftkino, Boccia Bahn, Duftgarten"
+                   "public_transport": "S-Bahn: Landsberger Allee, U-Bahn: Strausberger Platz, Tram M5, M6, M8 (Platz der Vereinten Nationen), Bus 200, 240 (Am Friedrichshain)",
+                   "activities": "Spielplätze, Basketballplatz, Planschbecken am Märchenbrunnen, Tennisplätze, Beachvolleyball-Platz, Halfpipe für Skateboarder und Inline-Skater, Freiluftkino, Boccia Bahn, Duftgarten"
                    },
                    {
                    "name": "Görlitzer Park",
@@ -71,7 +71,7 @@
                    "latitude": 52.49194,
                    "longitude": 13.313568,
                    "public_transport": "U-Bahn: Fehrbelliner Platz",
-                   "activities": "Senioren-Aktivplatz"
+                   "activities": null
                    },
                    {
                    "name": "Zehlendorf Süd",
@@ -80,7 +80,7 @@
                    "latitude": 52.420981,
                    "longitude": 13.244935,
                    "public_transport": "S-Bahn: Zehlendorf-Süd",
-                   "activities": ""
+                   "activities": null
                    },
                    {
                    "name": "Landschaftspark Johannisthal",

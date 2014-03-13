@@ -172,11 +172,16 @@
                  Placemark *placemark = [NSEntityDescription insertNewObjectForEntityForName:@"Placemark"
                                                                       inManagedObjectContext:self.managedObjectContext];
                  
+                 // Mandatory attributes.
                  placemark.name = [obj objectForKey:@"name"];
                  placemark.longitude = [obj objectForKey:@"longitude"];
                  placemark.latitude = [obj objectForKey:@"latitude"];
                  placemark.district = [obj objectForKey:@"district"];
                  placemark.placeDescription = [obj objectForKey:@"description"];
+                 
+                 // Optional attributes.
+                 if ([[obj objectForKey:@"public_transport"] isKindOfClass:[NSString class]]) placemark.publicTransportation = [obj objectForKey:@"public_transport"];
+                 if ([[obj objectForKey:@"activities"] isKindOfClass:[NSString class]]) placemark.activities = [obj objectForKey:@"activities"];
                  
                  NSError *error;
                  

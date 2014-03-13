@@ -35,9 +35,44 @@
 }
 
 
+- (NSAttributedString *)placeDescriptionString
+{
+    NSMutableParagraphStyle *paragraphStyle=[[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentJustified;
+    
+    NSMutableAttributedString *placeDescriptionString = [[NSMutableAttributedString alloc] initWithString:_placemark.placeDescription];
+    
+    [placeDescriptionString addAttributes:@{
+                                            NSForegroundColorAttributeName : [UIColor blackColor],
+                                            NSFontAttributeName : [UIFont systemFontOfSize:13.0f],
+                                            NSParagraphStyleAttributeName: paragraphStyle,
+                                            NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
+                                            }
+                                    range:NSMakeRange(0, [placeDescriptionString length])];
+    
+    if (_placemark.activities)
+    {
+        NSMutableAttributedString *activitiesString = [[NSMutableAttributedString alloc] initWithString:_placemark.activities];
+        
+        [activitiesString addAttributes:@{
+                                          NSForegroundColorAttributeName : [UIColor blackColor],
+                                          NSFontAttributeName : [UIFont systemFontOfSize:13.0f],
+                                          NSParagraphStyleAttributeName: paragraphStyle,
+                                          NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
+                                          }
+                                  range:NSMakeRange(0, [activitiesString length])];
+        
+        [placeDescriptionString appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n\n"]];
+        [placeDescriptionString appendAttributedString:activitiesString];
+    }
+
+    return placeDescriptionString;
+}
+
+
 - (void)configureContentView
 {
-    CGFloat margin = 20.0f;
+    CGFloat margin = 15.0f;
     
     UIView *contentView = [[UIView alloc] init];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -50,17 +85,17 @@
     
     UILabel *descriptionLabel = [[UILabel alloc] init];
     descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    descriptionLabel.text = _placemark.placeDescription;
     descriptionLabel.numberOfLines = 0;
     descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
-    descriptionLabel.font = [UIFont systemFontOfSize:13.0f];
-    
+    descriptionLabel.attributedText = [self placeDescriptionString];
+
     UILabel *publicTransportationLabel = [[UILabel alloc] init];
     publicTransportationLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    publicTransportationLabel.text = [NSString stringWithFormat:@"Verkehrsanbindung: %@", _placemark.publicTransportation];
     publicTransportationLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
     publicTransportationLabel.numberOfLines = 0;
     publicTransportationLabel.font = [UIFont systemFontOfSize:12.0f];
+    publicTransportationLabel.textColor = [UIColor darkGrayColor];
+    publicTransportationLabel.text = _placemark.publicTransportation;
 
     [contentView addSubview:descriptionLabel];
     [contentView addSubview:publicTransportationLabel];
@@ -166,7 +201,11 @@
 
 - (void)shareButtonTapped:(id)sender
 {
-    NSArray * activityItems = @[[NSString stringWithFormat:@"Some initial text."]];
+    NSArray * activityItems = @[[NSString stringWithFormat:@"%@, %@. %@",
+                                 _placemark.name,
+                                 _placemark.district,
+                                 _placemark.publicTransportation]];
+    
     NSArray * applicationActivities = nil;
     NSArray * excludeActivities = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePostToWeibo, UIActivityTypePrint];
     

@@ -8,6 +8,7 @@
 @property (nonatomic, retain) NSString * district;
 @property (nonatomic, retain) NSString * placeDescription;
 @property (nonatomic, retain) NSString * publicTransportation;
+@property (nonatomic, retain) NSString * activities;
 @property (nonatomic, retain) NSNumber * longitude;
 @property (nonatomic, retain) NSNumber * latitude;
 

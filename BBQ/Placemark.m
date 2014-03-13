@@ -8,6 +8,8 @@
 @dynamic longitude;
 @dynamic latitude;
 @dynamic placeDescription;
+@dynamic publicTransportation;
+@dynamic activities;
 
 
 - (NSString *)title
@@ -17,7 +19,7 @@
 
 - (NSString *)subtitle
 {
-    return self.placeDescription;
+    return self.district;
 }
 
 - (CLLocationCoordinate2D)coordinate

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Placemark" representedClassName="Placemark" syncable="YES">
+        <attribute name="activities" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="district" attributeType="String" syncable="YES"/>
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -9,6 +10,6 @@
         <attribute name="publicTransportation" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Placemark" positionX="160" positionY="183" width="128" height="133"/>
+        <element name="Placemark" positionX="160" positionY="183" width="128" height="148"/>
     </elements>
 </model>
