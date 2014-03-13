@@ -66,21 +66,21 @@
                    },
                    {
                    "name": "Landschaftspark Johannisthal / Ostfuge",
-                   "description": "Nähe Technologiepark Adlershof, erreichbar über Groß-Berliner-Damm / Hermann-Dorner-Allee.",
+                   "description": "Nähe Technologiepark Adlershof, erreichbar über Groß-Berliner-Damm / Hermann-Dorner-Allee. Der Grillplatz liegt im westlichen Zipfel des Parks und ist erreichbar über den Parkzugang Groß-Berliner-Damm/Hermann-Dorner Allee. Skaterbahn (Rollfeld), Beachvolleyball, Dirt-Bike-Parcours, Joggen, Picknick",
                    "district": "Treptow",
                    "latitude": 52.437457,
                    "longitude": 13.521779
                    },
                    {
                    "name": "Schlesischer Busch",
-                   "description": "Am Flutgraben.",
+                   "description": "Grillplatz an der Straße \"Am Flutgraben\". Wer Abwechslung sucht, kann im Badeschiff und rund um die Arena Treptow entspannen.",
                    "district": "Treptow",
                    "latitude": 52.49541,
                    "longitude": 13.449512
                    },
                    {
                    "name": "Stadtpark",
-                   "description": "Nähe Sprühplatte.",
+                   "description": "Nähe Sprühplatte. Man darf Radfahren. Es gibt Plätze für Fuss-,Hand- und Volleyball. Sonderflächen zum Mini Golf und Boccia spielen. Zum Joggen geeignet. Hunde erlaubt. Auf der Freilichtbühne finden im Sommer des Öfteren kleine Konzerte statt.",
                    "district": "Lichtenberg",
                    "latitude": 52.518037,
                    "longitude": 13.476212
@@ -100,8 +100,8 @@
                    "longitude": 13.475812
                    },
                    {
-                   "name": "An der Landmarke - Ahornallee",
-                   "description": "Erreichbar über Hagenower Ring/Hechtgraben). Die Anfahrt/ Anlieferung mit PKW ist nach Antragstellung beim Gartenamt als Sondernutzung möglich.",
+                   "name": "An der Landmarke",
+                   "description": "Darüber hinaus liegen der Malchower See und Berlins schönste Kleingartenanlage „Falkenhöhe Nord” mit Biotop sowie Insektenhotel nicht weit entfernt. Spielplatz, gut ausgebaute Fahrrad- und Inliner-Strecken, Malchower See nur knapp 2 km entfernt. Erreichbar über Hagenower Ring/Hechtgraben). Die Anfahrt/ Anlieferung mit PKW ist nach Antragstellung beim Gartenamt als Sondernutzung möglich.",
                    "district": "Hohenschönhausen",
                    "latitude": 52.578234,
                    "longitude": 13.505514
