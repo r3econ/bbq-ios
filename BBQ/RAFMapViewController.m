@@ -91,19 +91,24 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation
 {
-    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-    
-    if (!annotationView)
+    if ([annotation isKindOfClass:[Placemark class]])
     {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-        annotationView.canShowCallout = YES;
-        annotationView.image = [UIImage imageNamed:@"pin"];
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+        
+        if (!annotationView)
+        {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+            annotationView.canShowCallout = YES;
+            annotationView.image = [UIImage imageNamed:@"pin"];
+            annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        }
+        
+        annotationView.annotation = annotation;
+        
+        return annotationView;
     }
     
-    annotationView.annotation = annotation;
-    
-    return annotationView;
+    return nil;
 }
 
 
