@@ -458,9 +458,10 @@
     self.title = _placemark.name;
     self.navigationItem.prompt = _placemark.district;
     
-    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                                               target:self
-                                                                               action:@selector(shareButtonTapped:)];
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithImage:IMAGE_NAMED(@"share_icon")
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self action:@selector(shareButtonTapped:)];
+    
     self.navigationItem.rightBarButtonItem = shareItem;
 }
 
