@@ -18,5 +18,6 @@
     #import "RAFAppDelegate.h"
     #import "UIColor+Extensions.h"
     #import "RAFAppearance.h"
+    #import "RAFUtilities.h"
 
 #endif

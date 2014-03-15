@@ -1,11 +1,19 @@
 #import "RAFDetailViewController.h"
 
+#define kEnterMapFullscreenImage [IMAGE_NAMED(@"expand_arrows") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+#define kExitMapFullscreenImage [IMAGE_NAMED(@"collapse_arrows") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+
+
 @interface RAFDetailViewController ()<MKMapViewDelegate>
 @property(nonatomic, strong) Placemark *placemark;
 @property(nonatomic, strong) MKMapView *mapView;
 @property(nonatomic, strong) UILabel *descriptionLabel;
 @property(nonatomic, strong) UILabel *publicTransportationLabel;
 @property(nonatomic, strong) UIView *contentView;
+@property(nonatomic, strong) NSLayoutConstraint *contentViewBottomConstraint;
+@property(nonatomic, strong) UIButton *toggleMapFullscreenButton;
+@property(nonatomic, assign) BOOL isMapFullscreen;
+
 @end
 
 
@@ -83,14 +91,14 @@
 {
     CGFloat margin = 15.0f;
     
-    UIView *contentView = [[UIView alloc] init];
-    contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    contentView.backgroundColor = [RAFAppearance secondaryViewColor];
+    _contentView = [[UIView alloc] init];
+    _contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    _contentView.backgroundColor = [RAFAppearance secondaryViewColor];
     
     CALayer *topBorder = [CALayer layer];
     topBorder.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.view.bounds), 0.5f);
     topBorder.backgroundColor = [RAFAppearance accessoryViewColor].CGColor;
-    [contentView.layer addSublayer:topBorder];
+    [_contentView.layer addSublayer:topBorder];
     
     UILabel *descriptionLabel = [[UILabel alloc] init];
     descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -106,12 +114,21 @@
     publicTransportationLabel.textColor = [RAFAppearance accessoryTextColor];
     publicTransportationLabel.text = _placemark.publicTransportation;
     
-    [contentView addSubview:descriptionLabel];
-    [contentView addSubview:publicTransportationLabel];
-    [self.view addSubview:contentView];
+    [_contentView addSubview:descriptionLabel];
+    [_contentView addSubview:publicTransportationLabel];
+    [self.view addSubview:_contentView];
+    
+    _toggleMapFullscreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _toggleMapFullscreenButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [_toggleMapFullscreenButton setImage:kEnterMapFullscreenImage forState:UIControlStateNormal];
+    [_toggleMapFullscreenButton addTarget:self
+                                   action:@selector(toggleMapFullScreenButtonTapped:)
+                         forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_toggleMapFullscreenButton];
     
     // Constraints
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:contentView
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeWidth
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
@@ -119,15 +136,17 @@
                                                          multiplier:1.0f
                                                            constant:0.0f]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0f
-                                                           constant:0.0f]];
+    // Keep a reference to the bottom constant to animate it later.
+    _contentViewBottomConstraint = [NSLayoutConstraint constraintWithItem:_contentView
+                                                                attribute:NSLayoutAttributeBottom
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.view
+                                                                attribute:NSLayoutAttributeBottom
+                                                               multiplier:1.0f
+                                                                 constant:0.0f];
+    [self.view addConstraint:_contentViewBottomConstraint];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:contentView
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeLeading
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
@@ -135,7 +154,7 @@
                                                          multiplier:1.0f
                                                            constant:0.0f]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:contentView
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:descriptionLabel
@@ -143,23 +162,23 @@
                                                          multiplier:1.0f
                                                            constant:-margin]];
     
-    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
                                                             attribute:NSLayoutAttributeCenterX
                                                             relatedBy:NSLayoutRelationEqual
-                                                               toItem:contentView
+                                                               toItem:_contentView
                                                             attribute:NSLayoutAttributeCenterX
                                                            multiplier:1.0f
                                                              constant:0.0f]];
     
-    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
                                                             attribute:NSLayoutAttributeWidth
                                                             relatedBy:NSLayoutRelationEqual
-                                                               toItem:contentView
+                                                               toItem:_contentView
                                                             attribute:NSLayoutAttributeWidth
                                                            multiplier:1.0f
                                                              constant:-2 * margin]];
     
-    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
                                                             attribute:NSLayoutAttributeBottom
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:publicTransportationLabel
@@ -167,26 +186,26 @@
                                                            multiplier:1.0f
                                                              constant:-margin]];
     
-    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
                                                             attribute:NSLayoutAttributeCenterX
                                                             relatedBy:NSLayoutRelationEqual
-                                                               toItem:contentView
+                                                               toItem:_contentView
                                                             attribute:NSLayoutAttributeCenterX
                                                            multiplier:1.0f
                                                              constant:0.0f]];
     
-    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
                                                             attribute:NSLayoutAttributeWidth
                                                             relatedBy:NSLayoutRelationEqual
-                                                               toItem:contentView
+                                                               toItem:_contentView
                                                             attribute:NSLayoutAttributeWidth
                                                            multiplier:1.0f
                                                              constant:-2 * margin]];
     
-    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
                                                             attribute:NSLayoutAttributeBottom
                                                             relatedBy:NSLayoutRelationEqual
-                                                               toItem:contentView
+                                                               toItem:_contentView
                                                             attribute:NSLayoutAttributeBottom
                                                            multiplier:1.0f
                                                              constant:-margin]];
@@ -196,38 +215,70 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
                                                           attribute:NSLayoutAttributeBottom
                                                           relatedBy:NSLayoutRelationEqual
-                                                             toItem:contentView
+                                                             toItem:_contentView
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0f
                                                            constant:0.0f]];
      
     
-     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
-     attribute:NSLayoutAttributeTop
-     relatedBy:NSLayoutRelationEqual
-     toItem:self.view
-     attribute:NSLayoutAttributeTop
-     multiplier:1.0f
-     constant:0.0f]];
-     
-     
-     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
-     attribute:NSLayoutAttributeWidth
-     relatedBy:NSLayoutRelationEqual
-     toItem:self.view
-     attribute:NSLayoutAttributeWidth
-     multiplier:1.0f
-     constant:0.0f]];
-     
-     
-     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
-     attribute:NSLayoutAttributeLeading
-     relatedBy:NSLayoutRelationEqual
-     toItem:self.view
-     attribute:NSLayoutAttributeLeading
-     multiplier:1.0f
-     constant:0.0f]];
-     
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0f
+                                                           constant:0.0f]];
+    
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0f
+                                                           constant:0.0f]];
+    
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeading
+                                                         multiplier:1.0f
+                                                           constant:0.0f]];
+    
+    // Toggle map fullscreen button
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_toggleMapFullscreenButton
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_contentView
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0f
+                                                           constant:-2.0f]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_toggleMapFullscreenButton
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0f
+                                                           constant:-2.0f]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_toggleMapFullscreenButton
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0f
+                                                           constant:40.0f]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_toggleMapFullscreenButton
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0f
+                                                           constant:40.0f]];
 }
 
 
@@ -260,6 +311,68 @@
     activityController.excludedActivityTypes = excludeActivities;
     
     [self presentViewController:activityController animated:YES completion:nil];
+}
+
+
+- (IBAction)toggleMapFullScreenButtonTapped:(id)sender
+{
+    [_toggleMapFullscreenButton setImage:_isMapFullscreen ? kEnterMapFullscreenImage : kExitMapFullscreenImage
+                                forState:UIControlStateNormal];
+    [self toggleMapFullscreen];
+}
+
+
+#pragma mark - Map fullscreen animations
+
+
+- (void)toggleMapFullscreen
+{
+    if (_isMapFullscreen == NO)
+    {
+        [self enterMapFullscreen];
+    }
+    else
+    {
+        [self exitMapFullscreen];
+    }
+}
+
+
+- (void)enterMapFullscreen
+{
+    _toggleMapFullscreenButton.userInteractionEnabled = NO;
+    
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:0.2f
+                     animations:^
+     {
+         _contentViewBottomConstraint.constant = CGRectGetHeight(_contentView.bounds);
+         [self.view layoutIfNeeded];
+     }
+                     completion:^(BOOL finished)
+     {
+         _isMapFullscreen = YES;
+         _toggleMapFullscreenButton.userInteractionEnabled = YES;
+     }];
+}
+
+
+- (void)exitMapFullscreen
+{
+    _toggleMapFullscreenButton.userInteractionEnabled = NO;
+    
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:0.2f
+                     animations:^
+     {
+         _contentViewBottomConstraint.constant = 0;
+         [self.view layoutIfNeeded];
+     }
+                     completion:^(BOOL finished)
+     {
+         _isMapFullscreen = NO;
+         _toggleMapFullscreenButton.userInteractionEnabled = YES;
+     }];
 }
 
 
