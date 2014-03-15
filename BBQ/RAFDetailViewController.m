@@ -212,9 +212,9 @@
     CGFloat horizontalPadding = 10.0f;
     CGFloat verticalPadding = 10.0f;
 
-    _descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * horizontalMargin;
-    _publicTransportationLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * horizontalMargin;
-    _activitiesLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * horizontalMargin;
+    _descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 40 - 2 * horizontalMargin;
+    _publicTransportationLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 40 - 2 * horizontalMargin;
+    _activitiesLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 40 - 2 * horizontalMargin;
 
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeWidth
