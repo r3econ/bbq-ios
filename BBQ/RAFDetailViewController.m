@@ -10,6 +10,9 @@
 @property(nonatomic, strong) UILabel *descriptionLabel;
 @property(nonatomic, strong) UILabel *activitiesLabel;
 @property(nonatomic, strong) UILabel *publicTransportationLabel;
+@property(nonatomic, strong) UIImageView *infoImageView;
+@property(nonatomic, strong) UIImageView *activitiesImageView;
+@property(nonatomic, strong) UIImageView *transportationImageView;
 @property(nonatomic, strong) UIView *contentView;
 @property(nonatomic, strong) NSLayoutConstraint *contentViewBottomConstraint;
 @property(nonatomic, strong) UIButton *toggleMapFullscreenButton;
@@ -170,8 +173,23 @@
     [_contentView addSubview:_descriptionLabel];
     [_contentView addSubview:_activitiesLabel];
     [_contentView addSubview:_publicTransportationLabel];
-    [self.view addSubview:_contentView];
     
+    // Configure image views.
+    _infoImageView = [[UIImageView  alloc] initWithImage:[IMAGE_NAMED(@"info_icon") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    _activitiesImageView = [[UIImageView  alloc] initWithImage:[IMAGE_NAMED(@"runner_icon") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    _transportationImageView = [[UIImageView  alloc] initWithImage:[IMAGE_NAMED(@"bus_icon") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    _infoImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    _activitiesImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    _transportationImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    // Add image views to the view.
+    [_contentView addSubview:_infoImageView];
+    [_contentView addSubview:_activitiesImageView];
+    [_contentView addSubview:_transportationImageView];
+    
+    // Add content view to the main view.
+    [self.view addSubview:_contentView];
+
     // Configure button for switching to fullscreen mode.
     _toggleMapFullscreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _toggleMapFullscreenButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -189,10 +207,14 @@
 
 - (void)configureConstraints
 {
-    CGFloat margin = 15.0f;
+    CGFloat verticalMargin = 15.0f;
+    CGFloat horizontalMargin = 15.0f;
+    CGFloat horizontalPadding = 10.0f;
+    CGFloat verticalPadding = 10.0f;
 
-    _descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
-    _publicTransportationLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
+    _descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * horizontalMargin;
+    _publicTransportationLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * horizontalMargin;
+    _activitiesLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * horizontalMargin;
 
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeWidth
@@ -212,6 +234,7 @@
                                                                  constant:0.0f];
     [self.view addConstraint:_contentViewBottomConstraint];
     
+    // Content view leading.
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeLeading
                                                           relatedBy:NSLayoutRelationEqual
@@ -220,53 +243,93 @@
                                                          multiplier:1.0f
                                                            constant:0.0f]];
     
+    // Content view top based on its contents.
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:_descriptionLabel
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0f
-                                                           constant:-margin]];
+                                                           constant:-verticalMargin]];
     
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel
-                                                             attribute:NSLayoutAttributeCenterX
+    // Info image view leading.
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_infoImageView
+                                                             attribute:NSLayoutAttributeLeading
                                                              relatedBy:NSLayoutRelationEqual
-                                                                toItem:_contentView
-                                                             attribute:NSLayoutAttributeCenterX
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeLeading
+                                                            multiplier:1.0f
+                                                              constant:horizontalMargin]];
+    
+    // Info image view center Y based on description label center Y.
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_infoImageView
+                                                             attribute:NSLayoutAttributeCenterY
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_descriptionLabel
+                                                             attribute:NSLayoutAttributeCenterY
                                                             multiplier:1.0f
                                                               constant:0.0f]];
     
+    // Description label leading with a padding.
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel
-                                                             attribute:NSLayoutAttributeWidth
+                                                             attribute:NSLayoutAttributeLeading
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_infoImageView
+                                                             attribute:NSLayoutAttributeRight
+                                                            multiplier:1.0f
+                                                              constant:horizontalPadding]];
+    
+    // Description label trailing.
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel
+                                                             attribute:NSLayoutAttributeTrailing
                                                              relatedBy:NSLayoutRelationEqual
                                                                 toItem:_contentView
-                                                             attribute:NSLayoutAttributeWidth
+                                                             attribute:NSLayoutAttributeTrailing
                                                             multiplier:1.0f
-                                                              constant:-2 * margin]];
+                                                              constant:-horizontalMargin]];
     
+    // Description label bottom on top of the activities label.
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel
                                                              attribute:NSLayoutAttributeBottom
                                                              relatedBy:NSLayoutRelationEqual
                                                                 toItem:_activitiesLabel
                                                              attribute:NSLayoutAttributeTop
                                                             multiplier:1.0f
-                                                              constant:-margin]];
-    //
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesLabel
-                                                             attribute:NSLayoutAttributeCenterX
+                                                              constant:-verticalPadding]];
+    
+    // Activities image view leading.
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesImageView
+                                                             attribute:NSLayoutAttributeLeading
                                                              relatedBy:NSLayoutRelationEqual
-                                                                toItem:_contentView
-                                                             attribute:NSLayoutAttributeCenterX
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeLeading
+                                                            multiplier:1.0f
+                                                              constant:horizontalMargin]];
+    
+    // Activities image view center Y based on activities label center Y.
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesImageView
+                                                             attribute:NSLayoutAttributeCenterY
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_activitiesLabel
+                                                             attribute:NSLayoutAttributeCenterY
                                                             multiplier:1.0f
                                                               constant:0.0f]];
     
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesLabel
-                                                             attribute:NSLayoutAttributeWidth
+                                                             attribute:NSLayoutAttributeLeading
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_activitiesImageView
+                                                             attribute:NSLayoutAttributeRight
+                                                            multiplier:1.0f
+                                                              constant:horizontalPadding]];
+    
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesLabel
+                                                             attribute:NSLayoutAttributeTrailing
                                                              relatedBy:NSLayoutRelationEqual
                                                                 toItem:_contentView
-                                                             attribute:NSLayoutAttributeWidth
+                                                             attribute:NSLayoutAttributeTrailing
                                                             multiplier:1.0f
-                                                              constant:-2 * margin]];
+                                                              constant:-horizontalMargin]];
     
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesLabel
                                                              attribute:NSLayoutAttributeBottom
@@ -274,23 +337,41 @@
                                                                 toItem:_publicTransportationLabel
                                                              attribute:NSLayoutAttributeTop
                                                             multiplier:1.0f
-                                                              constant:-margin]];
-    //
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_publicTransportationLabel
-                                                             attribute:NSLayoutAttributeCenterX
+                                                              constant:-verticalPadding]];
+    
+    // Transportation image view leading.
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_transportationImageView
+                                                             attribute:NSLayoutAttributeLeading
                                                              relatedBy:NSLayoutRelationEqual
-                                                                toItem:_contentView
-                                                             attribute:NSLayoutAttributeCenterX
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeLeading
+                                                            multiplier:1.0f
+                                                              constant:horizontalMargin]];
+    
+    // Transportation image view center Y based on transportation label center Y.
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_transportationImageView
+                                                             attribute:NSLayoutAttributeCenterY
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_publicTransportationLabel
+                                                             attribute:NSLayoutAttributeCenterY
                                                             multiplier:1.0f
                                                               constant:0.0f]];
     
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_publicTransportationLabel
-                                                             attribute:NSLayoutAttributeWidth
+                                                             attribute:NSLayoutAttributeLeading
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_transportationImageView
+                                                             attribute:NSLayoutAttributeRight
+                                                            multiplier:1.0f
+                                                              constant:horizontalPadding]];
+    
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_publicTransportationLabel
+                                                             attribute:NSLayoutAttributeTrailing
                                                              relatedBy:NSLayoutRelationEqual
                                                                 toItem:_contentView
-                                                             attribute:NSLayoutAttributeWidth
+                                                             attribute:NSLayoutAttributeTrailing
                                                             multiplier:1.0f
-                                                              constant:-2 * margin]];
+                                                              constant:-horizontalMargin]];
     
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_publicTransportationLabel
                                                              attribute:NSLayoutAttributeBottom
@@ -298,7 +379,7 @@
                                                                 toItem:_contentView
                                                              attribute:NSLayoutAttributeBottom
                                                             multiplier:1.0f
-                                                              constant:-margin]];
+                                                              constant:-verticalMargin]];
     
     _mapView.translatesAutoresizingMaskIntoConstraints = NO;
     
