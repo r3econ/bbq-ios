@@ -1,6 +1,26 @@
 #import "RAFAppearance.h"
 
+/**
+ Colors
+ */
+#define kAccessoryViewColor @"5E5A59"
+#define kDefaultViewColor @"F2CA80"
+#define kSecondaryViewColor @"5E5A59"
+#define kDefaultTextColor @"0D0D0D"
+#define kSecondaryTextColor @"5E5A59"
+#define kAccessoryTextColor @"FFFFFF"
+#define kCellBackgroundColor @"FFFFFF"
+
+
+/**
+ Fonts
+ */
+#define kDefaultFont @"Avenir-Light"
+#define kBoldFont @"Avenir-Black"
+
+
 @implementation RAFAppearance
+
 
 + (void)configureAppearance
 {    
@@ -46,54 +66,54 @@
 
 + (UIColor *)accessoryViewColor
 {
-    return [UIColor colorWithHexString:@"5E5A59"];
+    return [UIColor colorWithHexString:kAccessoryViewColor];
 }
 
 
 + (UIColor *)defaultViewColor
 {
-    return [UIColor colorWithHexString:@"F2CA80"];
+    return [UIColor colorWithHexString:kDefaultViewColor];
 }
 
 
 + (UIColor *)secondaryViewColor
 {
-    return [UIColor colorWithHexString:@"5E5A59"];
+    return [UIColor colorWithHexString:kSecondaryViewColor];
 }
 
 
 + (UIColor *)defaultTextColor
 {
-    return [UIColor colorWithHexString:@"0D0D0D"];
+    return [UIColor colorWithHexString:kDefaultTextColor];
 }
 
 
 + (UIColor *)secondaryTextColor
 {
-    return [UIColor colorWithHexString:@"5E5A59"];
+    return [UIColor colorWithHexString:kSecondaryTextColor];
 }
 
 
 + (UIColor *)accessoryTextColor;
 {
-    return [UIColor colorWithHexString:@"FFFFFF"];
+    return [UIColor colorWithHexString:kSecondaryTextColor];
 }
 
 + (UIFont *)defaultFontOfSize:(CGFloat)pointSize
 {
-    return [UIFont fontWithName:@"Avenir-Light" size:pointSize];
+    return [UIFont fontWithName:kDefaultFont size:pointSize];
 }
 
 
 + (UIFont *)boldFontOfSize:(CGFloat)pointSize
 {
-    return [UIFont fontWithName:@"Avenir-Black" size:pointSize];
+    return [UIFont fontWithName:kBoldFont size:pointSize];
 }
 
 
 + (UIColor *)cellBackgroundColor
 {
-    return [UIColor colorWithHexString:@"F4E6CA"];
+    return [UIColor colorWithHexString:kCellBackgroundColor];
 }
 
 @end
