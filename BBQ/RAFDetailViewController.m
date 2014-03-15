@@ -8,6 +8,7 @@
 @property(nonatomic, strong) Placemark *placemark;
 @property(nonatomic, strong) MKMapView *mapView;
 @property(nonatomic, strong) UILabel *descriptionLabel;
+@property(nonatomic, strong) UILabel *activitiesLabel;
 @property(nonatomic, strong) UILabel *publicTransportationLabel;
 @property(nonatomic, strong) UIView *contentView;
 @property(nonatomic, strong) NSLayoutConstraint *contentViewBottomConstraint;
@@ -18,6 +19,9 @@
 
 
 @implementation RAFDetailViewController
+
+
+#pragma mark - Lifecycle
 
 
 + (RAFDetailViewController *)controllerWithPlacemark:(Placemark *)placemark
@@ -34,7 +38,7 @@
 {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-
+    
     _mapView = [[MKMapView alloc] init];
     [_mapView addAnnotation:_placemark];
     _mapView.delegate = self;
@@ -52,72 +56,123 @@
 }
 
 
+#pragma mark - Strings
+
+
 - (NSAttributedString *)placeDescriptionString
 {
-    NSMutableParagraphStyle *paragraphStyle=[[NSMutableParagraphStyle alloc] init];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.alignment = NSTextAlignmentJustified;
     
-    NSMutableAttributedString *placeDescription = [[NSMutableAttributedString alloc] initWithString:_placemark.placeDescription];
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:_placemark.placeDescription];
     
-    [placeDescription addAttributes:@{
-                                      NSForegroundColorAttributeName : [RAFAppearance defaultTextColor],
-                                      NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
-                                      NSParagraphStyleAttributeName: paragraphStyle,
-                                      NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
-                                      }
-                              range:NSMakeRange(0, [placeDescription length])];
+    [string addAttributes:@
+     {
+         NSForegroundColorAttributeName : [RAFAppearance defaultTextColor],
+         NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
+     NSParagraphStyleAttributeName: paragraphStyle,
+     NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
+     }
+                    range:NSMakeRange(0, [string length])];
+    
+    return string;
+}
+
+
+
+- (NSAttributedString *)activitiesString
+{
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentJustified;
+    
+    NSMutableAttributedString *string = nil;
     
     if (_placemark.activities)
     {
-        NSMutableAttributedString *activitiesString = [[NSMutableAttributedString alloc] initWithString:_placemark.activities];
+        string = [[NSMutableAttributedString alloc] initWithString:_placemark.activities];
         
-        [activitiesString addAttributes:@{
-                                          NSForegroundColorAttributeName : [RAFAppearance defaultTextColor],
-                                          NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
-                                          NSParagraphStyleAttributeName: paragraphStyle,
-                                          NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
-                                          }
-                                  range:NSMakeRange(0, [activitiesString length])];
-        
-        [placeDescription appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n\n"]];
-        [placeDescription appendAttributedString:activitiesString];
+        [string addAttributes:@
+         {
+             NSForegroundColorAttributeName : [RAFAppearance accessoryTextColor],
+             NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
+         NSParagraphStyleAttributeName: paragraphStyle,
+         NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
+         }
+                        range:NSMakeRange(0, [string length])];
     }
     
-    return placeDescription;
+    return string;
 }
+
+
+- (NSAttributedString *)publicTransportationString
+{
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentJustified;
+    
+    NSMutableAttributedString *string = nil;
+    
+    if (_placemark.publicTransportation)
+    {
+        string = [[NSMutableAttributedString alloc] initWithString:_placemark.publicTransportation];
+        
+        [string addAttributes:@
+         {
+             NSForegroundColorAttributeName : [RAFAppearance accessoryTextColor],
+             NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
+         NSParagraphStyleAttributeName: paragraphStyle,
+         NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
+         }
+                        range:NSMakeRange(0, [string length])];
+    }
+    
+    return string;
+}
+
+
+#pragma mark - Configuration
 
 
 - (void)configureViews
 {
-    CGFloat margin = 15.0f;
-    
+    // Configure content view.
     _contentView = [[UIView alloc] init];
     _contentView.translatesAutoresizingMaskIntoConstraints = NO;
     _contentView.backgroundColor = [RAFAppearance secondaryViewColor];
     
+    // Add border to the view.
     CALayer *topBorder = [CALayer layer];
     topBorder.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.view.bounds), 0.5f);
-    topBorder.backgroundColor = [RAFAppearance accessoryViewColor].CGColor;
+    topBorder.backgroundColor = [UIColor grayColor].CGColor;
     [_contentView.layer addSublayer:topBorder];
     
-    UILabel *descriptionLabel = [[UILabel alloc] init];
-    descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    descriptionLabel.numberOfLines = 0;
-    descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
-    descriptionLabel.attributedText = [self placeDescriptionString];
+    // Configure label with place description.
+    _descriptionLabel = [[UILabel alloc] init];
+    _descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _descriptionLabel.numberOfLines = 0;
+    _descriptionLabel.attributedText = [self placeDescriptionString];
     
-    UILabel *publicTransportationLabel = [[UILabel alloc] init];
-    publicTransportationLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    publicTransportationLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
-    publicTransportationLabel.numberOfLines = 0;
-    publicTransportationLabel.font = [RAFAppearance defaultFontOfSize:12.0f];
-    publicTransportationLabel.textColor = [RAFAppearance accessoryTextColor];
-    publicTransportationLabel.text = _placemark.publicTransportation;
+    // Configure label with activities.
+    _activitiesLabel = [[UILabel alloc] init];
+    _activitiesLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _activitiesLabel.numberOfLines = 0;
+    _activitiesLabel.attributedText = [self activitiesString];
     
-    [_contentView addSubview:descriptionLabel];
-    [_contentView addSubview:publicTransportationLabel];
+    // Configure label with transportation info.
+    _publicTransportationLabel = [[UILabel alloc] init];
+    _publicTransportationLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _publicTransportationLabel.numberOfLines = 0;
+    _publicTransportationLabel.font = [RAFAppearance defaultFontOfSize:12.0f];
+    _publicTransportationLabel.textColor = [RAFAppearance accessoryTextColor];
+    _publicTransportationLabel.text = _placemark.publicTransportation;
+    
+    // Add labels to the view.
+    [_contentView addSubview:_descriptionLabel];
+    [_contentView addSubview:_activitiesLabel];
+    [_contentView addSubview:_publicTransportationLabel];
     [self.view addSubview:_contentView];
     
+    // Configure button for switching to fullscreen mode.
     _toggleMapFullscreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _toggleMapFullscreenButton.translatesAutoresizingMaskIntoConstraints = NO;
     [_toggleMapFullscreenButton setImage:kEnterMapFullscreenImage forState:UIControlStateNormal];
@@ -127,7 +182,18 @@
     
     [self.view addSubview:_toggleMapFullscreenButton];
     
-    // Constraints
+    // Set up constraints
+    [self configureConstraints];
+}
+
+
+- (void)configureConstraints
+{
+    CGFloat margin = 15.0f;
+
+    _descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
+    _publicTransportationLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
+
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeWidth
                                                           relatedBy:NSLayoutRelationEqual
@@ -157,58 +223,82 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_contentView
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
-                                                             toItem:descriptionLabel
+                                                             toItem:_descriptionLabel
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0f
                                                            constant:-margin]];
     
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
-                                                            attribute:NSLayoutAttributeCenterX
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:_contentView
-                                                            attribute:NSLayoutAttributeCenterX
-                                                           multiplier:1.0f
-                                                             constant:0.0f]];
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel
+                                                             attribute:NSLayoutAttributeCenterX
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_contentView
+                                                             attribute:NSLayoutAttributeCenterX
+                                                            multiplier:1.0f
+                                                              constant:0.0f]];
     
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:_contentView
-                                                            attribute:NSLayoutAttributeWidth
-                                                           multiplier:1.0f
-                                                             constant:-2 * margin]];
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel
+                                                             attribute:NSLayoutAttributeWidth
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_contentView
+                                                             attribute:NSLayoutAttributeWidth
+                                                            multiplier:1.0f
+                                                              constant:-2 * margin]];
     
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:descriptionLabel
-                                                            attribute:NSLayoutAttributeBottom
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:publicTransportationLabel
-                                                            attribute:NSLayoutAttributeTop
-                                                           multiplier:1.0f
-                                                             constant:-margin]];
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_activitiesLabel
+                                                             attribute:NSLayoutAttributeTop
+                                                            multiplier:1.0f
+                                                              constant:-margin]];
+    //
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesLabel
+                                                             attribute:NSLayoutAttributeCenterX
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_contentView
+                                                             attribute:NSLayoutAttributeCenterX
+                                                            multiplier:1.0f
+                                                              constant:0.0f]];
     
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
-                                                            attribute:NSLayoutAttributeCenterX
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:_contentView
-                                                            attribute:NSLayoutAttributeCenterX
-                                                           multiplier:1.0f
-                                                             constant:0.0f]];
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesLabel
+                                                             attribute:NSLayoutAttributeWidth
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_contentView
+                                                             attribute:NSLayoutAttributeWidth
+                                                            multiplier:1.0f
+                                                              constant:-2 * margin]];
     
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:_contentView
-                                                            attribute:NSLayoutAttributeWidth
-                                                           multiplier:1.0f
-                                                             constant:-2 * margin]];
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_activitiesLabel
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_publicTransportationLabel
+                                                             attribute:NSLayoutAttributeTop
+                                                            multiplier:1.0f
+                                                              constant:-margin]];
+    //
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_publicTransportationLabel
+                                                             attribute:NSLayoutAttributeCenterX
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_contentView
+                                                             attribute:NSLayoutAttributeCenterX
+                                                            multiplier:1.0f
+                                                              constant:0.0f]];
     
-    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
-                                                            attribute:NSLayoutAttributeBottom
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:_contentView
-                                                            attribute:NSLayoutAttributeBottom
-                                                           multiplier:1.0f
-                                                             constant:-margin]];
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_publicTransportationLabel
+                                                             attribute:NSLayoutAttributeWidth
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_contentView
+                                                             attribute:NSLayoutAttributeWidth
+                                                            multiplier:1.0f
+                                                              constant:-2 * margin]];
+    
+    [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_publicTransportationLabel
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:_contentView
+                                                             attribute:NSLayoutAttributeBottom
+                                                            multiplier:1.0f
+                                                              constant:-margin]];
     
     _mapView.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -219,7 +309,7 @@
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0f
                                                            constant:0.0f]];
-     
+    
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
                                                           attribute:NSLayoutAttributeTop
@@ -343,7 +433,7 @@
     _toggleMapFullscreenButton.userInteractionEnabled = NO;
     
     [self.view layoutIfNeeded];
-    [UIView animateWithDuration:0.2f
+    [UIView animateWithDuration:0.4f
                      animations:^
      {
          _contentViewBottomConstraint.constant = CGRectGetHeight(_contentView.bounds);
@@ -362,7 +452,7 @@
     _toggleMapFullscreenButton.userInteractionEnabled = NO;
     
     [self.view layoutIfNeeded];
-    [UIView animateWithDuration:0.2f
+    [UIView animateWithDuration:0.3f
                      animations:^
      {
          _contentViewBottomConstraint.constant = 0;
