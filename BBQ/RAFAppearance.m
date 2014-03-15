@@ -22,7 +22,7 @@
  Fonts
  */
 #define kDefaultFont @"Avenir-Light"
-#define kBoldFont @"Avenir-Black"
+#define kBoldFont @"Avenir-Medium"
 
 
 @implementation RAFAppearance
