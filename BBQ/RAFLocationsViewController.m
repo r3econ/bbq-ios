@@ -109,7 +109,7 @@
                                       reuseIdentifier:CellIdentifier];
         
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"chevron_right"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        imageView.tintColor = [RAFAppearance accessoryViewColor];
+        imageView.tintColor = [RAFAppearance cellTextColor];
         cell.accessoryView = imageView;
         
         cell.textLabel.textColor = [RAFAppearance cellTextColor];
