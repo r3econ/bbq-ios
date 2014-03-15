@@ -18,8 +18,8 @@
     
     self.title = NSLocalizedString(@"locations_view_title", nil);
 
-    self.navigationController.tabBarItem.image = [UIImage imageNamed:@"list_unselected"];
-    self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"list_selected"];
+    self.navigationController.tabBarItem.image = [UIImage imageNamed:@"grill_unselected"];
+    self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"grill_selected"];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                              style:UIBarButtonItemStylePlain
