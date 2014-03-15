@@ -67,6 +67,7 @@
     
     [UITableViewCell appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
     [UITableView appearance].separatorColor = [RAFAppearance accessoryViewColor];
+    
     [UITableView appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
 }
 

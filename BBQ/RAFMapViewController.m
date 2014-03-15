@@ -22,9 +22,6 @@
 
     self.title = NSLocalizedString(@"map_view_title", nil);
     
-    self.navigationController.tabBarItem.image = [UIImage imageNamed:@"map_unselected"];
-    self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"map_selected"];
-    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:nil

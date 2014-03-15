@@ -94,11 +94,11 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Navigation Controller - BBQ-->
+        <!--Navigation Controller-->
         <scene sceneID="8Mb-IQ-5EO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bL9-Dt-1k7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="BBQ" image="map_selected.png" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="" id="u1e-5L-l1D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iqA-6Y-4Ps">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -113,11 +113,11 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <!--Navigation Controller - Places-->
+        <!--Navigation Controller-->
         <scene sceneID="pfC-RP-IgH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h9O-4D-8p6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Places" image="list_selected.png" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="" id="Z7h-1E-pvt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HGy-4W-GS4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -153,8 +153,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list_selected.png" width="25" height="25"/>
-        <image name="map_selected.png" width="25" height="25"/>
         <image name="user_location.png" width="35" height="35"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -66,6 +66,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [RAFAppearance configureAppearance];
+
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+
+    tabBar.barTintColor = [RAFAppearance secondaryViewColor];
+
+    tabBarItem1.image = [[UIImage imageNamed:@"map_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"map_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
+    tabBarItem1.title = NSLocalizedString(@"map_view_title", nil);
+
+    tabBarItem2.image = [[UIImage imageNamed:@"grill_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    tabBarItem2.selectedImage = [[UIImage imageNamed:@"grill_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    tabBarItem2.title = NSLocalizedString(@"locations_view_title", nil);
+    
     [self createPersistentStore];
     
     return YES;
