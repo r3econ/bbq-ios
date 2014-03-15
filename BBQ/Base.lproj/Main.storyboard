@@ -68,6 +68,7 @@
                     <navigationItem key="navigationItem" id="dzG-cN-kIw"/>
                     <connections>
                         <outlet property="mapView" destination="Cef-Pe-ajg" id="LW6-ee-hfe"/>
+                        <outlet property="showUserLocationButton" destination="pcY-8U-dGI" id="yZO-sV-Fwh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>

@@ -5,6 +5,7 @@
 
 @interface RAFMapViewController () <MKMapViewDelegate>
 @property(nonatomic, weak) IBOutlet MKMapView *mapView;
+@property(nonatomic, weak) IBOutlet UIButton *showUserLocationButton;
 @property(nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
 
@@ -29,6 +30,8 @@
                                                                             target:nil
                                                                             action:nil];
     [self configureAnnotations];
+    
+    _showUserLocationButton.tintColor = [RAFAppearance accessoryViewColor];
 }
 
 
@@ -102,8 +105,9 @@
         {
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
             annotationView.canShowCallout = YES;
-            annotationView.image = [UIImage imageNamed:@"pin"];
+            annotationView.image = [[UIImage imageNamed:@"pin"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            annotationView.tintColor = [RAFAppearance defaultTextColor];
         }
         
         annotationView.annotation = annotation;
@@ -124,6 +128,15 @@
     
     [self.navigationController pushViewController:vc
                                          animated:YES];
+}
+
+
+#pragma mark - Appearance
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return [RAFAppearance preferredStatusBarStyle];
 }
 
 

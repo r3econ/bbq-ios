@@ -3,13 +3,19 @@
 /**
  Colors
  */
-#define kAccessoryViewColor @"5E5A59"
-#define kDefaultViewColor @"F2CA80"
-#define kSecondaryViewColor @"5E5A59"
-#define kDefaultTextColor @"0D0D0D"
-#define kSecondaryTextColor @"5E5A59"
+#define kDefaultViewColor @"8A0917"
+#define kDefaultTextColor @"FFFFFF"
+
+#define kSecondaryViewColor @"595241"
+#define kSecondaryTextColor @"FFFFFF"
+
+#define kAccessoryViewColor @"595241"
 #define kAccessoryTextColor @"FFFFFF"
+
 #define kCellBackgroundColor @"FFFFFF"
+#define kCellTextColor @"595241"
+
+#define kDefaultTintColor @"FFFFFF"
 
 
 /**
@@ -24,12 +30,13 @@
 
 + (void)configureAppearance
 {    
-    [UIView appearance].tintColor = [UIColor blackColor];
+    [UIView appearance].tintColor = [UIColor colorWithHexString:kDefaultTintColor];
     
     /**
      UINavigationBar appearance
      */
     [UINavigationBar appearance].barTintColor = [RAFAppearance defaultViewColor];
+    [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     
     [UINavigationBar appearance].titleTextAttributes = @
     {
@@ -40,7 +47,7 @@
     /**
      UITabBar appearance
      */
-    [UITabBar appearance].barTintColor = [RAFAppearance defaultViewColor];
+    [UITabBar appearance].barTintColor = [RAFAppearance secondaryViewColor];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@
      {
@@ -52,7 +59,7 @@
     
     [[UITabBarItem appearance] setTitleTextAttributes:@
      {
-     NSForegroundColorAttributeName:[RAFAppearance secondaryTextColor],
+     NSForegroundColorAttributeName:[UIColor lightGrayColor],
      NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
      }
      
@@ -61,6 +68,12 @@
     [UITableViewCell appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
     [UITableView appearance].separatorColor = [RAFAppearance accessoryViewColor];
     [UITableView appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
+}
+
+
++ (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 
@@ -115,5 +128,12 @@
 {
     return [UIColor colorWithHexString:kCellBackgroundColor];
 }
+
+
++ (UIColor *)cellTextColor
+{
+    return [UIColor colorWithHexString:kCellTextColor];
+}
+
 
 @end

@@ -69,7 +69,7 @@
                                                             CGRectGetWidth(self.tableView.bounds),
                                                             28.0f)];
     
-    view.backgroundColor = [RAFAppearance secondaryViewColor];
+    view.backgroundColor = [RAFAppearance accessoryViewColor];
 
     // Display the district as a section heading.
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f,
@@ -115,7 +115,7 @@
         imageView.tintColor = [RAFAppearance accessoryViewColor];
         cell.accessoryView = imageView;
         
-        cell.textLabel.textColor = [RAFAppearance defaultTextColor];
+        cell.textLabel.textColor = [RAFAppearance cellTextColor];
         cell.textLabel.font = [RAFAppearance defaultFontOfSize:16.0f];
     }
     
@@ -259,5 +259,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Appearance
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return [RAFAppearance preferredStatusBarStyle];
+}
 
 @end

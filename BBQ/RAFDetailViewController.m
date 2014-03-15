@@ -1,7 +1,7 @@
 #import "RAFDetailViewController.h"
 
-#define kEnterMapFullscreenImage [IMAGE_NAMED(@"expand_arrows") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
-#define kExitMapFullscreenImage [IMAGE_NAMED(@"collapse_arrows") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+#define kEnterMapFullscreenImage IMAGE_NAMED(@"expand_arrows")
+#define kExitMapFullscreenImage IMAGE_NAMED(@"collapse_arrows")
 
 
 @interface RAFDetailViewController ()<MKMapViewDelegate>
@@ -122,7 +122,7 @@
         [string addAttributes:@
          {
              NSForegroundColorAttributeName : [RAFAppearance accessoryTextColor],
-             NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
+             NSFontAttributeName : [RAFAppearance defaultFontOfSize:11.0f],
          NSParagraphStyleAttributeName: paragraphStyle,
          NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
          }
@@ -165,9 +165,7 @@
     _publicTransportationLabel = [[UILabel alloc] init];
     _publicTransportationLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _publicTransportationLabel.numberOfLines = 0;
-    _publicTransportationLabel.font = [RAFAppearance defaultFontOfSize:12.0f];
-    _publicTransportationLabel.textColor = [RAFAppearance accessoryTextColor];
-    _publicTransportationLabel.text = _placemark.publicTransportation;
+    _publicTransportationLabel.attributedText = [self publicTransportationString];
     
     // Add labels to the view.
     [_contentView addSubview:_descriptionLabel];
@@ -191,7 +189,8 @@
     [self.view addSubview:_contentView];
 
     // Configure button for switching to fullscreen mode.
-    _toggleMapFullscreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _toggleMapFullscreenButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _toggleMapFullscreenButton.tintColor = [RAFAppearance accessoryViewColor];
     _toggleMapFullscreenButton.translatesAutoresizingMaskIntoConstraints = NO;
     [_toggleMapFullscreenButton setImage:kEnterMapFullscreenImage forState:UIControlStateNormal];
     [_toggleMapFullscreenButton addTarget:self
@@ -570,6 +569,15 @@
     }
     
     return nil;
+}
+
+
+#pragma mark - Appearance
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return [RAFAppearance preferredStatusBarStyle];
 }
 
 

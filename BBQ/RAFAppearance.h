@@ -11,5 +11,7 @@
 + (UIColor *)secondaryTextColor;
 + (UIColor *)accessoryTextColor;
 + (UIColor *)cellBackgroundColor;
++ (UIColor *)cellTextColor;
++ (UIStatusBarStyle)preferredStatusBarStyle;
 
 @end
