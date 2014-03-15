@@ -110,7 +110,7 @@
 
 + (UIColor *)accessoryTextColor;
 {
-    return [UIColor colorWithHexString:kSecondaryTextColor];
+    return [UIColor colorWithHexString:kAccessoryTextColor];
 }
 
 + (UIFont *)defaultFontOfSize:(CGFloat)pointSize

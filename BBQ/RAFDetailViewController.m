@@ -96,7 +96,7 @@
         
         [string addAttributes:@
          {
-             NSForegroundColorAttributeName : [RAFAppearance accessoryTextColor],
+             NSForegroundColorAttributeName : [RAFAppearance secondaryTextColor],
              NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
          NSParagraphStyleAttributeName: paragraphStyle,
          NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
@@ -121,7 +121,7 @@
         
         [string addAttributes:@
          {
-             NSForegroundColorAttributeName : [RAFAppearance accessoryTextColor],
+             NSForegroundColorAttributeName : [RAFAppearance secondaryTextColor],
              NSFontAttributeName : [RAFAppearance defaultFontOfSize:11.0f],
          NSParagraphStyleAttributeName: paragraphStyle,
          NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
