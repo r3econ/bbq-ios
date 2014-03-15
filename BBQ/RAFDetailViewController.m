@@ -1,8 +1,8 @@
 #import "RAFDetailViewController.h"
 
-@interface RAFDetailViewController ()
+@interface RAFDetailViewController ()<MKMapViewDelegate>
 @property(nonatomic, strong) Placemark *placemark;
-@property(nonatomic, weak) IBOutlet MKMapView *mapView;
+@property(nonatomic, strong) MKMapView *mapView;
 @property(nonatomic, strong) UILabel *descriptionLabel;
 @property(nonatomic, strong) UILabel *publicTransportationLabel;
 @property(nonatomic, strong) UIView *contentView;
@@ -17,7 +17,7 @@
     RAFDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RAFDetailViewController"];
     
     vc.placemark = placemark;
-
+    
     return vc;
 }
 
@@ -25,12 +25,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 
+    _mapView = [[MKMapView alloc] init];
+    [_mapView addAnnotation:_placemark];
+    _mapView.delegate = self;
+    [self.view addSubview:_mapView];
+    
     [self configureNavigationBar];
     
-    [self configureContentView];
-    
-    [_mapView addAnnotation:_placemark];
+    [self configureViews];
+}
+
+
+- (void)viewDidLayoutSubviews
+{
     [_mapView showAnnotations:_mapView.annotations animated:YES];
 }
 
@@ -40,47 +49,47 @@
     NSMutableParagraphStyle *paragraphStyle=[[NSMutableParagraphStyle alloc] init];
     paragraphStyle.alignment = NSTextAlignmentJustified;
     
-    NSMutableAttributedString *placeDescriptionString = [[NSMutableAttributedString alloc] initWithString:_placemark.placeDescription];
+    NSMutableAttributedString *placeDescription = [[NSMutableAttributedString alloc] initWithString:_placemark.placeDescription];
     
-    [placeDescriptionString addAttributes:@{
-                                            NSForegroundColorAttributeName : [UIColor blackColor],
-                                            NSFontAttributeName : [UIFont systemFontOfSize:13.0f],
-                                            NSParagraphStyleAttributeName: paragraphStyle,
-                                            NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
-                                            }
-                                    range:NSMakeRange(0, [placeDescriptionString length])];
+    [placeDescription addAttributes:@{
+                                      NSForegroundColorAttributeName : [RAFAppearance defaultTextColor],
+                                      NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
+                                      NSParagraphStyleAttributeName: paragraphStyle,
+                                      NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
+                                      }
+                              range:NSMakeRange(0, [placeDescription length])];
     
     if (_placemark.activities)
     {
         NSMutableAttributedString *activitiesString = [[NSMutableAttributedString alloc] initWithString:_placemark.activities];
         
         [activitiesString addAttributes:@{
-                                          NSForegroundColorAttributeName : [UIColor blackColor],
-                                          NSFontAttributeName : [UIFont systemFontOfSize:13.0f],
+                                          NSForegroundColorAttributeName : [RAFAppearance defaultTextColor],
+                                          NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
                                           NSParagraphStyleAttributeName: paragraphStyle,
                                           NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
                                           }
                                   range:NSMakeRange(0, [activitiesString length])];
         
-        [placeDescriptionString appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n\n"]];
-        [placeDescriptionString appendAttributedString:activitiesString];
+        [placeDescription appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n\n"]];
+        [placeDescription appendAttributedString:activitiesString];
     }
-
-    return placeDescriptionString;
+    
+    return placeDescription;
 }
 
 
-- (void)configureContentView
+- (void)configureViews
 {
     CGFloat margin = 15.0f;
     
     UIView *contentView = [[UIView alloc] init];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    contentView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.8f];
+    contentView.backgroundColor = [RAFAppearance secondaryViewColor];
     
     CALayer *topBorder = [CALayer layer];
     topBorder.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.view.bounds), 0.5f);
-    topBorder.backgroundColor = [UIColor lightGrayColor].CGColor;
+    topBorder.backgroundColor = [RAFAppearance accessoryViewColor].CGColor;
     [contentView.layer addSublayer:topBorder];
     
     UILabel *descriptionLabel = [[UILabel alloc] init];
@@ -88,15 +97,15 @@
     descriptionLabel.numberOfLines = 0;
     descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
     descriptionLabel.attributedText = [self placeDescriptionString];
-
+    
     UILabel *publicTransportationLabel = [[UILabel alloc] init];
     publicTransportationLabel.translatesAutoresizingMaskIntoConstraints = NO;
     publicTransportationLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.bounds) - 2 * margin;
     publicTransportationLabel.numberOfLines = 0;
-    publicTransportationLabel.font = [UIFont systemFontOfSize:12.0f];
-    publicTransportationLabel.textColor = [UIColor darkGrayColor];
+    publicTransportationLabel.font = [RAFAppearance defaultFontOfSize:12.0f];
+    publicTransportationLabel.textColor = [RAFAppearance accessoryTextColor];
     publicTransportationLabel.text = _placemark.publicTransportation;
-
+    
     [contentView addSubview:descriptionLabel];
     [contentView addSubview:publicTransportationLabel];
     [self.view addSubview:contentView];
@@ -125,7 +134,7 @@
                                                           attribute:NSLayoutAttributeLeading
                                                          multiplier:1.0f
                                                            constant:0.0f]];
-
+    
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:contentView
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
@@ -165,7 +174,7 @@
                                                             attribute:NSLayoutAttributeCenterX
                                                            multiplier:1.0f
                                                              constant:0.0f]];
-  
+    
     [contentView addConstraint:[NSLayoutConstraint constraintWithItem:publicTransportationLabel
                                                             attribute:NSLayoutAttributeWidth
                                                             relatedBy:NSLayoutRelationEqual
@@ -181,6 +190,44 @@
                                                             attribute:NSLayoutAttributeBottom
                                                            multiplier:1.0f
                                                              constant:-margin]];
+    
+    _mapView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:contentView
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0f
+                                                           constant:0.0f]];
+     
+    
+     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
+     attribute:NSLayoutAttributeTop
+     relatedBy:NSLayoutRelationEqual
+     toItem:self.view
+     attribute:NSLayoutAttributeTop
+     multiplier:1.0f
+     constant:0.0f]];
+     
+     
+     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
+     attribute:NSLayoutAttributeWidth
+     relatedBy:NSLayoutRelationEqual
+     toItem:self.view
+     attribute:NSLayoutAttributeWidth
+     multiplier:1.0f
+     constant:0.0f]];
+     
+     
+     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_mapView
+     attribute:NSLayoutAttributeLeading
+     relatedBy:NSLayoutRelationEqual
+     toItem:self.view
+     attribute:NSLayoutAttributeLeading
+     multiplier:1.0f
+     constant:0.0f]];
+     
 }
 
 
@@ -188,7 +235,7 @@
 {
     self.title = _placemark.name;
     self.navigationItem.prompt = _placemark.district;
-
+    
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                                target:self
                                                                                action:@selector(shareButtonTapped:)];

@@ -17,5 +17,6 @@
     #import "Placemark.h"
     #import "RAFAppDelegate.h"
     #import "UIColor+Extensions.h"
+    #import "RAFAppearance.h"
 
 #endif

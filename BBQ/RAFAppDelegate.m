@@ -4,15 +4,6 @@
 @implementation RAFAppDelegate
 
 
-#pragma mark - Appearance
-
-
-- (void)configureAppearance
-{    
-    [UIView appearance].tintColor = [UIColor blackColor];
-}
-
-
 #pragma mark - Configuration
 
 
@@ -74,7 +65,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self configureAppearance];
+    [RAFAppearance configureAppearance];
     [self createPersistentStore];
     
     return YES;

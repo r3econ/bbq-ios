@@ -18,6 +18,9 @@
     
     self.title = NSLocalizedString(@"locations_view_title", nil);
 
+    self.navigationController.tabBarItem.image = [UIImage imageNamed:@"list_unselected"];
+    self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"list_selected"];
+    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:nil
@@ -59,10 +62,32 @@
 }
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f,
+                                                            0.0f,
+                                                            CGRectGetWidth(self.tableView.bounds),
+                                                            28.0f)];
     
+    view.backgroundColor = [RAFAppearance secondaryViewColor];
+
     // Display the district as a section heading.
-    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f,
+                                                               0.0f,
+                                                               CGRectGetWidth(self.tableView.bounds) - 10.0f,
+                                                               28.0f)];
+    label.textColor = [RAFAppearance accessoryTextColor];
+    label.font = [RAFAppearance defaultFontOfSize:14.0f];
+    label.text = [[[self.fetchedResultsController sections] objectAtIndex:section] name]; //uppercaseString];
+    
+    [view addSubview:label];
+    return view;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 28.0f;
 }
 
 
@@ -71,14 +96,29 @@
 {
     // Configure the cell to show the book's title
     Placemark *placemark = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     cell.textLabel.text = placemark.name;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"PlacemarkCell";
+    static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:CellIdentifier];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"chevron_right"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        imageView.tintColor = [RAFAppearance accessoryViewColor];
+        cell.accessoryView = imageView;
+        
+        cell.textLabel.textColor = [RAFAppearance defaultTextColor];
+        cell.textLabel.font = [RAFAppearance defaultFontOfSize:16.0f];
+    }
+    
     
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
