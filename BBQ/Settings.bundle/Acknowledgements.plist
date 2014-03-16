@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>StringsTable</key>
+    <string>Acknowledgements</string>
+    <key>PreferenceSpecifiers</key>
+       <array>
+       <dict>
+          <key>Title</key>
+<string>
+Share post symbol icon - Icon made by Icomoon from Flaticon.com.
+
+Running man icon - Icon made by Freepik from Flaticon.com.
+
+Bus icon - Icon made by Freepik from Flaticon.com.
+
+Information circle icon - Icon made by Freepik from Flaticon.com.
+</string>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+        </dict>
+    </array>
+</dict>
+</plist>
