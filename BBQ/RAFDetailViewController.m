@@ -45,6 +45,12 @@
     _mapView = [[MKMapView alloc] init];
     [_mapView addAnnotation:_placemark];
     _mapView.delegate = self;
+    
+    if ([[RAFLocationManager sharedInstance] locationServicesAllowed])
+    {
+        _mapView.showsUserLocation = YES;
+    }
+    
     [self.view addSubview:_mapView];
     
     [self configureNavigationBar];
@@ -64,7 +70,7 @@
 
 - (void)viewDidLayoutSubviews
 {
-    [_mapView showAnnotations:_mapView.annotations animated:YES];
+    [_mapView showAnnotations:@[_placemark] animated:YES];
 }
 
 

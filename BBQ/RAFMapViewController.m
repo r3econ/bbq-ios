@@ -7,6 +7,8 @@
 @property(nonatomic, weak) IBOutlet MKMapView *mapView;
 @property(nonatomic, weak) IBOutlet UIButton *showUserLocationButton;
 @property(nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property(nonatomic, strong) CLLocationManager *locationManager;
+@property(nonatomic, assign) BOOL shouldZoomToUserLocation;
 @end
 
 
@@ -42,10 +44,28 @@
 
 - (void)configureAnnotations
 {
-    [_mapView removeAnnotations:self.mapView.annotations];
+    if ([[RAFLocationManager sharedInstance] locationServicesAllowed])
+    {
+        _mapView.showsUserLocation = YES;
+    }
+    
     [_mapView addAnnotations:[self.fetchedResultsController fetchedObjects]];
 
     [_mapView showAnnotations:_mapView.annotations animated:YES];
+}
+
+
+- (void)zoomToUserLocationOnFirstUpdate
+{
+    if (_shouldZoomToUserLocation)
+    {
+        _shouldZoomToUserLocation = NO;
+        
+        if (_mapView.userLocation)
+        {
+            [_mapView showAnnotations:@[_mapView.userLocation] animated:YES];
+        }
+    }
 }
 
 
@@ -94,6 +114,23 @@
 - (IBAction)centerAtUserLocationButtonTapped:(id)sender
 {
     _mapView.showsUserLocation = YES;
+    
+    if ([RAFLocationManager sharedInstance].currentLocation)
+    {
+        [_mapView showAnnotations:@[_mapView.userLocation] animated:YES];
+    }
+    else
+    {
+        _shouldZoomToUserLocation = YES;
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(zoomToUserLocationOnFirstUpdate)
+                                                     name:RAFLocationDidChangeNotification
+                                                   object:nil];
+        
+        [[RAFLocationManager sharedInstance] startLocating];
+    }
+    
 }
 
 

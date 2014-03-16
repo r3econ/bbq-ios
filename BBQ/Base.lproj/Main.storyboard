@@ -35,8 +35,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cef-Pe-ajg">
-                                <rect key="frame" x="0.0" y="64" width="320" height="342"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cef-Pe-ajg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="CZ4-MO-1fc" id="u6G-UI-JmP"/>
@@ -57,10 +57,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ma2-dk-5Rf" firstAttribute="top" secondItem="Cef-Pe-ajg" secondAttribute="bottom" id="LyL-nj-gxP"/>
-                            <constraint firstItem="Cef-Pe-ajg" firstAttribute="top" secondItem="9Fo-db-xyS" secondAttribute="bottom" id="WQu-ab-obQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Cef-Pe-ajg" secondAttribute="trailing" id="ZFU-bE-oRd"/>
-                            <constraint firstItem="Cef-Pe-ajg" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" id="a6b-d4-sdg"/>
+                            <constraint firstAttribute="trailing" secondItem="Cef-Pe-ajg" secondAttribute="trailing" id="9lZ-Wl-IPG"/>
+                            <constraint firstItem="Cef-Pe-ajg" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" id="F1t-Mw-6U1"/>
+                            <constraint firstItem="Cef-Pe-ajg" firstAttribute="top" secondItem="2VE-Yg-loa" secondAttribute="top" id="JIu-hm-7nk"/>
+                            <constraint firstAttribute="bottom" secondItem="Cef-Pe-ajg" secondAttribute="bottom" id="NRd-A6-6pN"/>
                             <constraint firstItem="Ma2-dk-5Rf" firstAttribute="top" secondItem="pcY-8U-dGI" secondAttribute="bottom" constant="9" id="ojd-da-qyS"/>
                             <constraint firstAttribute="trailing" secondItem="pcY-8U-dGI" secondAttribute="trailing" constant="10" id="wYh-l9-8w9"/>
                         </constraints>

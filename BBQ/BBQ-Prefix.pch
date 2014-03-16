@@ -20,5 +20,6 @@
     #import "RAFAppearance.h"
     #import "RAFUtilities.h"
     #import "RAFTracking.h"
+    #import "RAFLocationManager.h"
 
 #endif

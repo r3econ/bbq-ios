@@ -95,6 +95,8 @@
 		8631AD6218D5F2E900F45405 /* bus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1218D4EDEC00F45405 /* bus_icon.png */; };
 		8631AD6318D5F2E900F45405 /* map_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACEF18D4C8A700F45405 /* map_unselected.png */; };
 		8631AD6418D5F2E900F45405 /* Berlin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACAD18CE77E900F45405 /* Berlin.json */; };
+		86EDBAB218D60C2200DF56D2 /* RAFLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */; };
+		86EDBAB318D60C2200DF56D2 /* RAFLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +169,8 @@
 		8631AD2D18D5C59200F45405 /* RAFTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTracking.m; sourceTree = "<group>"; };
 		8631AD6918D5F2E900F45405 /* BBQ-Berlin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBQ-Berlin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8631AD6A18D5F2E900F45405 /* BBQ-Berlin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BBQ-Berlin-Info.plist"; path = "/Users/r3n/Documents/Projects/BBQ/BBQ-Berlin-Info.plist"; sourceTree = "<absolute>"; };
+		86EDBAB018D60C2200DF56D2 /* RAFLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFLocationManager.h; sourceTree = "<group>"; };
+		86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFLocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,7 @@
 		8631AC6C18CE55D400F45405 /* BBQ */ = {
 			isa = PBXGroup;
 			children = (
+				86EDBAAF18D60C0A00DF56D2 /* Location Manager */,
 				8631ACE218D495E900F45405 /* Appearance */,
 				8631AD6B18D5F6A800F45405 /* Delegate */,
 				8631ACB818D0EBC600F45405 /* Extensions */,
@@ -394,6 +399,15 @@
 				8631ACB118CFD54500F45405 /* RAFDetailViewController.m */,
 			);
 			name = Details;
+			sourceTree = "<group>";
+		};
+		86EDBAAF18D60C0A00DF56D2 /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				86EDBAB018D60C2200DF56D2 /* RAFLocationManager.h */,
+				86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */,
+			);
+			name = "Location Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,6 +605,7 @@
 				8631ACE618D4960300F45405 /* RAFAppearance.m in Sources */,
 				8631ACFE18D4CBDF00F45405 /* RAFUtilities.m in Sources */,
 				8631ACB318CFD54500F45405 /* RAFDetailViewController.m in Sources */,
+				86EDBAB218D60C2200DF56D2 /* RAFLocationManager.m in Sources */,
 				8631ACB718D0EBB000F45405 /* UIColor+Extensions.m in Sources */,
 				8631AD2F18D5C59200F45405 /* RAFTracking.m in Sources */,
 			);
@@ -600,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86EDBAB318D60C2200DF56D2 /* RAFLocationManager.m in Sources */,
 				8631AD3318D5F2E900F45405 /* RAFAppearance.m in Sources */,
 				8631AD3418D5F2E900F45405 /* Placemark.m in Sources */,
 				8631AD3518D5F2E900F45405 /* RAFTracking.m in Sources */,
