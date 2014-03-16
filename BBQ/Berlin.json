@@ -3,12 +3,12 @@
     "placemarks": [
                    {
                    "name": "Monbijoupark",
-                   "description": "Nähe Oranienburger Strasse. Das Grillen ist nicht im gesamten Monbijoupark erlaubt, sondern lediglich auf einer kleinen, ausgeschilderten Grillfläche. Der Monbijoupark liegt mit schönem Ausblick zur Museumsinsel und der Neuen Synagoge Berlin.",
+                   "description": "Nähe Oranienburger Strasse. Das Grillen ist nicht im gesamten Monbijoupark erlaubt, sondern lediglich auf einer kleinen, ausgeschilderten Grillfläche. Der Monbijoupark liegt mit schönem Ausblick zur Museumsinsel und der Neuen Synagoge.",
                    "district": "Mitte",
                    "latitude": 52.5238,
                    "longitude": 13.396397,
-                   "public_transport": "S-Bahn: Hackescher Markt und Oranienburger Str.",
-                   "activities": "Spielplatz, Tischtennisplatten, Basketball-Platz."
+                   "public_transport": "S-Bahn: S5, S7, S75 (Hackescher Markt), S1, S2, S25 (Oranienburger Str.), Tram: 12, M1, M6 (Monbijouplatz), M4, M5 (Hackescher Markt)",
+                   "activities": "Spielplatz, Kinderbad, Liegewiese, Tischtennisplatten, Basketballplatz."
                    },
                    {
                    "name": "Volkspark Friedrichshain",
@@ -16,8 +16,8 @@
                    "district": "Friedrichshain",
                    "latitude": 52.528008,
                    "longitude": 13.437026,
-                   "public_transport": "S-Bahn: Landsberger Allee, U-Bahn: Strausberger Platz, Tram M5, M6, M8 (Platz der Vereinten Nationen), Bus 200, 240 (Am Friedrichshain)",
-                   "activities": "Spielplätze, Basketballplatz, Planschbecken am Märchenbrunnen, Tennisplätze, Beachvolleyball-Platz, Halfpipe für Skateboarder und Inline-Skater, Freiluftkino, Boccia Bahn, Duftgarten"
+                   "public_transport": "S-Bahn: Landsberger Allee, U-Bahn: Strausberger Platz, Tram: M5, M6, M8 (Platz der Vereinten Nationen), M4 (Am Friedrichshain), Bus: 200, 240 (Am Friedrichshain).",
+                   "activities": "Spielplätze, Basketballplatz, Planschbecken am Märchenbrunnen, Tennisplätze, Beachvolleyball-Platz, Halfpipe für Skateboarder und Inline-Skater, Freiluftkino, Boccia Bahn, Duftgarten."
                    },
                    {
                    "name": "Görlitzer Park",
@@ -25,8 +25,8 @@
                    "district": "Kreuzberg",
                    "latitude": 52.494425,
                    "longitude": 13.44261,
-                   "public_transport": "U-Bahn: Görlitzer Bahnhof oder Schlesisches Tor",
-                   "activities": "Kinderbauernhof, Skateranlage"
+                   "public_transport": "U-Bahn: Görlitzer Bahnhof oder Schlesisches Tor.",
+                   "activities": "Kinderbauernhof, Skateranlage, öffentliche Hallenbad Spreewaldbad."
                    },
                    {
                    "name": "Blücherplatz",
@@ -35,7 +35,7 @@
                    "latitude": 52.497267,
                    "longitude": 13.392374,
                    "public_transport": "U-Bahn: U6 Hallesches Tor",
-                   "activities": ""
+                   "activities": "Zum Karneval der Kulturen findet auf dem Blücherplatz das jährliche Straßenfest statt."
                    },
                    {
                    "name": "Mauerpark / Falkplatz",
@@ -43,8 +43,8 @@
                    "district": "Prenzlauer Berg",
                    "latitude": 52.543356,
                    "longitude": 13.402477,
-                   "public_transport": "Tram M10: Friedrich-Ludwig-Jahn-Sportpark, Tram 12: Eberswalder Str. U-Bahn: U2 Eberswalder Str.",
-                   "activities": "Eine Basketball-Anlage, ein Spielplatz, eine Graffiti-Mauer, am Wochenende locken der Flohmarkt, und viele Musiker, die kostenlos auftreten"
+                   "public_transport": "Tram: M10 (Friedrich-Ludwig-Jahn-Sportpark), 12 (Eberswalder Str.), U-Bahn: U2 (Eberswalder Str.)",
+                   "activities": "Basketballplatz, Spielplatz, Graffiti-Mauer, Jugendfarm Moritzhof, Kletterwand, Sonntags Karaoke und Flohmarkt, und viele Musiker, die kostenlos auftreten."
                    },
                    {
                    "name": "Goslarer Ufer",
@@ -52,17 +52,17 @@
                    "district": "Charlottenburg",
                    "latitude": 52.531153,
                    "longitude": 13.312986,
-                   "public_transport": "S-Bahn: Jungfernheide",
-                   "activities": ""
+                   "public_transport": "S-Bahn: S41, S42 (Jungfernheide)",
+                   "activities": "Spielplätze, Liegewiese mit einem schönen Blick aufs Wasser."
                    },
                    {
                    "name": "Rudolf-Mosse-Platz",
-                   "description": "Mecklenburgische Strasse.",
+                   "description": " Grillplatz ist in der Nähe der Mecklenburgische Strasse.",
                    "district": "Wilmersdorf",
                    "latitude": 52.475438,
                    "longitude": 13.302424,
-                   "public_transport": "Bus 249 (Rudolf-Mosse-Platz)",
-                   "activities": "Sandspielfläche und eine Basketball-Anlage."
+                   "public_transport": "Bus: 249 (Rudolf-Mosse-Platz)",
+                   "activities": "Sandspielfläche, Basketball-Anlage."
                    },
                    {
                    "name": "Preußenpark",
@@ -70,8 +70,8 @@
                    "district": "Wilmersdorf",
                    "latitude": 52.49194,
                    "longitude": 13.313568,
-                   "public_transport": "U-Bahn: Fehrbelliner Platz",
-                   "activities": null
+                   "public_transport": "U-Bahn: U7 (Fehrbelliner Platz)",
+                   "activities": "Liegewiese, Outdoor-Fitness-Platz, Thai Küche."
                    },
                    {
                    "name": "Zehlendorf Süd",
@@ -79,8 +79,8 @@
                    "district": "Zehlendorf",
                    "latitude": 52.420981,
                    "longitude": 13.244935,
-                   "public_transport": "S-Bahn: Zehlendorf-Süd",
-                   "activities": null
+                   "public_transport": "S-Bahn: S1 (Zehlendorf-Süd)",
+                   "activities": "Liegewiese, Laufstrecken."
                    },
                    {
                    "name": "Landschaftspark Johannisthal",
@@ -88,7 +88,7 @@
                    "district": "Treptow",
                    "latitude": 52.437457,
                    "longitude": 13.521779,
-                   "public_transport": "Bus 163 (Groß-Berliner Damm Mitte)",
+                   "public_transport": "Bus: 163 (Groß-Berliner Damm Mitte)",
                    "activities": "Skaterbahn (Rollfeld), Beachvolleyball, Dirt-Bike-Parcours"
                    },
                    {
@@ -97,17 +97,17 @@
                    "district": "Treptow",
                    "latitude": 52.49541,
                    "longitude": 13.449512,
-                   "public_transport": "S-Bahn: Treptower Park, U-Bahn: Schlesisches Tor",
-                   "activities": ""
+                   "public_transport": "S-Bahn: S41, S42 (Treptower Park), U-Bahn: U1 (Schlesisches Tor)",
+                   "activities": "Grenzwachturm (museum), Liegewiese."
                    },
                    {
-                   "name": "Stadtpark",
+                   "name": "Stadtpark Lichtenberg",
                    "description": "Nähe Sprühplatte. Gegrillt werden darf, auf dem 5,3 ha großen Gelände, in mehreren Bereichen des Parks.",
                    "district": "Lichtenberg",
                    "latitude": 52.518037,
                    "longitude": 13.476212,
-                   "public_transport": "S-Bahn, U-Bahn: Frankfurter Allee",
-                   "activities": "Spazierwege, Spiel- und Ballspielplatz, Liegewiesen, verschiedene Skulpturen, Ruhebereiche."
+                   "public_transport": "S-Bahn: S41, S42 (Frankfurter Allee), U-Bahn: U5 (Frankfurter Allee)",
+                   "activities": "Spazierwege, Spielplatz, Ballspielplatz, Liegewiesen, verschiedene Skulpturen, Ruhebereiche."
                    },
                    {
                    "name": "Rudolf-Seiffert-Grünzug",
@@ -115,8 +115,8 @@
                    "district": "Lichtenberg",
                    "latitude": 52.524939,
                    "longitude": 13.471571,
-                   "public_transport": "S-Bahn: Storkower Strasse",
-                   "activities": ""
+                   "public_transport": "S-Bahn: S41, S42 (Storkower Straße)",
+                   "activities": "Liegewiesen"
                    },
                    {
                    "name": "Fennpfuhlpark",
@@ -124,7 +124,7 @@
                    "district": "Lichtenberg",
                    "latitude": 52.528085,
                    "longitude": 13.475812,
-                   "public_transport": "S-Bahn: Storkower Straße",
+                   "public_transport": "S-Bahn: S41, S42 (Storkower Straße)",
                    "activities": "Spielplätze, Basketball-Platz, Tischtennis, Halfpipe und Skateplatz."
                    },
                    {
@@ -133,7 +133,7 @@
                    "district": "Hohenschönhausen",
                    "latitude": 52.578234,
                    "longitude": 13.505514,
-                   "public_transport": "Hagenower / Ückeritzer Ring,",
+                   "public_transport": "Bus: 256 (Hagenower Ring).",
                    "activities": "Spielplatz, gut ausgebaute Fahrrad- und Inliner-Strecken."
                    },
                    {
@@ -142,7 +142,8 @@
                    "district": "Tempelhof",
                    "latitude": 52.480161,
                    "longitude": 13.404028,
-                   "public_transport": "U7 U-Bhf Südstern, Bus 104 Haltestellen Friedhöfe Columbiadamm oder Golßener Straße"
+                   "public_transport": "U-Bahn: U7 (Südstern), Bus: 104 (Friedhöfe Columbiadamm oder Golßener Straße)",
+                   "activities": "Liegewiesen, Badminton, Baseball, Beachvolleyball, Beachhandball, Bogenschießen, Softball."
                    },
                    {
                    "name": "Nähe Oderstraße/Leinestraße",
@@ -150,7 +151,8 @@
                    "district": "Tempelhof",
                    "latitude": 52.471783,
                    "longitude": 13.416152,
-                   "public_transport": "U8 U-Bhf. Hermannplatz, Leinestraße, Boddinstraße."
+                   "public_transport": "U-Bahn: U8 (Hermannplatz, Leinestraße, Boddinstraße)",
+                   "activities": "Skaterstrecken, Laufstrecken, Fahrradstrecken, Umzäuntes Hundeauslaufgebiet, Picknick Area, Liegewiesen"
                    },
                    {
                    "name": "Nähe Tempelhofer Damm",
@@ -158,7 +160,8 @@
                    "district": "Tempelhof",
                    "latitude": 52.470489,
                    "longitude": 13.393192,
-                   "public_transport": "S41, S42, S46, S47 S-Bhf Tempelhof. U6 U-Bhf Tempelhof oder Paradestraße."
+                   "public_transport": "S-Bahn: S41, S42, S46, S47 (Tempelhof), U-Bahn: U6 (Tempelhof oder Paradestraße).",
+                    "activities": "Skaterstrecken, Laufstrecken, Fahrradstrecken, Umzäuntes Hundeauslaufgebiet, Picknick Area, Liegewiesen"
                    }
                    ]
 }
