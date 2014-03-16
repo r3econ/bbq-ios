@@ -53,6 +53,15 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[RAFTracking sharedInstance] trackPageView:@"PlaceDetailsView"];
+    [[RAFTracking sharedInstance] viewPlacemarkDetails:_placemark];
+}
+
+
 - (void)viewDidLayoutSubviews
 {
     [_mapView showAnnotations:_mapView.annotations animated:YES];

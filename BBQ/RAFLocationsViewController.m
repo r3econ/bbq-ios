@@ -36,6 +36,14 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[RAFTracking sharedInstance] trackPageView:@"PlacesView"];
+}
+
+
 - (void)viewWillAppear
 {    
     [self.tableView reloadData];

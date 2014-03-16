@@ -32,6 +32,14 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[RAFTracking sharedInstance] trackPageView:@"MapView"];
+}
+
+
 - (void)configureAnnotations
 {
     [_mapView removeAnnotations:self.mapView.annotations];
