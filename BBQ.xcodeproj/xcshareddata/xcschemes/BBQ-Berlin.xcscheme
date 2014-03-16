@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8631AD3018D5F2E900F45405"
-               BuildableName = "BBQ copy.app"
+               BuildableName = "BBQ-Berlin.app"
                BlueprintName = "BBQ-Berlin"
                ReferencedContainer = "container:BBQ.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8631AD3018D5F2E900F45405"
-            BuildableName = "BBQ copy.app"
+            BuildableName = "BBQ-Berlin.app"
             BlueprintName = "BBQ-Berlin"
             ReferencedContainer = "container:BBQ.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8631AD3018D5F2E900F45405"
-            BuildableName = "BBQ copy.app"
+            BuildableName = "BBQ-Berlin.app"
             BlueprintName = "BBQ-Berlin"
             ReferencedContainer = "container:BBQ.xcodeproj">
          </BuildableReference>

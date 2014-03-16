@@ -3,19 +3,20 @@
 /**
  Colors
  */
-#define kDefaultViewColor @"8A0917"
-#define kDefaultTextColor @"FFFFFF"
+#define kDefaultViewColor @"59023B"
+#define kDefaultTextColor @"E7F2DF"
 
-#define kSecondaryViewColor @"595241"
-#define kSecondaryTextColor @"FFFFFF"
+#define kSecondaryViewColor @"161726"
+#define kSecondaryTextColor @"E7F2DF"
 
-#define kAccessoryViewColor @"595241"
-#define kAccessoryTextColor @"FFFFFF"
+#define kAccessoryViewColor @"231E2D"
+#define kAccessoryTextColor @"E7F2DF"
 
-#define kCellBackgroundColor @"FFFFFF"
-#define kCellTextColor @"595241"
+#define kCellBackgroundColor @"E7F2DF"
+#define kCellTextColor @"161726"
 
-#define kDefaultTintColor @"FFFFFF"
+#define kDefaultTintColor @"E7F2DF"
+
 
 
 /**
@@ -48,7 +49,7 @@
      UITabBar appearance
      */
     [UITabBar appearance].barTintColor = [RAFAppearance secondaryViewColor];
-    
+
     [[UITabBarItem appearance] setTitleTextAttributes:@
      {
      NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
