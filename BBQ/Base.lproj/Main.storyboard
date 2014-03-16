@@ -43,7 +43,7 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcY-8U-dGI">
-                                <rect key="frame" x="270" y="406" width="40" height="40"/>
+                                <rect key="frame" x="276" y="410" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="9vl-iT-eFK"/>
@@ -61,8 +61,8 @@
                             <constraint firstItem="Cef-Pe-ajg" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" id="F1t-Mw-6U1"/>
                             <constraint firstItem="Cef-Pe-ajg" firstAttribute="top" secondItem="2VE-Yg-loa" secondAttribute="top" id="JIu-hm-7nk"/>
                             <constraint firstAttribute="bottom" secondItem="Cef-Pe-ajg" secondAttribute="bottom" id="NRd-A6-6pN"/>
-                            <constraint firstItem="Ma2-dk-5Rf" firstAttribute="top" secondItem="pcY-8U-dGI" secondAttribute="bottom" constant="9" id="ojd-da-qyS"/>
-                            <constraint firstAttribute="trailing" secondItem="pcY-8U-dGI" secondAttribute="trailing" constant="10" id="wYh-l9-8w9"/>
+                            <constraint firstItem="Ma2-dk-5Rf" firstAttribute="top" secondItem="pcY-8U-dGI" secondAttribute="bottom" constant="5" id="ojd-da-qyS"/>
+                            <constraint firstAttribute="trailing" secondItem="pcY-8U-dGI" secondAttribute="trailing" constant="4" id="wYh-l9-8w9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dzG-cN-kIw"/>
@@ -153,7 +153,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="user_location.png" width="35" height="35"/>
+        <image name="user_location.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

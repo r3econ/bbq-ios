@@ -16,6 +16,8 @@
 @property(nonatomic, strong) UIView *contentView;
 @property(nonatomic, strong) NSLayoutConstraint *contentViewBottomConstraint;
 @property(nonatomic, strong) UIButton *toggleMapFullscreenButton;
+@property(nonatomic, strong) UIButton *showUserLocationButton;
+@property(nonatomic, assign) BOOL shouldZoomToUserLocation;
 @property(nonatomic, assign) BOOL isMapFullscreen;
 
 @end
@@ -68,9 +70,29 @@
 }
 
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 - (void)viewDidLayoutSubviews
 {
     [_mapView showAnnotations:@[_placemark] animated:YES];
+}
+
+
+- (void)zoomToUserLocationOnFirstUpdate
+{
+    if (_shouldZoomToUserLocation)
+    {
+        _shouldZoomToUserLocation = NO;
+        
+        if (_mapView.userLocation)
+        {
+            [_mapView showAnnotations:@[_mapView.userLocation] animated:YES];
+        }
+    }
 }
 
 
@@ -205,7 +227,7 @@
 
     // Configure button for switching to fullscreen mode.
     _toggleMapFullscreenButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    _toggleMapFullscreenButton.tintColor = [RAFAppearance accessoryViewColor];
+    _toggleMapFullscreenButton.tintColor = [RAFAppearance secondaryViewColor];
     _toggleMapFullscreenButton.translatesAutoresizingMaskIntoConstraints = NO;
     [_toggleMapFullscreenButton setImage:kEnterMapFullscreenImage forState:UIControlStateNormal];
     [_toggleMapFullscreenButton addTarget:self
@@ -213,6 +235,17 @@
                          forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:_toggleMapFullscreenButton];
+    
+    // Configure button for showing user location.
+    _showUserLocationButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _showUserLocationButton.tintColor = [RAFAppearance secondaryViewColor];
+    _showUserLocationButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [_showUserLocationButton setImage:IMAGE_NAMED(@"user_location") forState:UIControlStateNormal];
+    [_showUserLocationButton addTarget:self
+                                   action:@selector(centerAtUserLocationButtonTapped:)
+                         forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_showUserLocationButton];
     
     // Set up constraints
     [self configureConstraints];
@@ -433,10 +466,43 @@
                                                            constant:0.0f]];
     
     // Toggle map fullscreen button
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_toggleMapFullscreenButton
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_showUserLocationButton
                                                           attribute:NSLayoutAttributeBottom
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:_contentView
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0f
+                                                           constant:-2.0f]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_showUserLocationButton
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0f
+                                                           constant:-2.0f]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_showUserLocationButton
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0f
+                                                           constant:40.0f]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_showUserLocationButton
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0f
+                                                           constant:40.0f]];
+    
+    // Show user location button
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_toggleMapFullscreenButton
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0f
                                                            constant:-2.0f]];
@@ -447,7 +513,7 @@
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeTrailing
                                                          multiplier:1.0f
-                                                           constant:-2.0f]];
+                                                           constant:2.0f]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_toggleMapFullscreenButton
                                                           attribute:NSLayoutAttributeWidth
@@ -507,6 +573,29 @@
     [self presentViewController:activityController animated:YES completion:nil];
     
     [[RAFTracking sharedInstance] trackShareButtonTapped];
+}
+
+
+- (IBAction)centerAtUserLocationButtonTapped:(id)sender
+{
+    _mapView.showsUserLocation = YES;
+    
+    if ([RAFLocationManager sharedInstance].currentLocation)
+    {
+        [_mapView showAnnotations:@[_mapView.userLocation] animated:YES];
+    }
+    else
+    {
+        _shouldZoomToUserLocation = YES;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(zoomToUserLocationOnFirstUpdate)
+                                                     name:RAFLocationDidChangeNotification
+                                                   object:nil];
+        
+        [[RAFLocationManager sharedInstance] startLocating];
+    }
+    
 }
 
 

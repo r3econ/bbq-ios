@@ -30,7 +30,7 @@
                                                                             action:nil];
     [self configureAnnotations];
     
-    _showUserLocationButton.tintColor = [RAFAppearance accessoryViewColor];
+    _showUserLocationButton.tintColor = [RAFAppearance secondaryViewColor];
 }
 
 
@@ -39,6 +39,12 @@
     [super viewDidAppear:animated];
     
     [[RAFTracking sharedInstance] trackPageView:@"MapView"];
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
