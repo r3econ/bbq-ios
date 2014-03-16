@@ -479,7 +479,7 @@
 
 - (void)shareButtonTapped:(id)sender
 {
-    NSArray * activityItems = @[[NSString stringWithFormat:@"%@, %@. %@",
+    NSArray * activityItems = @[[NSString stringWithFormat:@"%@, %@.\n\n%@",
                                  _placemark.name,
                                  _placemark.district,
                                  _placemark.publicTransportation]];
@@ -490,7 +490,17 @@
     UIActivityViewController * activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
     activityController.excludedActivityTypes = excludeActivities;
     
+    [activityController setCompletionHandler:^(NSString *activityType, BOOL completed)
+    {
+        if (completed)
+        {
+            [[RAFTracking sharedInstance] trackShareWithSocialNetwork:activityType];
+        }
+    }];
+    
     [self presentViewController:activityController animated:YES completion:nil];
+    
+    [[RAFTracking sharedInstance] trackShareButtonTapped];
 }
 
 
