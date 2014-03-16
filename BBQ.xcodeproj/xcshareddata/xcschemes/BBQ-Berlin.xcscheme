@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8631AC6218CE55D400F45405"
-               BuildableName = "BBQ.app"
-               BlueprintName = "BBQ"
+               BlueprintIdentifier = "8631AD3018D5F2E900F45405"
+               BuildableName = "BBQ copy.app"
+               BlueprintName = "BBQ-Berlin"
                ReferencedContainer = "container:BBQ.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,23 +28,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8631AC8618CE55D400F45405"
-               BuildableName = "BBQTests.xctest"
-               BlueprintName = "BBQTests"
-               ReferencedContainer = "container:BBQ.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8631AC6218CE55D400F45405"
-            BuildableName = "BBQ.app"
-            BlueprintName = "BBQ"
+            BlueprintIdentifier = "8631AD3018D5F2E900F45405"
+            BuildableName = "BBQ copy.app"
+            BlueprintName = "BBQ-Berlin"
             ReferencedContainer = "container:BBQ.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,9 +51,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8631AC6218CE55D400F45405"
-            BuildableName = "BBQ.app"
-            BlueprintName = "BBQ"
+            BlueprintIdentifier = "8631AD3018D5F2E900F45405"
+            BuildableName = "BBQ-Berlin.app"
+            BlueprintName = "BBQ-Berlin"
             ReferencedContainer = "container:BBQ.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -79,9 +69,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8631AC6218CE55D400F45405"
-            BuildableName = "BBQ.app"
-            BlueprintName = "BBQ"
+            BlueprintIdentifier = "8631AD3018D5F2E900F45405"
+            BuildableName = "BBQ copy.app"
+            BlueprintName = "BBQ-Berlin"
             ReferencedContainer = "container:BBQ.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
