@@ -103,7 +103,6 @@
 		8631AC6618CE55D400F45405 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8631AC6818CE55D400F45405 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8631AC6A18CE55D400F45405 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		8631AC6E18CE55D400F45405 /* BBQ-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBQ-Info.plist"; sourceTree = "<group>"; };
 		8631AC7018CE55D400F45405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8631AC7218CE55D400F45405 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8631AC7418CE55D400F45405 /* BBQ-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBQ-Prefix.pch"; sourceTree = "<group>"; };
@@ -235,15 +234,14 @@
 		8631AC6C18CE55D400F45405 /* BBQ */ = {
 			isa = PBXGroup;
 			children = (
-				8631AD2B18D5C56D00F45405 /* Tracking */,
 				8631ACE218D495E900F45405 /* Appearance */,
-				8631AC7518CE55D400F45405 /* RAFAppDelegate.h */,
-				8631AC7618CE55D400F45405 /* RAFAppDelegate.m */,
+				8631AD6B18D5F6A800F45405 /* Delegate */,
+				8631ACB818D0EBC600F45405 /* Extensions */,
 				8631ACA418CE5E0C00F45405 /* Model */,
 				8631ACA318CE5DFF00F45405 /* Resources */,
-				8631ACA218CE5DEF00F45405 /* View Controllers */,
-				8631ACB818D0EBC600F45405 /* Extensions */,
 				8631AC6D18CE55D400F45405 /* Supporting Files */,
+				8631AD2B18D5C56D00F45405 /* Tracking */,
+				8631ACA218CE5DEF00F45405 /* View Controllers */,
 			);
 			path = BBQ;
 			sourceTree = "<group>";
@@ -251,7 +249,6 @@
 		8631AC6D18CE55D400F45405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8631AC6E18CE55D400F45405 /* BBQ-Info.plist */,
 				8631AC6F18CE55D400F45405 /* InfoPlist.strings */,
 				8631AC7218CE55D400F45405 /* main.m */,
 				8631AC7418CE55D400F45405 /* BBQ-Prefix.pch */,
@@ -280,12 +277,9 @@
 		8631ACA218CE5DEF00F45405 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8631AC7B18CE55D400F45405 /* RAFMapViewController.h */,
-				8631AC7C18CE55D400F45405 /* RAFMapViewController.m */,
-				8631AC7E18CE55D400F45405 /* RAFLocationsViewController.h */,
-				8631AC7F18CE55D400F45405 /* RAFLocationsViewController.m */,
-				8631ACB018CFD54500F45405 /* RAFDetailViewController.h */,
-				8631ACB118CFD54500F45405 /* RAFDetailViewController.m */,
+				8631AD6E18D5F6D300F45405 /* Details */,
+				8631AD6D18D5F6C000F45405 /* Places */,
+				8631AD6C18D5F6BA00F45405 /* Map */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -364,6 +358,42 @@
 				8631AD2D18D5C59200F45405 /* RAFTracking.m */,
 			);
 			name = Tracking;
+			sourceTree = "<group>";
+		};
+		8631AD6B18D5F6A800F45405 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC7518CE55D400F45405 /* RAFAppDelegate.h */,
+				8631AC7618CE55D400F45405 /* RAFAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		8631AD6C18D5F6BA00F45405 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC7B18CE55D400F45405 /* RAFMapViewController.h */,
+				8631AC7C18CE55D400F45405 /* RAFMapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		8631AD6D18D5F6C000F45405 /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				8631AC7E18CE55D400F45405 /* RAFLocationsViewController.h */,
+				8631AC7F18CE55D400F45405 /* RAFLocationsViewController.m */,
+			);
+			name = Places;
+			sourceTree = "<group>";
+		};
+		8631AD6E18D5F6D300F45405 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8631ACB018CFD54500F45405 /* RAFDetailViewController.h */,
+				8631ACB118CFD54500F45405 /* RAFDetailViewController.m */,
+			);
+			name = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
