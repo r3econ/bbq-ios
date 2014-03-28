@@ -4,25 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BBQ.xcscheme</key>
+		<key>Pods-GoogleAnalytics-iOS-SDK.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8631AC6218CE55D400F45405</key>
+		<key>044D86E1382442BA89ACF4A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8631AC8618CE55D400F45405</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8631AD3018D5F2E900F45405</key>
+		<key>A34FAD3E1696433298CD45FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

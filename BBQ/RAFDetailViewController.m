@@ -101,17 +101,12 @@
 
 - (NSAttributedString *)placeDescriptionString
 {
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.alignment = NSTextAlignmentJustified;
-    
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:_placemark.placeDescription];
     
     [string addAttributes:@
      {
          NSForegroundColorAttributeName : [RAFAppearance defaultTextColor],
          NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
-     NSParagraphStyleAttributeName: paragraphStyle,
-     NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
      }
                     range:NSMakeRange(0, [string length])];
     
@@ -122,9 +117,6 @@
 
 - (NSAttributedString *)activitiesString
 {
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.alignment = NSTextAlignmentJustified;
-    
     NSMutableAttributedString *string = nil;
     
     if (_placemark.activities)
@@ -135,8 +127,6 @@
          {
              NSForegroundColorAttributeName : [RAFAppearance secondaryTextColor],
              NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
-         NSParagraphStyleAttributeName: paragraphStyle,
-         NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
          }
                         range:NSMakeRange(0, [string length])];
     }
@@ -147,9 +137,6 @@
 
 - (NSAttributedString *)publicTransportationString
 {
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.alignment = NSTextAlignmentJustified;
-    
     NSMutableAttributedString *string = nil;
     
     if (_placemark.publicTransportation)
@@ -159,9 +146,7 @@
         [string addAttributes:@
          {
              NSForegroundColorAttributeName : [RAFAppearance secondaryTextColor],
-             NSFontAttributeName : [RAFAppearance defaultFontOfSize:11.0f],
-         NSParagraphStyleAttributeName: paragraphStyle,
-         NSBaselineOffsetAttributeName: [NSNumber numberWithFloat:0]
+             NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
          }
                         range:NSMakeRange(0, [string length])];
     }

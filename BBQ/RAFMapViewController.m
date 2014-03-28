@@ -155,7 +155,7 @@
             annotationView.canShowCallout = YES;
             annotationView.image = [[UIImage imageNamed:@"pin"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            annotationView.tintColor = [RAFAppearance defaultTextColor];
+            annotationView.rightCalloutAccessoryView.tintColor = [UIColor blackColor];
         }
         
         annotationView.annotation = annotation;
