@@ -1,4 +1,5 @@
 #import "RAFAppDelegate.h"
+#import <Crashlytics/Crashlytics.h>
 
 
 @implementation RAFAppDelegate
@@ -65,6 +66,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Crashlytics startWithAPIKey:@"29651bdbc5510c78f478b06620ec0015abfd1074"];
+    
     [RAFAppearance configureAppearance];
 
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;

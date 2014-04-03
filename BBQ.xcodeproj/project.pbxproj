@@ -100,6 +100,8 @@
 		86EDBAB318D60C2200DF56D2 /* RAFLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */; };
 		86EDBAC418D64B4700DF56D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86EDBAC318D64B4700DF56D2 /* Settings.bundle */; };
 		86EDBAC518D64B4700DF56D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86EDBAC318D64B4700DF56D2 /* Settings.bundle */; };
+		B582DC5D18EDED94002B8A0C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B582DC5C18EDED94002B8A0C /* Crashlytics.framework */; };
+		B582DC5E18EDED94002B8A0C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B582DC5C18EDED94002B8A0C /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +177,7 @@
 		86EDBAB018D60C2200DF56D2 /* RAFLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFLocationManager.h; sourceTree = "<group>"; };
 		86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFLocationManager.m; sourceTree = "<group>"; };
 		86EDBAC318D64B4700DF56D2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B582DC5C18EDED94002B8A0C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */,
+				B582DC5D18EDED94002B8A0C /* Crashlytics.framework in Frameworks */,
 				8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */,
 				8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */,
 				0AA27D2A99164257B45881BF /* libPods.a in Frameworks */,
@@ -199,6 +203,7 @@
 				8631AD4218D5F2E900F45405 /* UIKit.framework in Frameworks */,
 				8631AD4318D5F2E900F45405 /* Foundation.framework in Frameworks */,
 				8631AD4418D5F2E900F45405 /* libPods.a in Frameworks */,
+				B582DC5E18EDED94002B8A0C /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +234,7 @@
 		8631AC6518CE55D400F45405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B582DC5C18EDED94002B8A0C /* Crashlytics.framework */,
 				8631ACA018CE5CF200F45405 /* CoreData.framework */,
 				8631AC9E18CE5A6700F45405 /* MapKit.framework */,
 				8631AC6618CE55D400F45405 /* Foundation.framework */,
@@ -447,6 +453,7 @@
 				8631AD3E18D5F2E900F45405 /* Frameworks */,
 				8631AD4518D5F2E900F45405 /* Resources */,
 				8631AD6518D5F2E900F45405 /* Copy Pods Resources */,
+				B582DC5B18EDED51002B8A0C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -632,6 +639,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B582DC5B18EDED51002B8A0C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 29651bdbc5510c78f478b06620ec0015abfd1074 916c44e8b81bbd9096a39f88991a24f636600bb3eccdf87fe29f858bcaa7825b";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -793,6 +813,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
@@ -817,6 +838,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
@@ -833,6 +855,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -851,6 +877,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
