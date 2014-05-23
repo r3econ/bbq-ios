@@ -43,8 +43,6 @@
 		8631AD1A18D4EDEC00F45405 /* bus_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1018D4EDEC00F45405 /* bus_icon@2x.png */; };
 		8631AD1C18D4EDEC00F45405 /* runner_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1118D4EDEC00F45405 /* runner_icon@2x.png */; };
 		8631AD1E18D4EDEC00F45405 /* bus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1218D4EDEC00F45405 /* bus_icon.png */; };
-		8631AD2118D4F85400F45405 /* share_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1F18D4F85400F45405 /* share_icon@2x.png */; };
-		8631AD2418D4F8F500F45405 /* share_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD2218D4F8F500F45405 /* share_icon.png */; };
 		8631AD2818D4F99800F45405 /* collapse_arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD2518D4F99800F45405 /* collapse_arrows.png */; };
 		8631AD2A18D4F99800F45405 /* expand_arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD2618D4F99800F45405 /* expand_arrows.png */; };
 		8631AD2F18D5C59200F45405 /* RAFTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AD2D18D5C59200F45405 /* RAFTracking.m */; };
@@ -80,7 +78,6 @@
 		8631AD5218D5F2E900F45405 /* user_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACDF18D1161000F45405 /* user_location@2x.png */; };
 		8631AD5318D5F2E900F45405 /* chevron_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACE718D49C8700F45405 /* chevron_right.png */; };
 		8631AD5418D5F2E900F45405 /* map_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACC718D112F700F45405 /* map_selected.png */; };
-		8631AD5518D5F2E900F45405 /* share_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD2218D4F8F500F45405 /* share_icon.png */; };
 		8631AD5618D5F2E900F45405 /* chevron_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACE818D49C8700F45405 /* chevron_right@2x.png */; };
 		8631AD5718D5F2E900F45405 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACBF18D0FC3900F45405 /* Localizable.strings */; };
 		8631AD5818D5F2E900F45405 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC8118CE55D400F45405 /* Images.xcassets */; };
@@ -91,7 +88,6 @@
 		8631AD5D18D5F2E900F45405 /* collapse_arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD2518D4F99800F45405 /* collapse_arrows.png */; };
 		8631AD5E18D5F2E900F45405 /* grill_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACED18D4C8A700F45405 /* grill_unselected.png */; };
 		8631AD5F18D5F2E900F45405 /* grill_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACD618D113BB00F45405 /* grill_selected@2x.png */; };
-		8631AD6018D5F2E900F45405 /* share_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1F18D4F85400F45405 /* share_icon@2x.png */; };
 		8631AD6118D5F2E900F45405 /* bus_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1018D4EDEC00F45405 /* bus_icon@2x.png */; };
 		8631AD6218D5F2E900F45405 /* bus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1218D4EDEC00F45405 /* bus_icon.png */; };
 		8631AD6318D5F2E900F45405 /* map_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACEF18D4C8A700F45405 /* map_unselected.png */; };
@@ -100,8 +96,6 @@
 		86EDBAB318D60C2200DF56D2 /* RAFLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */; };
 		86EDBAC418D64B4700DF56D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86EDBAC318D64B4700DF56D2 /* Settings.bundle */; };
 		86EDBAC518D64B4700DF56D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86EDBAC318D64B4700DF56D2 /* Settings.bundle */; };
-		B582DC5D18EDED94002B8A0C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B582DC5C18EDED94002B8A0C /* Crashlytics.framework */; };
-		B582DC5E18EDED94002B8A0C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B582DC5C18EDED94002B8A0C /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,8 +160,6 @@
 		8631AD1018D4EDEC00F45405 /* bus_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bus_icon@2x.png"; sourceTree = "<group>"; };
 		8631AD1118D4EDEC00F45405 /* runner_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "runner_icon@2x.png"; sourceTree = "<group>"; };
 		8631AD1218D4EDEC00F45405 /* bus_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus_icon.png; sourceTree = "<group>"; };
-		8631AD1F18D4F85400F45405 /* share_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_icon@2x.png"; sourceTree = "<group>"; };
-		8631AD2218D4F8F500F45405 /* share_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_icon.png; sourceTree = "<group>"; };
 		8631AD2518D4F99800F45405 /* collapse_arrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collapse_arrows.png; sourceTree = "<group>"; };
 		8631AD2618D4F99800F45405 /* expand_arrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expand_arrows.png; sourceTree = "<group>"; };
 		8631AD2C18D5C59200F45405 /* RAFTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTracking.h; sourceTree = "<group>"; };
@@ -177,7 +169,6 @@
 		86EDBAB018D60C2200DF56D2 /* RAFLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFLocationManager.h; sourceTree = "<group>"; };
 		86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFLocationManager.m; sourceTree = "<group>"; };
 		86EDBAC318D64B4700DF56D2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		B582DC5C18EDED94002B8A0C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +177,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */,
-				B582DC5D18EDED94002B8A0C /* Crashlytics.framework in Frameworks */,
 				8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */,
 				8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */,
 				0AA27D2A99164257B45881BF /* libPods.a in Frameworks */,
@@ -203,7 +193,6 @@
 				8631AD4218D5F2E900F45405 /* UIKit.framework in Frameworks */,
 				8631AD4318D5F2E900F45405 /* Foundation.framework in Frameworks */,
 				8631AD4418D5F2E900F45405 /* libPods.a in Frameworks */,
-				B582DC5E18EDED94002B8A0C /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +223,6 @@
 		8631AC6518CE55D400F45405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B582DC5C18EDED94002B8A0C /* Crashlytics.framework */,
 				8631ACA018CE5CF200F45405 /* CoreData.framework */,
 				8631AC9E18CE5A6700F45405 /* MapKit.framework */,
 				8631AC6618CE55D400F45405 /* Foundation.framework */,
@@ -326,8 +314,6 @@
 				8631ACD918D1155100F45405 /* pin@2x.png */,
 				8631AD0F18D4EDEC00F45405 /* runner_icon.png */,
 				8631AD1118D4EDEC00F45405 /* runner_icon@2x.png */,
-				8631AD2218D4F8F500F45405 /* share_icon.png */,
-				8631AD1F18D4F85400F45405 /* share_icon@2x.png */,
 				8631ACCA18D112F700F45405 /* user_location.png */,
 				8631ACDF18D1161000F45405 /* user_location@2x.png */,
 				8631AC8118CE55D400F45405 /* Images.xcassets */,
@@ -453,7 +439,6 @@
 				8631AD3E18D5F2E900F45405 /* Frameworks */,
 				8631AD4518D5F2E900F45405 /* Resources */,
 				8631AD6518D5F2E900F45405 /* Copy Pods Resources */,
-				B582DC5B18EDED51002B8A0C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -505,7 +490,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8631AD0618D4D6E400F45405 /* expand_arrows@2x.png in Resources */,
-				8631AD2118D4F85400F45405 /* share_icon@2x.png in Resources */,
 				8631AD1A18D4EDEC00F45405 /* bus_icon@2x.png in Resources */,
 				8631ACF818D4C8A700F45405 /* map_unselected@2x.png in Resources */,
 				8631ACCC18D112F700F45405 /* map_selected.png in Resources */,
@@ -517,7 +501,6 @@
 				8631AC9318CE55D400F45405 /* InfoPlist.strings in Resources */,
 				8631AD1C18D4EDEC00F45405 /* runner_icon@2x.png in Resources */,
 				8631ACDB18D1155100F45405 /* pin@2x.png in Resources */,
-				8631AD2418D4F8F500F45405 /* share_icon.png in Resources */,
 				8631AD2818D4F99800F45405 /* collapse_arrows.png in Resources */,
 				8631AD1E18D4EDEC00F45405 /* bus_icon.png in Resources */,
 				8631ACD818D113BB00F45405 /* grill_selected@2x.png in Resources */,
@@ -557,7 +540,6 @@
 				8631AD5218D5F2E900F45405 /* user_location@2x.png in Resources */,
 				8631AD5318D5F2E900F45405 /* chevron_right.png in Resources */,
 				8631AD5418D5F2E900F45405 /* map_selected.png in Resources */,
-				8631AD5518D5F2E900F45405 /* share_icon.png in Resources */,
 				8631AD5618D5F2E900F45405 /* chevron_right@2x.png in Resources */,
 				8631AD5718D5F2E900F45405 /* Localizable.strings in Resources */,
 				8631AD5818D5F2E900F45405 /* Images.xcassets in Resources */,
@@ -568,7 +550,6 @@
 				8631AD5D18D5F2E900F45405 /* collapse_arrows.png in Resources */,
 				8631AD5E18D5F2E900F45405 /* grill_unselected.png in Resources */,
 				8631AD5F18D5F2E900F45405 /* grill_selected@2x.png in Resources */,
-				8631AD6018D5F2E900F45405 /* share_icon@2x.png in Resources */,
 				8631AD6118D5F2E900F45405 /* bus_icon@2x.png in Resources */,
 				8631AD6218D5F2E900F45405 /* bus_icon.png in Resources */,
 				8631AD6318D5F2E900F45405 /* map_unselected.png in Resources */,
@@ -638,19 +619,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		B582DC5B18EDED51002B8A0C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 29651bdbc5510c78f478b06620ec0015abfd1074 916c44e8b81bbd9096a39f88991a24f636600bb3eccdf87fe29f858bcaa7825b";
 		};
 /* End PBXShellScriptBuildPhase section */
 

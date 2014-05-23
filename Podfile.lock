@@ -1,10 +1,13 @@
 PODS:
+  - CrashlyticsFramework (2.1.9)
   - GoogleAnalytics-iOS-SDK (3.0.3)
 
 DEPENDENCIES:
-  - GoogleAnalytics-iOS-SDK (~> 3.0.3)
+  - CrashlyticsFramework (~> 2.1)
+  - GoogleAnalytics-iOS-SDK (~> 3.0)
 
 SPEC CHECKSUMS:
-  GoogleAnalytics-iOS-SDK: 7b0e55cfe5e70d60478a7b105f15ac71e8bc373e
+  CrashlyticsFramework: 627558b48c087a040c32a32590e95ea19f11aace
+  GoogleAnalytics-iOS-SDK: ee5322bf919d731d34ff3c8d891301e8f1e0e873
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.33.1
