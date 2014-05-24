@@ -462,6 +462,9 @@
 					8631AC8618CE55D400F45405 = {
 						TestTargetID = 8631AC6218CE55D400F45405;
 					};
+					8631AD3018D5F2E900F45405 = {
+						DevelopmentTeam = EJCJ4S2GTE;
+					};
 				};
 			};
 			buildConfigurationList = 8631AC5E18CE55D400F45405 /* Build configuration list for PBXProject "BBQ" */;
@@ -823,6 +826,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -845,6 +849,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
