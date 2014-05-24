@@ -61,6 +61,13 @@
 }
 
 
+- (void)resetFirstLaunch
+{
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"HasLaunchedOnce"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 #pragma mark - UIApplicationDelegate
 
 
@@ -198,6 +205,8 @@
                  if (![self.managedObjectContext save:&error])
                  {
                      NSLog(@"Couldn't save: %@", [error localizedDescription]);
+                     
+                     [self resetFirstLaunch];
                  }
              }];
         }
@@ -206,6 +215,8 @@
     {
         /*Error for store creation should be handled in here*/
         NSLog(@"Error %@", error.localizedDescription);
+        
+        [self resetFirstLaunch];
     }
 }
 
