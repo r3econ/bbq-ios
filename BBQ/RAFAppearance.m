@@ -3,20 +3,19 @@
 /**
  Colors
  */
-#define kDefaultViewColor @"59023B"
-#define kDefaultTextColor @"E7F2DF"
+#define kDefaultViewColor @"5EB1BF"
+#define kDefaultTextColor @"FBFEF9"
 
-#define kSecondaryViewColor @"161726"
-#define kSecondaryTextColor @"E7F2DF"
+#define kSecondaryViewColor @"042A2B"
+#define kSecondaryTextColor @"FBFEF9"
 
-#define kAccessoryViewColor @"231E2D"
-#define kAccessoryTextColor @"E7F2DF"
+#define kAccessoryViewColor @"FBF3BE"
+#define kAccessoryTextColor @"042A2B"
 
-#define kCellBackgroundColor @"E7F2DF"
-#define kCellTextColor @"161726"
+#define kCellBackgroundColor @"FBFEF9"
+#define kCellTextColor @"042A2B"
 
-#define kDefaultTintColor @"E7F2DF"
-
+#define kDefaultTintColor @"FBFEF9"
 
 /**
  Fonts
