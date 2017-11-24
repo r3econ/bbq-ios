@@ -11,24 +11,21 @@
 @implementation RAFTracking
 
 
-+ (id)sharedInstance
-{
++ (id)sharedInstance {
     static dispatch_once_t once;
     static RAFTracking *sharedInstance;
     
-    dispatch_once(&once, ^
-                  {
+    dispatch_once(&once, ^{
                       sharedInstance = [[self alloc] init];
                       
-                      [sharedInstance configureGA];
+                      [sharedInstance configureTracker];
                   });
     
     return sharedInstance;
 }
 
 
-- (void)configureGA
-{
+- (void)configureTracker {
     [[GAI sharedInstance] trackerWithTrackingId:kGATrackingID];
     
 #ifdef DEBUG

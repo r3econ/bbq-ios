@@ -18,19 +18,15 @@
 #define kDefaultTintColor @"E7F2DF"
 
 
-
 /**
  Fonts
  */
 #define kDefaultFont @"Avenir-Light"
 #define kBoldFont @"Avenir-Medium"
 
-
 @implementation RAFAppearance
 
-
-+ (void)configureAppearance
-{    
++ (void)configureAppearance {
     [UIView appearance].tintColor = [UIColor colorWithHexString:kDefaultTintColor];
     
     /**
@@ -39,31 +35,26 @@
     [UINavigationBar appearance].barTintColor = [RAFAppearance defaultViewColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     
-    [UINavigationBar appearance].titleTextAttributes = @
-    {
-    NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
-    NSFontAttributeName: [RAFAppearance boldFontOfSize:16.0f]
-    };
+    [UINavigationBar appearance].titleTextAttributes = @{
+                                                         NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
+                                                         NSFontAttributeName: [RAFAppearance boldFontOfSize:16.0f]
+                                                         };
     
     /**
      UITabBar appearance
      */
     [UITabBar appearance].barTintColor = [RAFAppearance secondaryViewColor];
-
-    [[UITabBarItem appearance] setTitleTextAttributes:@
-     {
-     NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
-     NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
-     }
-     
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                        NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
+                                                        NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
+                                                        }
                                              forState:UIControlStateSelected];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@
-     {
-     NSForegroundColorAttributeName:[UIColor lightGrayColor],
-     NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
-     }
-     
+    [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                        NSForegroundColorAttributeName:[UIColor lightGrayColor],
+                                                        NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
+                                                        }
                                              forState:UIControlStateNormal];
     
     [UITableViewCell appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
@@ -72,70 +63,49 @@
     [UITableView appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
 }
 
-
-+ (UIStatusBarStyle)preferredStatusBarStyle
-{
++ (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
-
-+ (UIColor *)accessoryViewColor
-{
++ (UIColor *)accessoryViewColor {
     return [UIColor colorWithHexString:kAccessoryViewColor];
 }
 
-
-+ (UIColor *)defaultViewColor
-{
++ (UIColor *)defaultViewColor {
     return [UIColor colorWithHexString:kDefaultViewColor];
 }
 
-
-+ (UIColor *)secondaryViewColor
-{
++ (UIColor *)secondaryViewColor {
     return [UIColor colorWithHexString:kSecondaryViewColor];
 }
 
-
-+ (UIColor *)defaultTextColor
-{
++ (UIColor *)defaultTextColor {
     return [UIColor colorWithHexString:kDefaultTextColor];
 }
 
-
-+ (UIColor *)secondaryTextColor
-{
++ (UIColor *)secondaryTextColor {
     return [UIColor colorWithHexString:kSecondaryTextColor];
 }
 
-
-+ (UIColor *)accessoryTextColor;
-{
++ (UIColor *)accessoryTextColor {
     return [UIColor colorWithHexString:kAccessoryTextColor];
 }
 
-+ (UIFont *)defaultFontOfSize:(CGFloat)pointSize
-{
++ (UIFont *)defaultFontOfSize:(CGFloat)pointSize {
     return [UIFont fontWithName:kDefaultFont size:pointSize];
 }
 
-
-+ (UIFont *)boldFontOfSize:(CGFloat)pointSize
-{
++ (UIFont *)boldFontOfSize:(CGFloat)pointSize {
     return [UIFont fontWithName:kBoldFont size:pointSize];
 }
 
-
-+ (UIColor *)cellBackgroundColor
-{
++ (UIColor *)cellBackgroundColor {
     return [UIColor colorWithHexString:kCellBackgroundColor];
 }
 
-
-+ (UIColor *)cellTextColor
-{
++ (UIColor *)cellTextColor {
     return [UIColor colorWithHexString:kCellTextColor];
 }
 
-
 @end
+

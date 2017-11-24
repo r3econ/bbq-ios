@@ -1,7 +1,5 @@
-
 #import "RAFMapViewController.h"
 #import "RAFDetailViewController.h"
-
 
 @interface RAFMapViewController () <MKMapViewDelegate>
 @property(nonatomic, weak) IBOutlet MKMapView *mapView;
@@ -11,15 +9,11 @@
 @property(nonatomic, assign) BOOL shouldZoomToUserLocation;
 @end
 
-
 @implementation RAFMapViewController
-
 
 #pragma mark - Lifecycle
 
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = NSLocalizedString(@"map_view_title", nil);
@@ -33,25 +27,20 @@
     _showUserLocationButton.tintColor = [RAFAppearance secondaryViewColor];
 }
 
-
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [[RAFTracking sharedInstance] trackPageView:@"MapView"];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
 
-- (void)viewDidDisappear:(BOOL)animated
-{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-
-- (void)configureAnnotations
-{
-    if ([[RAFLocationManager sharedInstance] locationServicesAllowed])
-    {
+- (void)configureAnnotations {
+    if ([[RAFLocationManager sharedInstance] locationServicesAllowed]) {
         _mapView.showsUserLocation = YES;
     }
     
@@ -60,32 +49,24 @@
     [_mapView showAnnotations:_mapView.annotations animated:YES];
 }
 
-
-- (void)zoomToUserLocationOnFirstUpdate
-{
-    if (_shouldZoomToUserLocation)
-    {
+- (void)zoomToUserLocationOnFirstUpdate {
+    if (_shouldZoomToUserLocation) {
         _shouldZoomToUserLocation = NO;
         
-        if (_mapView.userLocation)
-        {
+        if (_mapView.userLocation) {
             [_mapView showAnnotations:@[_mapView.userLocation] animated:YES];
         }
     }
 }
 
-
 #pragma mark - NSFetchedResultsController
-
 
 /*
  Returns the fetched results controller.
  Creates and configures the controller if necessary.
  */
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil)
-    {
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     
@@ -112,21 +93,15 @@
     return _fetchedResultsController;
 }
 
-
 #pragma mark - Actions
 
-
-
-- (IBAction)centerAtUserLocationButtonTapped:(id)sender
-{
+- (IBAction)centerAtUserLocationButtonTapped:(id)sender {
     _mapView.showsUserLocation = YES;
     
-    if ([RAFLocationManager sharedInstance].currentLocation)
-    {
+    if ([RAFLocationManager sharedInstance].currentLocation) {
         [_mapView showAnnotations:@[_mapView.userLocation] animated:YES];
     }
-    else
-    {
+    else {
         _shouldZoomToUserLocation = YES;
 
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -136,21 +111,15 @@
         
         [[RAFLocationManager sharedInstance] startLocating];
     }
-    
 }
-
 
 #pragma mark - MKMapViewDelegate
 
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation
-{
-    if ([annotation isKindOfClass:[Placemark class]])
-    {
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation {
+    if ([annotation isKindOfClass:[Placemark class]]) {
         MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
         
-        if (!annotationView)
-        {
+        if (!annotationView) {
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
             annotationView.canShowCallout = YES;
             annotationView.image = [[UIImage imageNamed:@"pin"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -166,9 +135,7 @@
     return nil;
 }
 
-
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     Placemark *placemark = (Placemark *)view.annotation;
     
     RAFDetailViewController *vc = [RAFDetailViewController controllerWithPlacemark:placemark];
@@ -178,14 +145,10 @@
                                          animated:YES];
 }
 
-
 #pragma mark - Appearance
 
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return [RAFAppearance preferredStatusBarStyle];
 }
-
 
 @end

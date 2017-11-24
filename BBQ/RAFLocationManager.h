@@ -7,9 +7,7 @@
 - (void)endLocating;
 - (BOOL)locationServicesAllowed;
 
-
 @end
-
 
 extern NSString * const RAFLocationDidChangeNotification;
 extern NSString * const RAFNewLocationKey;

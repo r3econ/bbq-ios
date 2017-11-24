@@ -1,19 +1,16 @@
 #import "RAFUtilities.h"
 
 
-NSString* GetDocumentsDirectory(void)
-{
+NSString* GetDocumentsDirectory(void) {
 	return [NSHomeDirectory() stringByAppendingPathComponent: @"Documents"];
 }
 
 
 #ifdef DEBUG
-UIImage* LoadImageNamed(NSString* name)
-{
+UIImage* LoadImageNamed(NSString* name) {
     UIImage* result = [UIImage imageNamed: name];
     
-    if (result == nil)
-    {
+    if (result == nil) {
         [NSException raise: @"CantFindImage" format: @"Can't find image: %@", name];
     }
     
@@ -25,12 +22,9 @@ UIImage* LoadImageNamed(NSString* name)
 /**
  In DEBUG mode this method throws an exception when the cast is invalid.
  */
-id Cast(id source, Class cl)
-{
-	if (source != nil)
-	{
-		if (![source isKindOfClass: cl])
-		{
+id Cast(id source, Class cl) {
+	if (source != nil) {
+		if (![source isKindOfClass: cl]) {
             NSLog(@"%@", [NSString stringWithFormat: @"The cast is invalid (%@ to %@)", [source class], cl]);
             
 			@throw [NSException exceptionWithName:@"CastException"
@@ -46,12 +40,9 @@ id Cast(id source, Class cl)
 /**
  This method returns nil when the cast is invalid.
  */
-id TryCast(id source, Class cl)
-{
-	if (source != nil)
-	{
-		if ([source isKindOfClass: cl])
-		{
+id TryCast(id source, Class cl) {
+	if (source != nil) {
+		if ([source isKindOfClass: cl]) {
 			return source;
 		}
 	}

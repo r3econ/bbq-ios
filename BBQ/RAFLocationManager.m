@@ -1,7 +1,6 @@
 #import "RAFLocationManager.h"
 #import <CoreLocation/CoreLocation.h>
 
-
 NSString * const RAFLocationDidChangeNotification = @"RAFLocationDidChangeNotification";
 NSString * const RAFNewLocationKey = @"RAFNewLocationKey";
 NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
@@ -17,12 +16,9 @@ NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
 
 @implementation RAFLocationManager
 
-
 #pragma mark - Lifecycle
 
-
-+ (instancetype)sharedInstance;
-{
++ (instancetype)sharedInstance; {
     static dispatch_once_t once;
     static RAFLocationManager *sharedInstance;
     
@@ -36,22 +32,15 @@ NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
     return sharedInstance;
 }
 
-
-- (void)configure
-{
-    
+- (void)configure {
+    // Do nothing
 }
-
 
 #pragma mark - Helper methods
 
-
-- (void)startLocating
-{
-    if ([self isLocationManagerAvailable])
-    {
-        if (!_locationManager)
-        {
+- (void)startLocating {
+    if ([self isLocationManagerAvailable]) {
+        if (!_locationManager) {
             _locationManager = [[CLLocationManager alloc] init];
             
             _locationManager.delegate = self;
@@ -61,8 +50,7 @@ NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
         
         [_locationManager startUpdatingLocation];
     }
-    else
-    {
+    else {
         [[[UIAlertView alloc] initWithTitle:nil
                                     message:NSLocalizedString(@"info_location_mode", nil)
                                    delegate:nil
@@ -71,67 +59,52 @@ NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
     }
 }
 
-
-- (void)endLocating
-{
+- (void)endLocating {
     [_locationManager stopUpdatingLocation];
 }
 
-
-- (BOOL)isLocationManagerAvailable
-{
-    switch ([CLLocationManager authorizationStatus])
-    {
+- (BOOL)isLocationManagerAvailable {
+    switch ([CLLocationManager authorizationStatus]) {
         case kCLAuthorizationStatusRestricted:
         case kCLAuthorizationStatusDenied:
             return NO;
             
-        case kCLAuthorizationStatusAuthorized:
+        case kCLAuthorizationStatusAuthorizedAlways:
         default:
             return YES;
     }
 }
 
-
-- (BOOL)locationServicesAllowed
-{
-    return [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized;
+- (BOOL)locationServicesAllowed {
+    return [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways;
 }
-
 
 #pragma mark - CLLLocationManageDelegate
 
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
-{
+           fromLocation:(CLLocation *)oldLocation {
     _currentLocation = newLocation;
     
     NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
 
-    if (newLocation)
-    {
+    if (newLocation) {
         userInfo[RAFNewLocationKey] = newLocation;
     }
     
-    if (oldLocation)
-    {
+    if (oldLocation) {
         userInfo[RAFOldLocationKey] = oldLocation;
     }
     
-    dispatch_async(dispatch_get_main_queue(),^
-    {
+    dispatch_async(dispatch_get_main_queue(),^ {
         [[NSNotificationCenter defaultCenter] postNotificationName:RAFLocationDidChangeNotification
                                                             object:userInfo];
     });
 }
 
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"Error: %@", error);
 }
-
 
 @end

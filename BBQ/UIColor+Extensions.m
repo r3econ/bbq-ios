@@ -7,8 +7,7 @@
 /**
  Creates a UIColor from a hex string.
  */
-+ (UIColor *)colorWithHexString:(NSString *)hexString
-{
++ (UIColor *)colorWithHexString:(NSString *)hexString {
     unsigned rgbValue = 0;
     
     // Remove potential "#" character.
@@ -31,8 +30,7 @@
 /**
  Creates a UIColor from a hex string.
  */
-+ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
-{
++ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha {
     unsigned rgbValue = 0;
     
     // Remove potential "#" character.

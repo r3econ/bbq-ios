@@ -12,18 +12,15 @@
 @dynamic activities;
 
 
-- (NSString *)title
-{
+- (NSString *)title {
     return self.name;
 }
 
-- (NSString *)subtitle
-{
+- (NSString *)subtitle {
     return self.district;
 }
 
-- (CLLocationCoordinate2D)coordinate
-{
+- (CLLocationCoordinate2D)coordinate {
     CLLocationCoordinate2D coord;
     coord.latitude = [self.latitude doubleValue];
     coord.longitude = [self.longitude doubleValue];
