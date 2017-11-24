@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0AA27D2A99164257B45881BF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20323A5C852346CBB6BF64FB /* libPods.a */; };
 		8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC8818CE55D400F45405 /* XCTest.framework */; };
 		8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6618CE55D400F45405 /* Foundation.framework */; };
 		8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6A18CE55D400F45405 /* UIKit.framework */; };
@@ -62,7 +61,6 @@
 		8631AD4118D5F2E900F45405 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6818CE55D400F45405 /* CoreGraphics.framework */; };
 		8631AD4218D5F2E900F45405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6A18CE55D400F45405 /* UIKit.framework */; };
 		8631AD4318D5F2E900F45405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6618CE55D400F45405 /* Foundation.framework */; };
-		8631AD4418D5F2E900F45405 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20323A5C852346CBB6BF64FB /* libPods.a */; };
 		8631AD4618D5F2E900F45405 /* collapse_arrows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD0218D4D6E400F45405 /* collapse_arrows@2x.png */; };
 		8631AD4718D5F2E900F45405 /* runner_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1118D4EDEC00F45405 /* runner_icon@2x.png */; };
 		8631AD4818D5F2E900F45405 /* info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD0E18D4EDEC00F45405 /* info_icon@2x.png */; };
@@ -99,8 +97,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20323A5C852346CBB6BF64FB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		594CE9ED514044DA9FFAFE00 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8631AC6618CE55D400F45405 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8631AC6818CE55D400F45405 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8631AC6A18CE55D400F45405 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -165,7 +161,6 @@
 		8631AD2C18D5C59200F45405 /* RAFTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTracking.h; sourceTree = "<group>"; };
 		8631AD2D18D5C59200F45405 /* RAFTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTracking.m; sourceTree = "<group>"; };
 		8631AD6918D5F2E900F45405 /* BBQ-Berlin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBQ-Berlin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8631AD6A18D5F2E900F45405 /* BBQ-Berlin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BBQ-Berlin-Info.plist"; path = "/Users/r3n/Documents/Projects/BBQ/BBQ-Berlin-Info.plist"; sourceTree = "<absolute>"; };
 		86EDBAB018D60C2200DF56D2 /* RAFLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFLocationManager.h; sourceTree = "<group>"; };
 		86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFLocationManager.m; sourceTree = "<group>"; };
 		86EDBAC318D64B4700DF56D2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -179,7 +174,6 @@
 				8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */,
 				8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */,
 				8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */,
-				0AA27D2A99164257B45881BF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +186,6 @@
 				8631AD4118D5F2E900F45405 /* CoreGraphics.framework in Frameworks */,
 				8631AD4218D5F2E900F45405 /* UIKit.framework in Frameworks */,
 				8631AD4318D5F2E900F45405 /* Foundation.framework in Frameworks */,
-				8631AD4418D5F2E900F45405 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +199,6 @@
 				8631AC8E18CE55D400F45405 /* BBQTests */,
 				8631AC6518CE55D400F45405 /* Frameworks */,
 				8631AC6418CE55D400F45405 /* Products */,
-				594CE9ED514044DA9FFAFE00 /* Pods.xcconfig */,
-				8631AD6A18D5F2E900F45405 /* BBQ-Berlin-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,7 +220,6 @@
 				8631AC6818CE55D400F45405 /* CoreGraphics.framework */,
 				8631AC6A18CE55D400F45405 /* UIKit.framework */,
 				8631AC8818CE55D400F45405 /* XCTest.framework */,
-				20323A5C852346CBB6BF64FB /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -415,11 +405,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8631AC9B18CE55D400F45405 /* Build configuration list for PBXNativeTarget "BBQTests" */;
 			buildPhases = (
-				6A9997360496475196036A25 /* Check Pods Manifest.lock */,
 				8631AC8318CE55D400F45405 /* Sources */,
 				8631AC8418CE55D400F45405 /* Frameworks */,
 				8631AC8518CE55D400F45405 /* Resources */,
-				2505FC09B8244DC792D0EA86 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -434,11 +422,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8631AD6618D5F2E900F45405 /* Build configuration list for PBXNativeTarget "BBQ-Berlin" */;
 			buildPhases = (
-				8631AD3118D5F2E900F45405 /* Check Pods Manifest.lock */,
 				8631AD3218D5F2E900F45405 /* Sources */,
 				8631AD3E18D5F2E900F45405 /* Frameworks */,
 				8631AD4518D5F2E900F45405 /* Resources */,
-				8631AD6518D5F2E900F45405 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -561,69 +547,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2505FC09B8244DC792D0EA86 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A9997360496475196036A25 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8631AD3118D5F2E900F45405 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8631AD6518D5F2E900F45405 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8631AC8318CE55D400F45405 /* Sources */ = {
@@ -799,7 +722,6 @@
 		};
 		8631AC9C18CE55D400F45405 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 594CE9ED514044DA9FFAFE00 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BBQ.app/BBQ";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -824,7 +746,6 @@
 		};
 		8631AC9D18CE55D400F45405 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 594CE9ED514044DA9FFAFE00 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BBQ.app/BBQ";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -845,7 +766,6 @@
 		};
 		8631AD6718D5F2E900F45405 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 594CE9ED514044DA9FFAFE00 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -869,7 +789,6 @@
 		};
 		8631AD6818D5F2E900F45405 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 594CE9ED514044DA9FFAFE00 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

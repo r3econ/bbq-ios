@@ -51,6 +51,7 @@ NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
         [_locationManager startUpdatingLocation];
     }
     else {
+        // TODO: Move the UI logic elsewhere
         [[[UIAlertView alloc] initWithTitle:nil
                                     message:NSLocalizedString(@"info_location_mode", nil)
                                    delegate:nil

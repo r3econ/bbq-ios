@@ -49,7 +49,6 @@
     [super viewDidAppear:animated];
     
     [[RAFTracking sharedInstance] trackPageView:@"PlaceDetailsView"];
-    [[RAFTracking sharedInstance] viewPlacemarkDetails:_placemark];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -520,15 +519,7 @@
     UIActivityViewController * activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
     activityController.excludedActivityTypes = excludeActivities;
     
-    [activityController setCompletionWithItemsHandler:^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
-        if (completed) {
-            [[RAFTracking sharedInstance] trackShareWithSocialNetwork:activityType];
-        }
-    }];
-    
     [self presentViewController:activityController animated:YES completion:nil];
-    
-    [[RAFTracking sharedInstance] trackShareButtonTapped];
 }
 
 - (IBAction)centerAtUserLocationButtonTapped:(id)sender {
