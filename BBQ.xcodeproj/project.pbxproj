@@ -7,44 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC8818CE55D400F45405 /* XCTest.framework */; };
-		8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6618CE55D400F45405 /* Foundation.framework */; };
-		8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8631AC6A18CE55D400F45405 /* UIKit.framework */; };
-		8631AC9318CE55D400F45405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8631AC9118CE55D400F45405 /* InfoPlist.strings */; };
-		8631AC9518CE55D400F45405 /* BBQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AC9418CE55D400F45405 /* BBQTests.m */; };
-		8631ACA818CE5E3900F45405 /* BBQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACA518CE5E3900F45405 /* BBQ.xcdatamodeld */; };
-		8631ACAC18CE60C100F45405 /* Placemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACAA18CE60C100F45405 /* Placemark.m */; };
-		8631ACAF18CE77E900F45405 /* Berlin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACAD18CE77E900F45405 /* Berlin.json */; };
-		8631ACB318CFD54500F45405 /* RAFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACB118CFD54500F45405 /* RAFDetailViewController.m */; };
-		8631ACB718D0EBB000F45405 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACB518D0EBB000F45405 /* UIColor+Extensions.m */; };
-		8631ACBD18D0FC3900F45405 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACBF18D0FC3900F45405 /* Localizable.strings */; };
-		8631ACCC18D112F700F45405 /* map_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACC718D112F700F45405 /* map_selected.png */; };
-		8631ACCE18D112F700F45405 /* grill_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACC818D112F700F45405 /* grill_selected.png */; };
-		8631ACD218D112F700F45405 /* user_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACCA18D112F700F45405 /* user_location.png */; };
-		8631ACD518D1137800F45405 /* map_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACD318D1137800F45405 /* map_selected@2x.png */; };
-		8631ACD818D113BB00F45405 /* grill_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACD618D113BB00F45405 /* grill_selected@2x.png */; };
-		8631ACDB18D1155100F45405 /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACD918D1155100F45405 /* pin@2x.png */; };
-		8631ACDE18D1159800F45405 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACDC18D1159800F45405 /* pin.png */; };
-		8631ACE118D1161000F45405 /* user_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACDF18D1161000F45405 /* user_location@2x.png */; };
-		8631ACE618D4960300F45405 /* RAFAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACE418D4960300F45405 /* RAFAppearance.m */; };
-		8631ACEA18D49C8700F45405 /* chevron_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACE718D49C8700F45405 /* chevron_right.png */; };
-		8631ACEC18D49C8700F45405 /* chevron_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACE818D49C8700F45405 /* chevron_right@2x.png */; };
-		8631ACF218D4C8A700F45405 /* grill_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACED18D4C8A700F45405 /* grill_unselected.png */; };
-		8631ACF418D4C8A700F45405 /* grill_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACEE18D4C8A700F45405 /* grill_unselected@2x.png */; };
-		8631ACF618D4C8A700F45405 /* map_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACEF18D4C8A700F45405 /* map_unselected.png */; };
-		8631ACF818D4C8A700F45405 /* map_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACF018D4C8A700F45405 /* map_unselected@2x.png */; };
-		8631ACFE18D4CBDF00F45405 /* RAFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACFC18D4CBDF00F45405 /* RAFUtilities.m */; };
-		8631AD0618D4D6E400F45405 /* expand_arrows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD0118D4D6E400F45405 /* expand_arrows@2x.png */; };
-		8631AD0818D4D6E400F45405 /* collapse_arrows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD0218D4D6E400F45405 /* collapse_arrows@2x.png */; };
-		8631AD1418D4EDEC00F45405 /* info_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD0D18D4EDEC00F45405 /* info_icon.png */; };
-		8631AD1618D4EDEC00F45405 /* info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD0E18D4EDEC00F45405 /* info_icon@2x.png */; };
-		8631AD1818D4EDEC00F45405 /* runner_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD0F18D4EDEC00F45405 /* runner_icon.png */; };
-		8631AD1A18D4EDEC00F45405 /* bus_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1018D4EDEC00F45405 /* bus_icon@2x.png */; };
-		8631AD1C18D4EDEC00F45405 /* runner_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1118D4EDEC00F45405 /* runner_icon@2x.png */; };
-		8631AD1E18D4EDEC00F45405 /* bus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1218D4EDEC00F45405 /* bus_icon.png */; };
-		8631AD2818D4F99800F45405 /* collapse_arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD2518D4F99800F45405 /* collapse_arrows.png */; };
-		8631AD2A18D4F99800F45405 /* expand_arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD2618D4F99800F45405 /* expand_arrows.png */; };
-		8631AD2F18D5C59200F45405 /* RAFTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AD2D18D5C59200F45405 /* RAFTracking.m */; };
 		8631AD3318D5F2E900F45405 /* RAFAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACE418D4960300F45405 /* RAFAppearance.m */; };
 		8631AD3418D5F2E900F45405 /* Placemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631ACAA18CE60C100F45405 /* Placemark.m */; };
 		8631AD3518D5F2E900F45405 /* RAFTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8631AD2D18D5C59200F45405 /* RAFTracking.m */; };
@@ -90,9 +52,7 @@
 		8631AD6218D5F2E900F45405 /* bus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1218D4EDEC00F45405 /* bus_icon.png */; };
 		8631AD6318D5F2E900F45405 /* map_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACEF18D4C8A700F45405 /* map_unselected.png */; };
 		8631AD6418D5F2E900F45405 /* Berlin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACAD18CE77E900F45405 /* Berlin.json */; };
-		86EDBAB218D60C2200DF56D2 /* RAFLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */; };
 		86EDBAB318D60C2200DF56D2 /* RAFLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */; };
-		86EDBAC418D64B4700DF56D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86EDBAC318D64B4700DF56D2 /* Settings.bundle */; };
 		86EDBAC518D64B4700DF56D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86EDBAC318D64B4700DF56D2 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -111,11 +71,7 @@
 		8631AC7E18CE55D400F45405 /* RAFLocationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFLocationsViewController.h; sourceTree = "<group>"; };
 		8631AC7F18CE55D400F45405 /* RAFLocationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFLocationsViewController.m; sourceTree = "<group>"; };
 		8631AC8118CE55D400F45405 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8631AC8718CE55D400F45405 /* BBQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8631AC8818CE55D400F45405 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		8631AC9018CE55D400F45405 /* BBQTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBQTests-Info.plist"; sourceTree = "<group>"; };
-		8631AC9218CE55D400F45405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8631AC9418CE55D400F45405 /* BBQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBQTests.m; sourceTree = "<group>"; };
 		8631AC9E18CE5A6700F45405 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8631ACA018CE5CF200F45405 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8631ACA618CE5E3900F45405 /* BBQ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BBQ.xcdatamodel; sourceTree = "<group>"; };
@@ -129,7 +85,6 @@
 		8631ACC018D0FC4000F45405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8631ACC118D0FC7700F45405 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8631ACC218D0FC7700F45405 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8631ACC318D0FC7700F45405 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8631ACC718D112F700F45405 /* map_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_selected.png; sourceTree = "<group>"; };
 		8631ACC818D112F700F45405 /* grill_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grill_selected.png; sourceTree = "<group>"; };
 		8631ACCA18D112F700F45405 /* user_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_location.png; sourceTree = "<group>"; };
@@ -167,16 +122,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8631AC8418CE55D400F45405 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8631AC8918CE55D400F45405 /* XCTest.framework in Frameworks */,
-				8631AC8B18CE55D400F45405 /* UIKit.framework in Frameworks */,
-				8631AC8A18CE55D400F45405 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8631AD3E18D5F2E900F45405 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				8631AC6C18CE55D400F45405 /* BBQ */,
-				8631AC8E18CE55D400F45405 /* BBQTests */,
 				8631AC6518CE55D400F45405 /* Frameworks */,
 				8631AC6418CE55D400F45405 /* Products */,
 			);
@@ -205,7 +149,6 @@
 		8631AC6418CE55D400F45405 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8631AC8718CE55D400F45405 /* BBQTests.xctest */,
 				8631AD6918D5F2E900F45405 /* BBQ-Berlin.app */,
 			);
 			name = Products;
@@ -246,24 +189,6 @@
 				8631AC6F18CE55D400F45405 /* InfoPlist.strings */,
 				8631AC7218CE55D400F45405 /* main.m */,
 				8631AC7418CE55D400F45405 /* BBQ-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8631AC8E18CE55D400F45405 /* BBQTests */ = {
-			isa = PBXGroup;
-			children = (
-				8631AC9418CE55D400F45405 /* BBQTests.m */,
-				8631AC8F18CE55D400F45405 /* Supporting Files */,
-			);
-			path = BBQTests;
-			sourceTree = "<group>";
-		};
-		8631AC8F18CE55D400F45405 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8631AC9018CE55D400F45405 /* BBQTests-Info.plist */,
-				8631AC9118CE55D400F45405 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -401,23 +326,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8631AC8618CE55D400F45405 /* BBQTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8631AC9B18CE55D400F45405 /* Build configuration list for PBXNativeTarget "BBQTests" */;
-			buildPhases = (
-				8631AC8318CE55D400F45405 /* Sources */,
-				8631AC8418CE55D400F45405 /* Frameworks */,
-				8631AC8518CE55D400F45405 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BBQTests;
-			productName = BBQTests;
-			productReference = 8631AC8718CE55D400F45405 /* BBQTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		8631AD3018D5F2E900F45405 /* BBQ-Berlin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8631AD6618D5F2E900F45405 /* Build configuration list for PBXNativeTarget "BBQ-Berlin" */;
@@ -445,9 +353,6 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Rafal Sroka";
 				TargetAttributes = {
-					8631AC8618CE55D400F45405 = {
-						TestTargetID = 8631AC6218CE55D400F45405;
-					};
 					8631AD3018D5F2E900F45405 = {
 						DevelopmentTeam = EJCJ4S2GTE;
 					};
@@ -467,48 +372,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8631AC8618CE55D400F45405 /* BBQTests */,
 				8631AD3018D5F2E900F45405 /* BBQ-Berlin */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8631AC8518CE55D400F45405 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8631AD0618D4D6E400F45405 /* expand_arrows@2x.png in Resources */,
-				8631AD1A18D4EDEC00F45405 /* bus_icon@2x.png in Resources */,
-				8631ACF818D4C8A700F45405 /* map_unselected@2x.png in Resources */,
-				8631ACCC18D112F700F45405 /* map_selected.png in Resources */,
-				8631AD1818D4EDEC00F45405 /* runner_icon.png in Resources */,
-				8631ACD218D112F700F45405 /* user_location.png in Resources */,
-				8631ACEA18D49C8700F45405 /* chevron_right.png in Resources */,
-				8631ACCE18D112F700F45405 /* grill_selected.png in Resources */,
-				8631ACDE18D1159800F45405 /* pin.png in Resources */,
-				8631AC9318CE55D400F45405 /* InfoPlist.strings in Resources */,
-				8631AD1C18D4EDEC00F45405 /* runner_icon@2x.png in Resources */,
-				8631ACDB18D1155100F45405 /* pin@2x.png in Resources */,
-				8631AD2818D4F99800F45405 /* collapse_arrows.png in Resources */,
-				8631AD1E18D4EDEC00F45405 /* bus_icon.png in Resources */,
-				8631ACD818D113BB00F45405 /* grill_selected@2x.png in Resources */,
-				8631ACEC18D49C8700F45405 /* chevron_right@2x.png in Resources */,
-				8631ACD518D1137800F45405 /* map_selected@2x.png in Resources */,
-				8631ACBD18D0FC3900F45405 /* Localizable.strings in Resources */,
-				8631ACF218D4C8A700F45405 /* grill_unselected.png in Resources */,
-				8631ACAF18CE77E900F45405 /* Berlin.json in Resources */,
-				86EDBAC418D64B4700DF56D2 /* Settings.bundle in Resources */,
-				8631AD2A18D4F99800F45405 /* expand_arrows.png in Resources */,
-				8631ACF418D4C8A700F45405 /* grill_unselected@2x.png in Resources */,
-				8631ACF618D4C8A700F45405 /* map_unselected.png in Resources */,
-				8631AD1618D4EDEC00F45405 /* info_icon@2x.png in Resources */,
-				8631ACE118D1161000F45405 /* user_location@2x.png in Resources */,
-				8631AD1418D4EDEC00F45405 /* info_icon.png in Resources */,
-				8631AD0818D4D6E400F45405 /* collapse_arrows@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8631AD4518D5F2E900F45405 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -549,22 +418,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8631AC8318CE55D400F45405 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8631ACAC18CE60C100F45405 /* Placemark.m in Sources */,
-				8631AC9518CE55D400F45405 /* BBQTests.m in Sources */,
-				8631ACA818CE5E3900F45405 /* BBQ.xcdatamodeld in Sources */,
-				8631ACE618D4960300F45405 /* RAFAppearance.m in Sources */,
-				8631ACFE18D4CBDF00F45405 /* RAFUtilities.m in Sources */,
-				8631ACB318CFD54500F45405 /* RAFDetailViewController.m in Sources */,
-				86EDBAB218D60C2200DF56D2 /* RAFLocationManager.m in Sources */,
-				8631ACB718D0EBB000F45405 /* UIColor+Extensions.m in Sources */,
-				8631AD2F18D5C59200F45405 /* RAFTracking.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8631AD3218D5F2E900F45405 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -602,15 +455,6 @@
 				8631AC7918CE55D400F45405 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8631AC9118CE55D400F45405 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8631AC9218CE55D400F45405 /* en */,
-				8631ACC318D0FC7700F45405 /* de */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		8631ACBF18D0FC3900F45405 /* Localizable.strings */ = {
@@ -720,50 +564,6 @@
 			};
 			name = Release;
 		};
-		8631AC9C18CE55D400F45405 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BBQ.app/BBQ";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BBQTests/BBQTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "Skawina.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		8631AC9D18CE55D400F45405 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BBQ.app/BBQ";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BBQ/BBQ-Prefix.pch";
-				INFOPLIST_FILE = "BBQTests/BBQTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "Skawina.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 		8631AD6718D5F2E900F45405 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -818,15 +618,6 @@
 			buildConfigurations = (
 				8631AC9618CE55D400F45405 /* Debug */,
 				8631AC9718CE55D400F45405 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8631AC9B18CE55D400F45405 /* Build configuration list for PBXNativeTarget "BBQTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8631AC9C18CE55D400F45405 /* Debug */,
-				8631AC9D18CE55D400F45405 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
