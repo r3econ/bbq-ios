@@ -16,8 +16,8 @@
 #import "RAFTracking.h"
 #import "Placemark.h"
 
-#define kCategoryErrors @"Errors"
-#define kCategoryUIEvents @"UI Events"
+static NSString *const kCategoryErrors = @"Errors";
+static NSString *const kCategoryUIEvents = @"UI Events";
 
 @implementation RAFTracking
 

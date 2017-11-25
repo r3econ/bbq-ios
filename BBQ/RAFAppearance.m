@@ -18,25 +18,25 @@
 /**
  Colors
  */
-#define kDefaultViewColor @"5EB1BF"
-#define kDefaultTextColor @"FBFEF9"
+static NSString *const kDefaultViewColor = @"5EB1BF";
+static NSString *const kDefaultTextColor = @"FBFEF9";
 
-#define kSecondaryViewColor @"042A2B"
-#define kSecondaryTextColor @"FBFEF9"
+static NSString *const kSecondaryViewColor = @"042A2B";
+static NSString *const kSecondaryTextColor = @"FBFEF9";
 
-#define kAccessoryViewColor @"FBF3BE"
-#define kAccessoryTextColor @"042A2B"
+static NSString *const kAccessoryViewColor = @"FBF3BE";
+static NSString *const kAccessoryTextColor = @"042A2B";
 
-#define kCellBackgroundColor @"FBFEF9"
-#define kCellTextColor @"042A2B"
+static NSString *const kCellBackgroundColor = @"FBFEF9";
+static NSString *const kCellTextColor = @"042A2B";
 
-#define kDefaultTintColor @"FBFEF9"
+static NSString *const kDefaultTintColor = @"FBFEF9";
 
 /**
  Fonts
  */
-#define kDefaultFont @"Avenir-Light"
-#define kBoldFont @"Avenir-Medium"
+static NSString *const kDefaultFont = @"Avenir-Light";
+static NSString *const kBoldFont = @"Avenir-Medium";
 
 @implementation RAFAppearance
 

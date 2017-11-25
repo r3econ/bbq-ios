@@ -15,9 +15,6 @@
 
 #import "RAFDetailViewController.h"
 
-#define kEnterMapFullscreenImage IMAGE_NAMED(@"expand_arrows")
-#define kExitMapFullscreenImage IMAGE_NAMED(@"collapse_arrows")
-
 @interface RAFDetailViewController ()<MKMapViewDelegate>
 
 @property(nonatomic, strong) Placemark *placemark;
@@ -204,7 +201,7 @@
     _toggleMapFullscreenButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _toggleMapFullscreenButton.tintColor = [RAFAppearance secondaryViewColor];
     _toggleMapFullscreenButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [_toggleMapFullscreenButton setImage:kEnterMapFullscreenImage forState:UIControlStateNormal];
+    [_toggleMapFullscreenButton setImage:IMAGE_NAMED(@"expand_arrows") forState:UIControlStateNormal];
     [_toggleMapFullscreenButton addTarget:self
                                    action:@selector(toggleMapFullScreenButtonTapped:)
                          forControlEvents:UIControlEventTouchUpInside];
@@ -556,7 +553,7 @@
 }
 
 - (IBAction)toggleMapFullScreenButtonTapped:(id)sender {
-    [_toggleMapFullscreenButton setImage:_isMapFullscreen ? kEnterMapFullscreenImage : kExitMapFullscreenImage
+    [_toggleMapFullscreenButton setImage:_isMapFullscreen ? IMAGE_NAMED(@"expand_arrows") : IMAGE_NAMED(@"collapse_arrows")
                                 forState:UIControlStateNormal];
     [self toggleMapFullscreen];
 }
