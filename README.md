@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-GNU%20GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 ![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 
-# Grilling spots in Berlin - iOS App
+# BBQ, Grilling spots in Berlin - iOS App
 
 Full source of an `iOS` app with information about public grilling spots in Berlin (state of `July 2014`). The app was available in the AppStore for two years (`2014`-`2016`). It's written in `Objective-C`.
 
@@ -32,4 +32,5 @@ The app was created as a weekend project long time ago. It is production ready, 
 
 # License
 This code is distributed under the terms and conditions of the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/) license.
+
 Copyright (c) 2014 Rafał Sroka
