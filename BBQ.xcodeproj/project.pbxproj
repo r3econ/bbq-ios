@@ -227,10 +227,10 @@
 		8631AC6C18CE55D400F45405 /* BBQ */ = {
 			isa = PBXGroup;
 			children = (
-				86EDBAAF18D60C0A00DF56D2 /* Location Manager */,
 				8631ACE218D495E900F45405 /* Appearance */,
 				8631AD6B18D5F6A800F45405 /* Delegate */,
 				8631ACB818D0EBC600F45405 /* Extensions */,
+				86EDBAAF18D60C0A00DF56D2 /* Location Manager */,
 				8631ACA418CE5E0C00F45405 /* Model */,
 				8631ACA318CE5DFF00F45405 /* Resources */,
 				8631AC6D18CE55D400F45405 /* Supporting Files */,

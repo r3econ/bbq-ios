@@ -51,21 +51,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     [RAFAppearance configureAppearance];
 
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    UITabBar *tabBar = tabBarController.tabBar;
-    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
-    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
-
-    tabBar.barTintColor = [RAFAppearance secondaryViewColor];
-
-    tabBarItem1.image = [[UIImage imageNamed:@"map_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
-    tabBarItem1.selectedImage = [[UIImage imageNamed:@"map_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
-    tabBarItem1.title = NSLocalizedString(@"map_view_title", nil);
-
-    tabBarItem2.image = [[UIImage imageNamed:@"grill_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    tabBarItem2.selectedImage = [[UIImage imageNamed:@"grill_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    tabBarItem2.title = NSLocalizedString(@"locations_view_title", nil);
-    
+    [self configureTabBarController];
     [self createPersistentStore];
     
     return YES;
@@ -91,6 +77,28 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Configuration
+
+- (void)configureTabBarController {
+    // Create the controller
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    // Set the tint color
+    tabBarController.tabBar.barTintColor = [RAFAppearance secondaryViewColor];
+    
+    // Get the tab bar items and customize them
+    UITabBarItem *tabBarItem1 = [tabBarController.tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBarController.tabBar.items objectAtIndex:1];
+    
+    tabBarItem1.image = [[UIImage imageNamed:@"map_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"map_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
+    tabBarItem1.title = NSLocalizedString(@"map_view_title", nil);
+    
+    tabBarItem2.image = [[UIImage imageNamed:@"grill_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    tabBarItem2.selectedImage = [[UIImage imageNamed:@"grill_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    tabBarItem2.title = NSLocalizedString(@"locations_view_title", nil);
 }
 
 #pragma mark - Core Data
@@ -165,7 +173,7 @@
         }
     }
     else {
-        /*Error for store creation should be handled in here*/
+        /* Error for store creation should be handled in here */
         NSLog(@"Error %@", error.localizedDescription);
         
         [self resetFirstLaunch];
