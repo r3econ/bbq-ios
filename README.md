@@ -6,9 +6,9 @@
 BBQ
 =============
 
-![Map](https://i.imgur.com/FQpHxXxm.png)
-![List](https://i.imgur.com/6CoCAcHm.png)
-![Details](https://i.imgur.com/dIZhwTlm.png)
+[![Map](https://i.imgur.com/FQpHxXxm.png)](https://i.imgur.com/FQpHxXxm.png)
+[![List](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/6CoCAcHm.png)
+[![Details](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/dIZhwTlm.png)
 
 License
 =======
