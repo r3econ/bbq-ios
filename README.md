@@ -25,4 +25,4 @@ Full source of an iOS app with information about public grilling spots in Berlin
 # License
 This code is distributed under the terms and conditions of the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/) license.
 
-Copyright (c) 2017 Rafal Sroka
+Copyright (c) 2014 Rafał Sroka
