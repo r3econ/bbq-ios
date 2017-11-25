@@ -52,6 +52,7 @@
 		8631AD6218D5F2E900F45405 /* bus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631AD1218D4EDEC00F45405 /* bus_icon.png */; };
 		8631AD6318D5F2E900F45405 /* map_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACEF18D4C8A700F45405 /* map_unselected.png */; };
 		8631AD6418D5F2E900F45405 /* Berlin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8631ACAD18CE77E900F45405 /* Berlin.json */; };
+		86D632C81FC9BDCB00F70715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D632C71FC9BDCB00F70715 /* LaunchScreen.storyboard */; };
 		86EDBAB318D60C2200DF56D2 /* RAFLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */; };
 		86EDBAC518D64B4700DF56D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86EDBAC318D64B4700DF56D2 /* Settings.bundle */; };
 /* End PBXBuildFile section */
@@ -116,6 +117,7 @@
 		8631AD2C18D5C59200F45405 /* RAFTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTracking.h; sourceTree = "<group>"; };
 		8631AD2D18D5C59200F45405 /* RAFTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTracking.m; sourceTree = "<group>"; };
 		8631AD6918D5F2E900F45405 /* BBQ-Berlin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBQ-Berlin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D632C71FC9BDCB00F70715 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86EDBAB018D60C2200DF56D2 /* RAFLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFLocationManager.h; sourceTree = "<group>"; };
 		86EDBAB118D60C2200DF56D2 /* RAFLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFLocationManager.m; sourceTree = "<group>"; };
 		86EDBAC318D64B4700DF56D2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		8631ACA318CE5DFF00F45405 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				86EDBAC318D64B4700DF56D2 /* Settings.bundle */,
 				8631ACAD18CE77E900F45405 /* Berlin.json */,
 				8631AD1218D4EDEC00F45405 /* bus_icon.png */,
 				8631AD1018D4EDEC00F45405 /* bus_icon@2x.png */,
@@ -231,10 +234,10 @@
 				8631AD1118D4EDEC00F45405 /* runner_icon@2x.png */,
 				8631ACCA18D112F700F45405 /* user_location.png */,
 				8631ACDF18D1161000F45405 /* user_location@2x.png */,
+				86D632C71FC9BDCB00F70715 /* LaunchScreen.storyboard */,
 				8631AC8118CE55D400F45405 /* Images.xcassets */,
 				8631ACBF18D0FC3900F45405 /* Localizable.strings */,
 				8631AC7818CE55D400F45405 /* Main.storyboard */,
-				86EDBAC318D64B4700DF56D2 /* Settings.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				8631AD5318D5F2E900F45405 /* chevron_right.png in Resources */,
 				8631AD5418D5F2E900F45405 /* map_selected.png in Resources */,
 				8631AD5618D5F2E900F45405 /* chevron_right@2x.png in Resources */,
+				86D632C81FC9BDCB00F70715 /* LaunchScreen.storyboard in Resources */,
 				8631AD5718D5F2E900F45405 /* Localizable.strings in Resources */,
 				8631AD5818D5F2E900F45405 /* Images.xcassets in Resources */,
 				8631AD5918D5F2E900F45405 /* InfoPlist.strings in Resources */,
@@ -568,7 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -591,7 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
