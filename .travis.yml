@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode9
 script:
-    - xcodebuild clean build -sdk iphonesimulator -project BBQ.xcodeproj -scheme BBQ CODE_SIGNING_REQUIRED=NO
+    - xcodebuild clean build -sdk iphonesimulator -project BBQ.xcodeproj -scheme BBQ-Berlin CODE_SIGNING_REQUIRED=NO
