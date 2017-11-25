@@ -1,10 +1,11 @@
 
 [![Build Status](https://travis-ci.org/r3econ/BBQ-iOS.svg?branch=master)](https://travis-ci.org/r3econ/BBQ-iOS)
-[![License](https://img.shields.io/badge/license-GNU%20GPLv3-brightgreen.svg)](https://img.shields.io/badge/license-GNU%20GPLv3-brightgreen.svg)
+[![License](https://img.shields.io/badge/license-GNU%20GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 ![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 
-# Grilling spots in Berlin - `iOS App`
-Full source of an iOS app with information about public grilling spots in Berlin (state of `July 2014`). The app was available in the AppStore for two years (`2014`-`2016`). It's written in `Objective-C`.
+# Grilling spots in Berlin - iOS App
+
+Full source of an `iOS` app with information about public grilling spots in Berlin (state of `July 2014`). The app was available in the AppStore for two years (`2014`-`2016`). It's written in `Objective-C`.
 
 [![Map](https://i.imgur.com/FQpHxXxm.png)](https://i.imgur.com/FQpHxXxm.png)
 [![List](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/6CoCAcHm.png)
@@ -22,7 +23,13 @@ Full source of an iOS app with information about public grilling spots in Berlin
 - JSON
 - Autolayout
 
+# What could be improved
+The app was created as a weekend project long time ago. It is production ready, updated to run in latest IDEs, but couple of things could be either added or improved.
+- Adding unit tests for creation of `CoreData` stack and importing initial data
+- Moving images and colors to asset catalogs
+- Adding more comments to the code
+- Simplifying autolayout logic in `RAFDetailViewController`
+
 # License
 This code is distributed under the terms and conditions of the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/) license.
-
 Copyright (c) 2014 Rafał Sroka
