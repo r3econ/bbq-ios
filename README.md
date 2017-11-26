@@ -7,14 +7,18 @@
 
 Full source of an `iOS` app with information about public grilling spots in Berlin (state of `July 2014`). The app was available in the AppStore for two years (`2014`-`2016`). It's written in `Objective-C`.
 
-[![Map](https://i.imgur.com/FQpHxXxm.png)](https://i.imgur.com/FQpHxXxm.png)
-[![List](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/6CoCAcHm.png)
-[![Details](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/dIZhwTlm.png)
+<p align="center">
+<img src="https://i.imgur.com/HuFbIXc.gif">
+</p>
 
 # What's inside
 - Map with grilling spots
 - Closest bus, tram or underground stops
 - Description of the area around the grilling spot
+
+[![Map](https://i.imgur.com/FQpHxXxm.png)](https://i.imgur.com/FQpHxXxm.png)
+[![List](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/6CoCAcHm.png)
+[![Details](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/dIZhwTlm.png)
 
 # Technologies used
 - Objective-C
