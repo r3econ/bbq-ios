@@ -143,6 +143,7 @@
     }
     
     [self.view addSubview:_mapView];
+    [_mapView setCenterCoordinate:_placemark.coordinate];
 }
 
 - (void)configureViews {
