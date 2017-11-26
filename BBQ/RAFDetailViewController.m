@@ -507,8 +507,7 @@
 }
 
 - (void)configureNavigationBar {
-    self.title = _placemark.name;
-    self.navigationItem.prompt = _placemark.district;
+    self.navigationItem.title = _placemark.name;
     
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                                target:self
