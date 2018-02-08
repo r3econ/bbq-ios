@@ -34,7 +34,7 @@
                                                                             target:nil
                                                                             action:nil];
     NSError *error;
-    if (![[self fetchedResultsController] performFetch:&error]) {
+    if (![self.fetchedResultsController performFetch:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -42,7 +42,7 @@
          should not use this function in a shipping application, although it may be
          useful during development.
          */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
 }
@@ -60,13 +60,13 @@
 #pragma mark - Table view
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[self.fetchedResultsController sections] count];
+    return (self.fetchedResultsController).sections.count;
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id<NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    id<NSFetchedResultsSectionInfo> sectionInfo = (self.fetchedResultsController).sections[section];
+    return sectionInfo.numberOfObjects;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -80,8 +80,7 @@
                                                                28.0f)];
     label.textColor = [RAFAppearance accessoryTextColor];
     label.font = [RAFAppearance defaultFontOfSize:14.0f];
-    label.text = [[[self.fetchedResultsController sections] objectAtIndex:section]
-                  name]; // uppercaseString];
+    label.text = (self.fetchedResultsController).sections[section].name; // uppercaseString];
     
     [view addSubview:label];
     return view;
@@ -124,7 +123,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Placemark *placemark = (Placemark *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+    Placemark *placemark = (Placemark *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     RAFDetailViewController *vc = [RAFDetailViewController controllerWithPlacemark:placemark];
     vc.hidesBottomBarWhenPushed = YES;
@@ -147,13 +146,13 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Placemark"
                                               inManagedObjectContext:[RAFAppDelegate managedObjectContext]];
-    [fetchRequest setEntity:entity];
+    fetchRequest.entity = entity;
     
     // Create the sort descriptors array.
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSSortDescriptor *districtDescriptor = [[NSSortDescriptor alloc] initWithKey:@"district" ascending:YES];
     
-    [fetchRequest setSortDescriptors:@[ districtDescriptor, nameDescriptor ]];
+    fetchRequest.sortDescriptors = @[ districtDescriptor, nameDescriptor ];
     
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest

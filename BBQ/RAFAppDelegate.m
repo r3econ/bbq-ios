@@ -38,9 +38,9 @@
 }
 
 - (NSString *)applicationDocumentsDirectory {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+    return NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                 NSUserDomainMask,
-                                                YES) objectAtIndex:0];
+                                                YES)[0];
 }
 
 - (BOOL)isFirstLaunch {
@@ -104,8 +104,8 @@
     tabBarController.tabBar.barTintColor = [RAFAppearance secondaryViewColor];
     
     // Get the tab bar items and customize them
-    UITabBarItem *tabBarItem1 = [tabBarController.tabBar.items objectAtIndex:0];
-    UITabBarItem *tabBarItem2 = [tabBarController.tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem1 = (tabBarController.tabBar.items)[0];
+    UITabBarItem *tabBarItem2 = (tabBarController.tabBar.items)[1];
     
     tabBarItem1.image = [[UIImage imageNamed:@"map_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
     tabBarItem1.selectedImage = [[UIImage imageNamed:@"map_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
@@ -123,11 +123,11 @@
         return _managedObjectContext;
     }
     
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
     
     if (coordinator != nil) {
         _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+        _managedObjectContext.persistentStoreCoordinator = coordinator;
     }
     
     return _managedObjectContext;
@@ -138,7 +138,7 @@
         return _persistentStoreCoordinator;
     }
     
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
     
     return _persistentStoreCoordinator;
 }
@@ -167,20 +167,20 @@
                  Placemark *placemark = [NSEntityDescription insertNewObjectForEntityForName:@"Placemark"
                                                                       inManagedObjectContext:self.managedObjectContext];
                  // Mandatory attributes.
-                 placemark.name = [obj objectForKey:@"name"];
-                 placemark.longitude = [obj objectForKey:@"longitude"];
-                 placemark.latitude = [obj objectForKey:@"latitude"];
-                 placemark.district = [obj objectForKey:@"district"];
-                 placemark.placeDescription = [obj objectForKey:@"description"];
+                 placemark.name = obj[@"name"];
+                 placemark.longitude = obj[@"longitude"];
+                 placemark.latitude = obj[@"latitude"];
+                 placemark.district = obj[@"district"];
+                 placemark.placeDescription = obj[@"description"];
                  
                  // Optional attributes.
-                 if ([[obj objectForKey:@"public_transport"] isKindOfClass:[NSString class]]) placemark.publicTransportation = [obj objectForKey:@"public_transport"];
-                 if ([[obj objectForKey:@"activities"] isKindOfClass:[NSString class]]) placemark.activities = [obj objectForKey:@"activities"];
+                 if ([obj[@"public_transport"] isKindOfClass:[NSString class]]) placemark.publicTransportation = obj[@"public_transport"];
+                 if ([obj[@"activities"] isKindOfClass:[NSString class]]) placemark.activities = obj[@"activities"];
                  
                  NSError *error;
                  
                  if (![self.managedObjectContext save:&error]) {
-                     NSLog(@"Couldn't save: %@", [error localizedDescription]);
+                     NSLog(@"Couldn't save: %@", error.localizedDescription);
                      
                      [self resetFirstLaunch];
                  }

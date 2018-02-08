@@ -20,7 +20,7 @@
 + (instancetype)sharedInstance;
 - (void)startLocating;
 - (void)endLocating;
-- (BOOL)locationServicesAllowed;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL locationServicesAllowed;
 
 @end
 

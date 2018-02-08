@@ -92,7 +92,7 @@
                             NSForegroundColorAttributeName : [RAFAppearance defaultTextColor],
                             NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
                             }
-                    range:NSMakeRange(0, [string length])];
+                    range:NSMakeRange(0, string.length)];
     
     return string;
 }
@@ -107,7 +107,7 @@
                                 NSForegroundColorAttributeName : [RAFAppearance secondaryTextColor],
                                 NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
                                 }
-                        range:NSMakeRange(0, [string length])];
+                        range:NSMakeRange(0, string.length)];
     }
     
     return string;
@@ -123,7 +123,7 @@
                                 NSForegroundColorAttributeName : [RAFAppearance secondaryTextColor],
                                 NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
                                 }
-                        range:NSMakeRange(0, [string length])];
+                        range:NSMakeRange(0, string.length)];
     }
     
     return string;
@@ -143,7 +143,7 @@
     }
     
     [self.view addSubview:_mapView];
-    [_mapView setCenterCoordinate:_placemark.coordinate];
+    _mapView.centerCoordinate = _placemark.coordinate;
 }
 
 - (void)configureViews {

@@ -59,7 +59,7 @@
         _mapView.showsUserLocation = YES;
     }
     
-    [_mapView addAnnotations:[self.fetchedResultsController fetchedObjects]];
+    [_mapView addAnnotations:(self.fetchedResultsController).fetchedObjects];
 
     [_mapView showAnnotations:_mapView.annotations animated:YES];
 }
@@ -89,13 +89,13 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Placemark"
                                               inManagedObjectContext:[RAFAppDelegate managedObjectContext]];
-    [fetchRequest setEntity:entity];
+    fetchRequest.entity = entity;
     
     // Create the sort descriptors array.
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
                                                                    ascending:YES];
     
-    [fetchRequest setSortDescriptors:@[nameDescriptor]];
+    fetchRequest.sortDescriptors = @[nameDescriptor];
     
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
