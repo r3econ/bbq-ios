@@ -110,7 +110,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
         
-        UIImageView *imageView = [[UIImageView alloc] initWithImage: [[UIImage imageNamed:@"chevron_right"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: IMAGE_NAMED(@"ChevronRight")];
         imageView.tintColor = [RAFAppearance cellTextColor];
         cell.accessoryView = imageView;
         

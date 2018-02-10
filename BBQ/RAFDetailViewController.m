@@ -183,9 +183,9 @@
     [_contentView addSubview:_publicTransportationLabel];
     
     // Configure image views.
-    _infoImageView = [[UIImageView  alloc] initWithImage:[IMAGE_NAMED(@"info_icon") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    _activitiesImageView = [[UIImageView  alloc] initWithImage:[IMAGE_NAMED(@"runner_icon") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    _transportationImageView = [[UIImageView  alloc] initWithImage:[IMAGE_NAMED(@"bus_icon") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    _infoImageView = [[UIImageView  alloc] initWithImage:IMAGE_NAMED(@"InfoIcon")];
+    _activitiesImageView = [[UIImageView  alloc] initWithImage:IMAGE_NAMED(@"RunnerIcon")];
+    _transportationImageView = [[UIImageView  alloc] initWithImage:IMAGE_NAMED(@"BusIcon")];
     _infoImageView.translatesAutoresizingMaskIntoConstraints = NO;
     _activitiesImageView.translatesAutoresizingMaskIntoConstraints = NO;
     _transportationImageView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -202,7 +202,7 @@
     _toggleMapFullscreenButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _toggleMapFullscreenButton.tintColor = [RAFAppearance secondaryViewColor];
     _toggleMapFullscreenButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [_toggleMapFullscreenButton setImage:IMAGE_NAMED(@"expand_arrows") forState:UIControlStateNormal];
+    [_toggleMapFullscreenButton setImage:IMAGE_NAMED(@"ExpandArrows") forState:UIControlStateNormal];
     [_toggleMapFullscreenButton addTarget:self
                                    action:@selector(toggleMapFullScreenButtonTapped:)
                          forControlEvents:UIControlEventTouchUpInside];
@@ -213,7 +213,7 @@
     _showUserLocationButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _showUserLocationButton.tintColor = [RAFAppearance secondaryViewColor];
     _showUserLocationButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [_showUserLocationButton setImage:IMAGE_NAMED(@"user_location") forState:UIControlStateNormal];
+    [_showUserLocationButton setImage:IMAGE_NAMED(@"UserLocation") forState:UIControlStateNormal];
     [_showUserLocationButton addTarget:self
                                 action:@selector(centerAtUserLocationButtonTapped:)
                       forControlEvents:UIControlEventTouchUpInside];
@@ -553,7 +553,7 @@
 }
 
 - (IBAction)toggleMapFullScreenButtonTapped:(id)sender {
-    [_toggleMapFullscreenButton setImage:_isMapFullscreen ? IMAGE_NAMED(@"expand_arrows") : IMAGE_NAMED(@"collapse_arrows")
+    [_toggleMapFullscreenButton setImage:_isMapFullscreen ? IMAGE_NAMED(@"ExpandArrows") : IMAGE_NAMED(@"CollapseArrows")
                                 forState:UIControlStateNormal];
     [self toggleMapFullscreen];
 }
@@ -610,7 +610,7 @@
         if (!annotationView) {
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
             annotationView.canShowCallout = YES;
-            annotationView.image = [UIImage imageNamed:@"pin"];
+            annotationView.image = IMAGE_NAMED(@"Pin");
         }
         
         annotationView.annotation = annotation;

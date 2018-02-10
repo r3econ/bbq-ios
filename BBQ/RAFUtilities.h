@@ -19,7 +19,7 @@
 
 
 /**
- Please always use IMAGE_NAMED so we are sure that the image we try to load really
+ Always use IMAGE_NAMED so we are sure that the image we try to load really
  exists.
  */
 #ifdef DEBUG
@@ -31,7 +31,7 @@ UIImage* LoadImageNamed(NSString* name);
 
 
 /**
- Please always use CAST and TRY_CAST instead of standard Obj-C casting to avoid
+ Always use CAST and TRY_CAST instead of standard Obj-C casting to avoid
  annoying mistakes and spot them quickly while developing.
  */
 #ifdef DEBUG

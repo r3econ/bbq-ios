@@ -140,7 +140,7 @@
         if (!annotationView) {
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
             annotationView.canShowCallout = YES;
-            annotationView.image = [[UIImage imageNamed:@"pin"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            annotationView.image = IMAGE_NAMED(@"Pin");
             annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             annotationView.rightCalloutAccessoryView.tintColor = [UIColor blackColor];
         }

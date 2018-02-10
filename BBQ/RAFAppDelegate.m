@@ -94,13 +94,13 @@
     // Get the tab bar items and customize them
     UITabBarItem *tabBarItem1 = (tabBarController.tabBar.items)[0];
     UITabBarItem *tabBarItem2 = (tabBarController.tabBar.items)[1];
-    
-    tabBarItem1.image = [[UIImage imageNamed:@"map_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
-    tabBarItem1.selectedImage = [[UIImage imageNamed:@"map_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];;
+
+    tabBarItem1.image = IMAGE_NAMED(@"MapUnselected");
+    tabBarItem1.selectedImage = IMAGE_NAMED(@"MapSelected");
     tabBarItem1.title = NSLocalizedString(@"map_view_title", nil);
     
-    tabBarItem2.image = [[UIImage imageNamed:@"grill_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    tabBarItem2.selectedImage = [[UIImage imageNamed:@"grill_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    tabBarItem2.image = IMAGE_NAMED(@"GrillUnselected");
+    tabBarItem2.selectedImage = IMAGE_NAMED(@"GrillSelected");
     tabBarItem2.title = NSLocalizedString(@"locations_view_title", nil);
 }
 
