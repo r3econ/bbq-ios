@@ -31,7 +31,6 @@ Full source of an `iOS` app with information about public grilling spots in Berl
 # What could be improved
 The app was created as a weekend project long time ago. It is production ready, updated to run in latest IDEs, but couple of things could be either added or improved.
 - Adding unit tests for creation of `CoreData` stack and importing initial data
-- Moving images and colors to asset catalogs
 - Adding more comments to the code
 - Simplifying autolayout logic in `RAFDetailViewController`
 
