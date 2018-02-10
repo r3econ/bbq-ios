@@ -15,6 +15,6 @@
 
 @interface RAFDetailViewController : UIViewController
 
-+ (RAFDetailViewController *)controllerWithPlacemark:(Placemark *)placemark;
++ (nonnull RAFDetailViewController *)controllerWithPlacemark:(nonnull Placemark *)placemark;
 
 @end

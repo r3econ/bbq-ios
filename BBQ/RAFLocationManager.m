@@ -14,7 +14,7 @@
 // limitations under the License.
 
 #import "RAFLocationManager.h"
-#import <CoreLocation/CoreLocation.h>
+@import CoreLocation;
 
 NSString * const RAFLocationDidChangeNotification = @"RAFLocationDidChangeNotification";
 NSString * const RAFNewLocationKey = @"RAFNewLocationKey";
@@ -37,58 +37,34 @@ NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
     static dispatch_once_t once;
     static RAFLocationManager *sharedInstance;
     
-    dispatch_once(&once, ^
-                  {
-                      sharedInstance = [[RAFLocationManager alloc] init];
-                      
-                      [sharedInstance configure];
-                  });
+    dispatch_once(&once, ^{
+        sharedInstance = [[RAFLocationManager alloc] init];
+    });
     
     return sharedInstance;
-}
-
-- (void)configure {
-    // Do nothing
 }
 
 #pragma mark - Helper methods
 
 - (void)startLocating {
-    if ([self isLocationManagerAvailable]) {
-        if (!_locationManager) {
-            _locationManager = [[CLLocationManager alloc] init];
-            
-            _locationManager.delegate = self;
-            _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-            _locationManager.distanceFilter = 30;
-        }
+    if (!self.locationServicesAllowed) {
+        NSLog(@"[RAFLocationManager] Location services not allowed");
+        return;
+    }
+    
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
         
-        [_locationManager startUpdatingLocation];
+        _locationManager.delegate = self;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        _locationManager.distanceFilter = 30.0;
     }
-    else {
-        // TODO: Move the UI logic elsewhere
-        [[[UIAlertView alloc] initWithTitle:nil
-                                    message:NSLocalizedString(@"info_location_mode", nil)
-                                   delegate:nil
-                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                          otherButtonTitles: nil] show];
-    }
+    
+    [_locationManager startUpdatingLocation];
 }
 
 - (void)endLocating {
     [_locationManager stopUpdatingLocation];
-}
-
-- (BOOL)isLocationManagerAvailable {
-    switch ([CLLocationManager authorizationStatus]) {
-        case kCLAuthorizationStatusRestricted:
-        case kCLAuthorizationStatusDenied:
-            return NO;
-            
-        case kCLAuthorizationStatusAuthorizedAlways:
-        default:
-            return YES;
-    }
 }
 
 - (BOOL)locationServicesAllowed {
@@ -120,7 +96,7 @@ NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"Error: %@", error);
+    NSLog(@"[RAFLocationManager] Error: %@", error);
 }
 
 @end

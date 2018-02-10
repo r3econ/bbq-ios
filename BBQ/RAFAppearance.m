@@ -15,9 +15,7 @@
 
 #import "RAFAppearance.h"
 
-/**
- Colors
- */
+// Colors
 static NSString *const kDefaultViewColor = @"5EB1BF";
 static NSString *const kDefaultTextColor = @"FBFEF9";
 
@@ -32,9 +30,7 @@ static NSString *const kCellTextColor = @"042A2B";
 
 static NSString *const kDefaultTintColor = @"FBFEF9";
 
-/**
- Fonts
- */
+// Fonts
 static NSString *const kDefaultFont = @"Avenir-Light";
 static NSString *const kBoldFont = @"Avenir-Medium";
 
@@ -43,9 +39,7 @@ static NSString *const kBoldFont = @"Avenir-Medium";
 + (void)configureAppearance {
     [UIView appearance].tintColor = [UIColor colorWithHexString:kDefaultTintColor];
     
-    /**
-     UINavigationBar appearance
-     */
+    // UINavigationBar
     [UINavigationBar appearance].barTintColor = [RAFAppearance defaultViewColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     
@@ -54,9 +48,7 @@ static NSString *const kBoldFont = @"Avenir-Medium";
                                                          NSFontAttributeName: [RAFAppearance boldFontOfSize:16.0f]
                                                          };
     
-    /**
-     UITabBar appearance
-     */
+    // UITabBar
     [UITabBar appearance].barTintColor = [RAFAppearance secondaryViewColor];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{
@@ -71,6 +63,7 @@ static NSString *const kBoldFont = @"Avenir-Medium";
                                                         }
                                              forState:UIControlStateNormal];
     
+    // UITableView
     [UITableViewCell appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
     [UITableView appearance].separatorColor = [RAFAppearance accessoryViewColor];
     

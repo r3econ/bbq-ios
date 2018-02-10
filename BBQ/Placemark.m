@@ -25,6 +25,8 @@
 @dynamic publicTransportation;
 @dynamic activities;
 
+#pragma mark - MKAnnotation
+
 - (NSString *)title {
     return self.name;
 }
@@ -34,10 +36,10 @@
 }
 
 - (CLLocationCoordinate2D)coordinate {
-    CLLocationCoordinate2D coord;
-    coord.latitude = (self.latitude).doubleValue;
-    coord.longitude = (self.longitude).doubleValue;
-    return coord;
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = (self.latitude).doubleValue;
+    coordinate.longitude = (self.longitude).doubleValue;
+    return coordinate;
 }
 
 @end

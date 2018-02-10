@@ -17,9 +17,7 @@
 
 @implementation UIColor (Extensions)
 
-/**
- Creates a UIColor from a hex string.
- */
+/// Creates a UIColor from a hex string.
 + (UIColor *)colorWithHexString:(NSString *)hexString {
     unsigned rgbValue = 0;
     
@@ -39,9 +37,7 @@
                            alpha:1.0];
 }
 
-/**
- Creates a UIColor from a hex string.
- */
+/// Creates a UIColor from a hex string. Assumes input like "#00FF00" (#RRGGBB).
 + (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha {
     unsigned rgbValue = 0;
     

@@ -15,10 +15,10 @@
 
 @interface UIColor (Extensions)
 
-/**
- Creates a UIColor from a hex string.
- */
-+ (UIColor *)colorWithHexString:(NSString *)hexString;
-+ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
+/// Creates a UIColor from a hex string.
++ (nonnull UIColor *)colorWithHexString:(nonnull NSString *)hexString;
+
+/// Creates a UIColor from a hex string and alpha component.
++ (nonnull UIColor *)colorWithHexString:(nonnull NSString *)hexString alpha:(CGFloat)alpha;
 
 @end

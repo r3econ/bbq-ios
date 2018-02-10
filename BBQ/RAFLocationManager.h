@@ -15,15 +15,16 @@
 
 @interface RAFLocationManager : NSObject
 
-@property (nonatomic, readonly) CLLocation *currentLocation;
+@property (nullable, nonatomic, readonly) CLLocation *currentLocation;
 
-+ (instancetype)sharedInstance;
++ (nonnull instancetype)sharedInstance;
 - (void)startLocating;
 - (void)endLocating;
+
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL locationServicesAllowed;
 
 @end
 
-extern NSString * const RAFLocationDidChangeNotification;
-extern NSString * const RAFNewLocationKey;
-extern NSString * const RAFOldLocationKey;
+extern NSString * _Nonnull const RAFLocationDidChangeNotification;
+extern NSString * _Nonnull const RAFNewLocationKey;
+extern NSString * _Nonnull const RAFOldLocationKey;

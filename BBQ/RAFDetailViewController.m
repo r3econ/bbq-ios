@@ -49,11 +49,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self configureMapView];
     [self configureNavigationBar];
-    
     [self configureViews];
 }
 
@@ -628,4 +628,3 @@
 }
 
 @end
-
