@@ -15,7 +15,7 @@
 
 #import "RAFDetailViewController.h"
 
-@interface RAFDetailViewController ()<MKMapViewDelegate>
+@interface RAFDetailViewController () <MKMapViewDelegate>
 
 @property(nonatomic, strong) Placemark *placemark;
 @property(nonatomic, strong) MKMapView *mapView;

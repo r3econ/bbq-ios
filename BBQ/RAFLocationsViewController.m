@@ -15,6 +15,7 @@
 
 #import "RAFLocationsViewController.h"
 #import "RAFDetailViewController.h"
+#import "RAFDataManager.h"
 
 @interface RAFLocationsViewController () <NSFetchedResultsControllerDelegate>
 
@@ -142,10 +143,12 @@
         return _fetchedResultsController;
     }
     
+    NSManagedObjectContext *context = RAFAppDelegate.sharedInstance.dataManager.viewContext;
+    
     // Create and configure a fetch request with the Book entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Placemark"
-                                              inManagedObjectContext:[RAFAppDelegate managedObjectContext]];
+                                              inManagedObjectContext:context];
     fetchRequest.entity = entity;
     
     // Create the sort descriptors array.
@@ -156,7 +159,7 @@
     
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                                                    managedObjectContext:[RAFAppDelegate managedObjectContext]
+                                                                    managedObjectContext:context
                                                                       sectionNameKeyPath:@"district"
                                                                                cacheName:nil];
     _fetchedResultsController.delegate = self;

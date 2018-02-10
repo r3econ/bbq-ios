@@ -14,33 +14,21 @@
 // limitations under the License.
 
 #import "RAFAppDelegate.h"
+#import "RAFDataManager.h"
+
+@interface RAFAppDelegate ()
+
+@property (strong, nonatomic) RAFDataManager *dataManager;
+
+@end
+
 
 @implementation RAFAppDelegate
 
-#pragma mark - Configuration
-
-- (NSURL *)URLForJSONWithDatabaseContent {
-    return [[NSBundle mainBundle] URLForResource:@"Berlin" withExtension:@"json"];
-}
-
-- (NSString *)databasePath {
-    return [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Berlin.sqlite"];
-}
-
 #pragma mark - Helper methods
 
-+ (RAFAppDelegate *)delegate {
++ (RAFAppDelegate *)sharedInstance {
     return (RAFAppDelegate *)[UIApplication sharedApplication].delegate;
-}
-
-+ (NSManagedObjectContext *)managedObjectContext {
-    return [RAFAppDelegate delegate].managedObjectContext;
-}
-
-- (NSString *)applicationDocumentsDirectory {
-    return NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                NSUserDomainMask,
-                                                YES)[0];
 }
 
 - (BOOL)isFirstLaunch {
@@ -67,7 +55,7 @@
     [RAFAppearance configureAppearance];
 
     [self configureTabBarController];
-    [self createPersistentStore];
+    [self configureDataManager];
     
     return YES;
 }
@@ -118,91 +106,19 @@
 
 #pragma mark - Core Data
 
-- (NSManagedObjectContext *) managedObjectContext {
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
+- (void)configureDataManager {
+    if (_dataManager == nil) {
+        _dataManager = [[RAFDataManager alloc] initWithModel:@"BBQ"];
     }
     
-    NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
-    
-    if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        _managedObjectContext.persistentStoreCoordinator = coordinator;
+    // Check if it's the first launch. If so, inject database content.
+    if ([self isFirstLaunch]) {
+        [_dataManager loadInitialContentWithSuccessHandler:nil
+                                                   failure:^(NSError *error) {
+            NSLog(@"[RAFAppDelegate] Data import error: %@", error.localizedDescription);
+            [self resetFirstLaunch];
+        }];
     }
-    
-    return _managedObjectContext;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
-    }
-    
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    
-    return _persistentStoreCoordinator;
-}
-
-- (void)createPersistentStore {
-    NSError *error = nil;
-    NSURL *storeUrl = [NSURL fileURLWithPath:[self databasePath]];
-    
-    if([self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                     configuration:nil
-                                                               URL:storeUrl
-                                                           options:nil
-                                                             error:&error]) {
-        // Check if it's the first launch. If so, create a database.
-        if ([self isFirstLaunch]) {
-            NSError *error = nil;
-            NSData *JSONData = [NSData dataWithContentsOfURL:[self URLForJSONWithDatabaseContent]];
-            
-            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
-            NSString *locale = dictionary[@"locale"];
-            NSArray *placemarks = dictionary[@"placemarks"];
-            
-            NSLog(@"Locale: %@", locale);
-            
-            [placemarks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                 Placemark *placemark = [NSEntityDescription insertNewObjectForEntityForName:@"Placemark"
-                                                                      inManagedObjectContext:self.managedObjectContext];
-                 // Mandatory attributes.
-                 placemark.name = obj[@"name"];
-                 placemark.longitude = obj[@"longitude"];
-                 placemark.latitude = obj[@"latitude"];
-                 placemark.district = obj[@"district"];
-                 placemark.placeDescription = obj[@"description"];
-                 
-                 // Optional attributes.
-                 if ([obj[@"public_transport"] isKindOfClass:[NSString class]]) placemark.publicTransportation = obj[@"public_transport"];
-                 if ([obj[@"activities"] isKindOfClass:[NSString class]]) placemark.activities = obj[@"activities"];
-                 
-                 NSError *error;
-                 
-                 if (![self.managedObjectContext save:&error]) {
-                     NSLog(@"Couldn't save: %@", error.localizedDescription);
-                     
-                     [self resetFirstLaunch];
-                 }
-             }];
-        }
-    }
-    else {
-        /* Error for store creation should be handled in here */
-        NSLog(@"Error %@", error.localizedDescription);
-        
-        [self resetFirstLaunch];
-    }
-}
-
-- (NSManagedObjectModel *)managedObjectModel {
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    
-    _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
-    
-    return _managedObjectModel;
 }
 
 @end

@@ -13,14 +13,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+@class RAFDataManager;
 @interface RAFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (strong, nonatomic, readonly) RAFDataManager *dataManager;
 
-+ (RAFAppDelegate *)delegate;
-+ (NSManagedObjectContext *)managedObjectContext;
++ (RAFAppDelegate *)sharedInstance;
 
 @end
