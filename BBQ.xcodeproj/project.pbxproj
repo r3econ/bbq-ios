@@ -49,7 +49,6 @@
 		8631AC7E18CE55D400F45405 /* RAFLocationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFLocationsViewController.h; sourceTree = "<group>"; };
 		8631AC7F18CE55D400F45405 /* RAFLocationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAFLocationsViewController.m; sourceTree = "<group>"; };
 		8631AC8118CE55D400F45405 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8631AC8818CE55D400F45405 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8631AC9E18CE5A6700F45405 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8631ACA018CE5CF200F45405 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8631ACA618CE5E3900F45405 /* BBQ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BBQ.xcdatamodel; sourceTree = "<group>"; };
@@ -121,7 +120,6 @@
 				8631AC6618CE55D400F45405 /* Foundation.framework */,
 				8631AC6818CE55D400F45405 /* CoreGraphics.framework */,
 				8631AC6A18CE55D400F45405 /* UIKit.framework */,
-				8631AC8818CE55D400F45405 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
