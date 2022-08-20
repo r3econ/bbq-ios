@@ -27,7 +27,7 @@ Map | Details | List
 
 # What could be improved
 
-The app is production ready, updated to run in latest IDEs, but couple of things could be either added or improved.
+The app is production ready, updated to run in latest IDEs, but couple of things could be either added or improved. Please remember that the app was written in 2014 and many things have changed since then.
 
 - Adding unit tests for creation of `CoreData` stack and importing initial data from a JSON file
 - Adding more comments to the code
