@@ -26,5 +26,4 @@
 @end
 
 extern NSString * _Nonnull const RAFLocationDidChangeNotification;
-extern NSString * _Nonnull const RAFNewLocationKey;
-extern NSString * _Nonnull const RAFOldLocationKey;
+extern NSString * _Nonnull const RAFLocationKey;

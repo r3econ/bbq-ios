@@ -17,8 +17,7 @@
 @import CoreLocation;
 
 NSString * const RAFLocationDidChangeNotification = @"RAFLocationDidChangeNotification";
-NSString * const RAFNewLocationKey = @"RAFNewLocationKey";
-NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
+NSString * const RAFLocationKey = @"RAFLocationKey";
 
 
 @interface RAFLocationManager() <CLLocationManagerDelegate>
@@ -73,22 +72,19 @@ NSString * const RAFOldLocationKey = @"RAFOldLocationKey";
 
 #pragma mark - CLLLocationManageDelegate
 
-
 - (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation {
-    _currentLocation = newLocation;
-    
-    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+     didUpdateLocations:(NSArray<CLLocation *> *)locations {
 
-    if (newLocation) {
-        userInfo[RAFNewLocationKey] = newLocation;
+    CLLocation *location = [locations lastObject];
+    if (location == nil) {
+        return;
     }
-    
-    if (oldLocation) {
-        userInfo[RAFOldLocationKey] = oldLocation;
-    }
-    
+
+    _currentLocation = location;
+
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    userInfo[RAFLocationKey] = _currentLocation;
+
     dispatch_async(dispatch_get_main_queue(),^ {
         [[NSNotificationCenter defaultCenter] postNotificationName:RAFLocationDidChangeNotification
                                                             object:userInfo];
