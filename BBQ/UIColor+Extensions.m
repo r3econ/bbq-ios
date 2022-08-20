@@ -22,7 +22,8 @@
     unsigned rgbValue = 0;
     
     // Remove potential "#" character.
-    NSString *cleanedString = [hexString stringByReplacingOccurrencesOfString:@"#" withString:@""];
+    NSString *cleanedString = [hexString stringByReplacingOccurrencesOfString:@"#"
+                                                                   withString:@""];
 
     // Create a scanner with string.
     NSScanner *scanner = [NSScanner scannerWithString:cleanedString];

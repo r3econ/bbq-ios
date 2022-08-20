@@ -89,7 +89,7 @@
                                                                28.0f)];
     label.textColor = [RAFAppearance accessoryTextColor];
     label.font = [RAFAppearance defaultFontOfSize:14.0f];
-    label.text = (self.fetchedResultsController).sections[section].name; // uppercaseString];
+    label.text = (self.fetchedResultsController).sections[section].name;
     
     [view addSubview:label];
     return view;
@@ -160,8 +160,10 @@
     fetchRequest.entity = entity;
     
     // Create the sort descriptors array.
-    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    NSSortDescriptor *districtDescriptor = [[NSSortDescriptor alloc] initWithKey:@"district" ascending:YES];
+    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                                   ascending:YES];
+    NSSortDescriptor *districtDescriptor = [[NSSortDescriptor alloc] initWithKey:@"district"
+                                                                       ascending:YES];
     
     fetchRequest.sortDescriptors = @[ districtDescriptor, nameDescriptor ];
     

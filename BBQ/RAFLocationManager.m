@@ -91,7 +91,8 @@ NSString * const RAFLocationKey = @"RAFLocationKey";
     });
 }
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error {
     NSLog(@"[RAFLocationManager] Error: %@", error);
 }
 

@@ -19,6 +19,7 @@
 + (nonnull UIColor *)colorWithHexString:(nonnull NSString *)hexString;
 
 /// Creates a UIColor from a hex string and alpha component.
-+ (nonnull UIColor *)colorWithHexString:(nonnull NSString *)hexString alpha:(CGFloat)alpha;
++ (nonnull UIColor *)colorWithHexString:(nonnull NSString *)hexString
+                                  alpha:(CGFloat)alpha;
 
 @end

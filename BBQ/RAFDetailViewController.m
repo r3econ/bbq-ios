@@ -40,7 +40,9 @@
 #pragma mark - Lifecycle
 
 + (RAFDetailViewController *)controllerWithPlacemark:(Placemark *)placemark {
-    RAFDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RAFDetailViewController"];
+    RAFDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Main"
+                                                             bundle:nil]
+                                   instantiateViewControllerWithIdentifier:@"RAFDetailViewController"];
 
     vc.placemark = placemark;
 
@@ -614,7 +616,8 @@
         MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
 
         if (!annotationView) {
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                          reuseIdentifier:@"Pin"];
             annotationView.canShowCallout = YES;
             annotationView.image = IMAGE_NAMED(@"Pin");
         }

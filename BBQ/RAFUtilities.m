@@ -25,7 +25,8 @@ UIImage* LoadImageNamed(NSString* name) {
     UIImage* result = [UIImage imageNamed: name];
     
     if (result == nil) {
-        [NSException raise: @"CantFindImage" format: @"Can't find image: %@", name];
+        [NSException raise: @"CantFindImage"
+                    format: @"Can't find image: %@", name];
     }
     
     return result;
@@ -41,7 +42,9 @@ id Cast(id source, Class cl) {
             NSLog(@"%@", [NSString stringWithFormat: @"The cast is invalid (%@ to %@)", [source class], cl]);
             
 			@throw [NSException exceptionWithName:@"CastException"
-                                           reason: [NSString stringWithFormat: @"The cast is invalid (%@ to %@)", [source class], cl]
+                                           reason: [NSString stringWithFormat: @"The cast is invalid (%@ to %@)",
+                                                    [source class],
+                                                    cl]
                                          userInfo:nil];
 		}
 	}
