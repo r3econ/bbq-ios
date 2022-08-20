@@ -7,19 +7,15 @@
 
 Full source of an `iOS` app with information about public grilling spots in Berlin (state of `July 2014`). The app was available in the AppStore for two years (`2014`-`2016`). It was created as a weekend project in **March 2014**. At the time of writing `Objective-C` was the leading iOS programming language. Two months after the first commit had been pushed to the repo, on June 2, 2014, Apple announced Swift.
 
-<p align="center">
-<img src="https://i.imgur.com/HuFbIXc.gif">
-</p>
-
 # What's inside
 
 - Map with grilling spots of Berlin
 - Closest bus, tram or underground stops
 - Description of the area around the grilling spot
 
-[![Map](https://i.imgur.com/FQpHxXxm.png)](https://i.imgur.com/FQpHxXxm.png)
-[![List](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/6CoCAcHm.png)
-[![Details](https://i.imgur.com/6CoCAcHm.png)](https://i.imgur.com/dIZhwTlm.png)
+Map | Details | List
+:-:|:-:|:-:
+![](Screenshots/1.png) | ![](Screenshots/2.png) | ![](Screenshots/3.png)
 
 # Technologies used
 
@@ -46,3 +42,7 @@ Copyright (c) 2014-2022 Rafał Sroka
 # Acknowledgements
 
 Icons used in the app come from [flaticon.com](https://www.flaticon.com/).
+
+<p align="center">
+<img src="https://i.imgur.com/HuFbIXc.gif">
+</p>
