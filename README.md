@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/r3econ/bbq-ios.svg?branch=master)](https://travis-ci.org/r3econ/bbq-ios) 
 [![CodeFactor](https://www.codefactor.io/repository/github/r3econ/bbq-ios/badge)](https://www.codefactor.io/repository/github/r3econ/bbq-ios)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1d063742356f4e8d9716c7113ee48fda)](https://www.codacy.com/gh/r3econ/bbq-ios/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=r3econ/bbq-ios&amp;utm_campaign=Badge_Grade)
 [![License](https://img.shields.io/badge/license-GNU%20GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 ![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 
