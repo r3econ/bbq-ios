@@ -13,7 +13,7 @@ Full source of an `iOS` app with information about public grilling spots in Berl
 </p>
 
 # What's inside
-- Map with grilling spots
+- Map with grilling spots of Berlin
 - Closest bus, tram or underground stops
 - Description of the area around the grilling spot
 
