@@ -38,6 +38,11 @@ The app is production ready, updated to run in latest IDEs, but couple of things
 - Simplifying autolayout logic in `RAFDetailViewController`
 
 # License
+
 This code is distributed under the terms and conditions of the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/) license.
 
 Copyright (c) 2014-2022 Rafał Sroka
+
+# Acknowledgements
+
+Icons used in the app come from [flaticon.com](https://www.flaticon.com/).
