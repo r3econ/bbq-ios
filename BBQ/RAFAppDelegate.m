@@ -87,10 +87,13 @@
 - (void)configureTabBarController {
     // Create the controller
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    
-    // Set the tint color
-    tabBarController.tabBar.barTintColor = [RAFAppearance secondaryViewColor];
-    
+
+    // Configure appearance
+    tabBarController.tabBar.standardAppearance = [RAFAppearance tabBarAppearance];
+    if (@available(iOS 15.0, *)) {
+        tabBarController.tabBar.scrollEdgeAppearance = [RAFAppearance tabBarAppearance];
+    }
+
     // Get the tab bar items and customize them
     UITabBarItem *tabBarItem1 = (tabBarController.tabBar.items)[0];
     UITabBarItem *tabBarItem2 = (tabBarController.tabBar.items)[1];
@@ -98,7 +101,7 @@
     tabBarItem1.image = IMAGE_NAMED(@"MapUnselected");
     tabBarItem1.selectedImage = IMAGE_NAMED(@"MapSelected");
     tabBarItem1.title = NSLocalizedString(@"map_view_title", nil);
-    
+
     tabBarItem2.image = IMAGE_NAMED(@"GrillUnselected");
     tabBarItem2.selectedImage = IMAGE_NAMED(@"GrillSelected");
     tabBarItem2.title = NSLocalizedString(@"locations_view_title", nil);

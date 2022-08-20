@@ -39,21 +39,7 @@ static NSString *const kBoldFont = @"Avenir-Medium";
 + (void)configureAppearance {
     [UIView appearance].tintColor = [UIColor colorWithHexString:kDefaultTintColor];
 
-    // UITabBar
-    [UITabBar appearance].barTintColor = [RAFAppearance secondaryViewColor];
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                        NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
-                                                        NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
-                                                        }
-                                             forState:UIControlStateSelected];
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                        NSForegroundColorAttributeName:[UIColor lightGrayColor],
-                                                        NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
-                                                        }
-                                             forState:UIControlStateNormal];
-    
+
     // UITableView
     [UITableViewCell appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
     [UITableView appearance].separatorColor = [RAFAppearance accessoryViewColor];
@@ -69,6 +55,28 @@ static NSString *const kBoldFont = @"Avenir-Medium";
         NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
         NSFontAttributeName: [RAFAppearance boldFontOfSize:16.0f]
     };
+
+    return barAppearance;
+}
+
++ (UITabBarAppearance *)tabBarAppearance {
+    UITabBarAppearance *barAppearance = [[UITabBarAppearance alloc] init];
+    barAppearance.backgroundColor = [RAFAppearance secondaryViewColor];
+
+    UITabBarItemAppearance *itemAppearance = [[UITabBarItemAppearance alloc] init];
+    [itemAppearance.selected setTitleTextAttributes:@{
+        NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
+        NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
+    }];
+
+    [itemAppearance.normal setTitleTextAttributes:@{
+        NSForegroundColorAttributeName:[UIColor lightGrayColor],
+        NSFontAttributeName: [RAFAppearance boldFontOfSize:12.0f]
+    }];
+
+    barAppearance.inlineLayoutAppearance = itemAppearance;
+    barAppearance.stackedLayoutAppearance = itemAppearance;
+    barAppearance.compactInlineLayoutAppearance = itemAppearance;
 
     return barAppearance;
 }

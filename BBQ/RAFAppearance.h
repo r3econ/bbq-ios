@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)cellTextColor;
 + (UIStatusBarStyle)preferredStatusBarStyle;
 + (UINavigationBarAppearance *)navigationBarAppearance;
++ (UITabBarAppearance *)tabBarAppearance;
 
 @end
 
