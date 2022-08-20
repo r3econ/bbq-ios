@@ -509,7 +509,7 @@
 					"TARGET_BBQ_BERLIN=1",
 				);
 				INFOPLIST_FILE = "BBQ-Berlin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafalsroka.bbqberlin;
 				PRODUCT_NAME = "BBQ-Berlin";
 				WRAPPER_EXTENSION = app;
@@ -533,7 +533,7 @@
 					"TARGET_BBQ_BERLIN=1",
 				);
 				INFOPLIST_FILE = "BBQ-Berlin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafalsroka.bbqberlin;
 				PRODUCT_NAME = "BBQ-Berlin";
 				WRAPPER_EXTENSION = app;
