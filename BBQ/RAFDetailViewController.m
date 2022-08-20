@@ -515,6 +515,9 @@
                                                                                action:@selector(shareButtonTapped:)];
 
     self.navigationItem.rightBarButtonItem = shareItem;
+
+    self.navigationController.navigationBar.standardAppearance = [RAFAppearance navigationBarAppearance];
+    self.navigationController.navigationBar.scrollEdgeAppearance = [RAFAppearance navigationBarAppearance];
 }
 
 #pragma mark - Actions
@@ -526,7 +529,10 @@
                                  _placemark.publicTransportation]];
 
     NSArray * applicationActivities = nil;
-    NSArray * excludeActivities = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePostToWeibo, UIActivityTypePrint];
+    NSArray * excludeActivities = @[UIActivityTypeAssignToContact,
+                                    UIActivityTypeCopyToPasteboard,
+                                    UIActivityTypePostToWeibo,
+                                    UIActivityTypePrint];
 
     UIActivityViewController * activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
     activityController.excludedActivityTypes = excludeActivities;

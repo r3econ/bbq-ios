@@ -38,16 +38,7 @@ static NSString *const kBoldFont = @"Avenir-Medium";
 
 + (void)configureAppearance {
     [UIView appearance].tintColor = [UIColor colorWithHexString:kDefaultTintColor];
-    
-    // UINavigationBar
-    [UINavigationBar appearance].barTintColor = [RAFAppearance defaultViewColor];
-    [UINavigationBar appearance].barStyle = UIBarStyleBlack;
-    
-    [UINavigationBar appearance].titleTextAttributes = @{
-                                                         NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
-                                                         NSFontAttributeName: [RAFAppearance boldFontOfSize:16.0f]
-                                                         };
-    
+
     // UITabBar
     [UITabBar appearance].barTintColor = [RAFAppearance secondaryViewColor];
     
@@ -68,6 +59,18 @@ static NSString *const kBoldFont = @"Avenir-Medium";
     [UITableView appearance].separatorColor = [RAFAppearance accessoryViewColor];
     
     [UITableView appearance].backgroundColor = [RAFAppearance cellBackgroundColor];
+}
+
++ (UINavigationBarAppearance *)navigationBarAppearance {
+    UINavigationBarAppearance *barAppearance = [[UINavigationBarAppearance alloc] init];
+    barAppearance.backgroundColor = [RAFAppearance defaultViewColor];
+
+    barAppearance.titleTextAttributes = @{
+        NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
+        NSFontAttributeName: [RAFAppearance boldFontOfSize:16.0f]
+    };
+
+    return barAppearance;
 }
 
 + (UIStatusBarStyle)preferredStatusBarStyle {

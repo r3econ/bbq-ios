@@ -32,12 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = NSLocalizedString(@"map_view_title", nil);
-    
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:nil
-                                                                            action:nil];
+    [self configureNavigationBar];
     [self configureAnnotations];
     
     _showUserLocationButton.tintColor = [RAFAppearance secondaryViewColor];
@@ -54,6 +49,21 @@
 
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+#pragma mark - Configuration
+
+- (void)configureNavigationBar {
+    self.title = NSLocalizedString(@"map_view_title", nil);
+
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
+
+    self.navigationController.navigationBar.standardAppearance = [RAFAppearance navigationBarAppearance];
+    self.navigationController.navigationBar.scrollEdgeAppearance = [RAFAppearance navigationBarAppearance];
+}
+
 
 - (void)configureAnnotations {
     if ([[RAFLocationManager sharedInstance] locationServicesAllowed]) {

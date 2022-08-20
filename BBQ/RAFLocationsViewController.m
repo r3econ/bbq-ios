@@ -28,12 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"locations_view_title", nil);
-    
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:nil
-                                                                            action:nil];
+    [self configureNavigationBar];
+
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
         /*
@@ -56,6 +52,18 @@
 
 - (void)viewWillAppear {
     [self.tableView reloadData];
+}
+
+- (void)configureNavigationBar {
+    self.title = NSLocalizedString(@"locations_view_title", nil);
+
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
+
+    self.navigationController.navigationBar.standardAppearance = [RAFAppearance navigationBarAppearance];
+    self.navigationController.navigationBar.scrollEdgeAppearance = [RAFAppearance navigationBarAppearance];
 }
 
 #pragma mark - Table view
@@ -229,13 +237,6 @@
     // The fetch controller has sent all current change notifications.
     // Tell the table view to process all updates.
     [self.tableView endUpdates];
-}
-
-#pragma mark - Memory
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Appearance
