@@ -123,7 +123,7 @@
         cell.accessoryView = imageView;
         
         cell.textLabel.textColor = [RAFAppearance cellTextColor];
-        cell.textLabel.font = [RAFAppearance defaultFontOfSize:16.0f];
+        cell.textLabel.font = [RAFAppearance defaultFontOfSize:17.0f];
     }
     
     // Configure the cell.

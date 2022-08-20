@@ -92,7 +92,7 @@
 
     [string addAttributes:@{
         NSForegroundColorAttributeName : [RAFAppearance defaultTextColor],
-        NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
+        NSFontAttributeName : [RAFAppearance defaultFontOfSize:16.0f],
     }
                     range:NSMakeRange(0, string.length)];
 
@@ -107,7 +107,7 @@
 
         [string addAttributes:@{
             NSForegroundColorAttributeName : [RAFAppearance secondaryTextColor],
-            NSFontAttributeName : [RAFAppearance defaultFontOfSize:13.0f],
+            NSFontAttributeName : [RAFAppearance defaultFontOfSize:14.0f],
         }
                         range:NSMakeRange(0, string.length)];
     }

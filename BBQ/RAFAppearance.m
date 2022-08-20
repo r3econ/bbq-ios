@@ -31,8 +31,8 @@ static NSString *const kCellTextColor = @"042A2B";
 static NSString *const kDefaultTintColor = @"FBFEF9";
 
 // Fonts
-static NSString *const kDefaultFont = @"Avenir-Light";
-static NSString *const kBoldFont = @"Avenir-Medium";
+static NSString *const kDefaultFont = @"AvenirNext-Regular";
+static NSString *const kBoldFont = @"AvenirNext-Heavy";
 
 @implementation RAFAppearance
 
@@ -53,7 +53,7 @@ static NSString *const kBoldFont = @"Avenir-Medium";
 
     barAppearance.titleTextAttributes = @{
         NSForegroundColorAttributeName:[RAFAppearance defaultTextColor],
-        NSFontAttributeName: [RAFAppearance boldFontOfSize:16.0f]
+        NSFontAttributeName: [RAFAppearance boldFontOfSize:18.0f]
     };
 
     return barAppearance;
