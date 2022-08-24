@@ -25,6 +25,7 @@ Map | Details | List
 - MapKit
 - JSON
 - Autolayout
+- GitHub Actions
 
 # What could be improved
 
