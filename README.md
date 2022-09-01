@@ -6,7 +6,7 @@
 
 # BBQ. Grilling spots in Berlin - iOS App 🍖🔥🥩🥓
 
-Full source of an `iOS` app with information about public grilling spots in Berlin (state of `July 2014`). The app was available in the AppStore for two years (`2014`-`2016`). It was created as a weekend project in **March 2014**. At the time of writing `Objective-C` was the leading iOS programming language. Two months after the first commit had been pushed to the repo, on June 2, 2014, Apple announced Swift.
+Full source code of an `iOS` app with information about public grilling spots in Berlin (state of `July 2014`). The app was available in the AppStore for two years (`2014`-`2016`). It was created as a weekend project in **March 2014**. At the time of writing `Objective-C` was the leading iOS programming language. Two months after the first commit had been pushed to the repo, on June 2, 2014, Apple announced Swift.
 
 # What's inside
 
