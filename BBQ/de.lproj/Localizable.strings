@@ -1,3 +1,6 @@
 
 "map_view_title" = "Berlin";
 "locations_view_title" = "Grillplätze";
+"warning_alert.title" = "Wichtig";
+"warning_alert.message" = "In allen Anlagen gilt: Grillen ist nur auf den vor Ort ausgewiesenen Flächen gestattet. Alle Angaben sind ohne Gewähr. Die Übersicht basiert auf Angaben der bezirklichen Straßen- und Grünflächenämter. Eine Gewähr für die aktuelle Gültigkeit kann nicht gegeben werden, da die Bezirksämter allein zuständig für die Ausweisung von Flächen für Sondernutzungen sind und diese kurzfristig auch wieder zurücknehmen können.";
+"warning_alert.accept_button" = "Ich verstehe";
