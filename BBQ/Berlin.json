@@ -12,7 +12,7 @@
                    },
                    {
                    "name": "Volkspark Friedrichshain",
-                   "description": "Grillen ist nur auf dem Kleinen Bunkerberg erlaubt.",
+                   "description": "Am Neuen Hain im Volkspark Friedrichshain ist das Grillen gestattet. Grill-Stellplätze müssen vorab online reserviert werden.",
                    "district": "Friedrichshain",
                    "latitude": 52.528008,
                    "longitude": 13.437026,
@@ -38,7 +38,7 @@
                    "activities": "Zum Karneval der Kulturen findet auf dem Blücherplatz das jährliche Straßenfest statt."
                    },
                    {
-                   "name": "Mauerpark / Falkplatz",
+                   "name": "Mauerpark",
                    "description": "Fläche entlang der Schwedter Straße mit Ausnahme der Spielplätze und des Birkenwäldchens.",
                    "district": "Prenzlauer Berg",
                    "latitude": 52.543356,
@@ -57,7 +57,7 @@
                    },
                    {
                    "name": "Rudolf-Mosse-Platz",
-                   "description": " Grillplatz ist in der Nähe der Mecklenburgische Strasse.",
+                   "description": "Grillplatz ist in der Nähe der Mecklenburgische Strasse.",
                    "district": "Wilmersdorf",
                    "latitude": 52.475438,
                    "longitude": 13.302424,
@@ -100,25 +100,6 @@
                    "public_transport": "S-Bahn: S41, S42 (Treptower Park), U-Bahn: U1 (Schlesisches Tor)",
                    "activities": "Grenzwachturm (museum), Liegewiese."
                    },
-                   {
-                   "name": "Stadtpark Lichtenberg",
-                   "description": "Nähe Sprühplatte. Gegrillt werden darf, auf dem 5,3 ha großen Gelände, in mehreren Bereichen des Parks.",
-                   "district": "Lichtenberg",
-                   "latitude": 52.518037,
-                   "longitude": 13.476212,
-                   "public_transport": "S-Bahn: S41, S42 (Frankfurter Allee), U-Bahn: U5 (Frankfurter Allee)",
-                   "activities": "Spazierwege, Spielplatz, Ballspielplatz, Liegewiesen, verschiedene Skulpturen, Ruhebereiche."
-                   },
-                   {
-                   "name": "Rudolf-Seiffert-Grünzug",
-                   "description": "Am Rudolf-Seifert-Grünzug an der Storkower Straße ist überall an den vom Bezirksamt ausgeschilderten Orten das Grillen erlaubt.",
-                   "district": "Lichtenberg",
-                   "latitude": 52.524939,
-                   "longitude": 13.471571,
-                   "public_transport": "S-Bahn: S41, S42 (Storkower Straße)",
-                   "activities": "Liegewiesen"
-                   },
-                   {
                    "name": "Fennpfuhlpark",
                    "description": "Der Grillplatz liegt in der Nähe des Anton-Saefkow-Platzes. Südöstlich des Fennpfuhls. Sehr sattes, grünes Gras, gepflegt.",
                    "district": "Lichtenberg",
