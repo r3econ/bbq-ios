@@ -1,6 +1,5 @@
-
 "map_view_title" = "Berlin";
 "locations_view_title" = "Places";
 "warning_alert.title" = "Important";
-"warning_alert.message" = "The following applies in all facilities: Barbecues are only permitted in the areas designated on site. All information is without guarantee. The overview is based on information from the district offices. No guarantee can be given for the current validity, as the district offices are solely responsible for the designation of areas for special uses and can also withdraw them at short notice."
+"warning_alert.message" = "The following applies in all facilities: Barbecues are only permitted in the areas designated on site. All information is without guarantee. The overview is based on information from the district offices. No guarantee can be given for the current validity, as the district offices are solely responsible for the designation of areas for special uses and can also withdraw them at short notice.";
 "warning_alert.accept_button" = "I understand";
