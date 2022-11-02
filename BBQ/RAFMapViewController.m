@@ -38,6 +38,31 @@
     _showUserLocationButton.tintColor = [RAFAppearance secondaryViewColor];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self showInformationAlert];
+}
+
+- (void)showInformationAlert {
+    if (![[RAFAppDelegate sharedInstance] isFirstLaunch]) {
+        return;
+    }
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"warning_alert.title", nil)
+                                                                   message:NSLocalizedString(@"warning_alert.message", nil)
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"warning_alert.accept_button", nil)
+                                                            style:UIAlertActionStyleDestructive
+                                                          handler:^(UIAlertAction * action) {}];
+
+    [alert addAction:defaultAction];
+    [self presentViewController:alert
+                       animated:NO
+                     completion:nil];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     

@@ -20,5 +20,6 @@
 @property (strong, nonatomic, readonly) RAFDataManager *dataManager;
 
 + (RAFAppDelegate *)sharedInstance;
+- (BOOL)isFirstLaunch;
 
 @end
