@@ -57,7 +57,7 @@
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData
                                                                options:0
                                                                  error:&error];
-    if (dictionary == nil && error == nil) {
+    if (dictionary == nil && error != nil) {
         failureHandler(error);
         return;
     }
@@ -87,10 +87,14 @@
     
     BOOL success = [self.viewContext save:&error];
     if (success) {
-        successHandler();
+        if (successHandler) {
+            successHandler();
+        }
     }
     else {
-        failureHandler(error);
+        if (failureHandler) {
+            failureHandler(error);
+        }
     }
 }
 
