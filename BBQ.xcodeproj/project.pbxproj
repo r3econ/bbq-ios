@@ -509,6 +509,7 @@
 					"TARGET_BBQ_BERLIN=1",
 				);
 				INFOPLIST_FILE = "BBQ-Berlin-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafalsroka.bbqberlin;
 				PRODUCT_NAME = "BBQ-Berlin";
@@ -533,6 +534,7 @@
 					"TARGET_BBQ_BERLIN=1",
 				);
 				INFOPLIST_FILE = "BBQ-Berlin-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafalsroka.bbqberlin;
 				PRODUCT_NAME = "BBQ-Berlin";
