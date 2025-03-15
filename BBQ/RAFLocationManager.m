@@ -74,17 +74,17 @@ NSString * const RAFLocationKey = @"RAFLocationKey";
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray<CLLocation *> *)locations {
-
+    
     CLLocation *location = [locations lastObject];
     if (location == nil) {
         return;
     }
-
+    
     _currentLocation = location;
-
+    
     NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
     userInfo[RAFLocationKey] = _currentLocation;
-
+    
     dispatch_async(dispatch_get_main_queue(),^ {
         [[NSNotificationCenter defaultCenter] postNotificationName:RAFLocationDidChangeNotification
                                                             object:userInfo];

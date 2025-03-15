@@ -26,9 +26,9 @@ static NSString *const kCategoryUIEvents = @"UI Events";
     static RAFTracking *sharedInstance;
     
     dispatch_once(&once, ^{
-                      sharedInstance = [[self alloc] init];
-                      [sharedInstance configureTracker];
-                  });
+        sharedInstance = [[self alloc] init];
+        [sharedInstance configureTracker];
+    });
     
     return sharedInstance;
 }

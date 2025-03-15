@@ -27,7 +27,7 @@
 - (id)initWithModel:(NSString *)modelName {
     self = [super init];
     if (!self) return nil;
-    
+
     self.persistentContainer = [[NSPersistentContainer alloc] initWithName:modelName];
     [self.persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *description,
                                                                           NSError *error) {
@@ -61,7 +61,7 @@
         failureHandler(error);
         return;
     }
-    
+
     NSArray *placemarks = dictionary[@"placemarks"];
     [placemarks enumerateObjectsUsingBlock:^(id obj,
                                              NSUInteger idx,
@@ -74,7 +74,7 @@
         placemark.latitude = obj[@"latitude"];
         placemark.district = obj[@"district"];
         placemark.placeDescription = obj[@"description"];
-        
+
         // Optional attributes
         if ([obj[@"public_transport"] isKindOfClass:[NSString class]]) {
             placemark.publicTransportation = obj[@"public_transport"];
@@ -84,7 +84,7 @@
             placemark.activities = obj[@"activities"];
         }
     }];
-    
+
     BOOL success = [self.viewContext save:&error];
     if (success) {
         if (successHandler) {

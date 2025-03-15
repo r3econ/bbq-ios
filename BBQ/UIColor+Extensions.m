@@ -20,17 +20,17 @@
 /// Creates a UIColor from a hex string.
 + (UIColor *)colorWithHexString:(NSString *)hexString {
     unsigned rgbValue = 0;
-    
+
     // Remove potential "#" character.
     NSString *cleanedString = [hexString stringByReplacingOccurrencesOfString:@"#"
                                                                    withString:@""];
 
     // Create a scanner with string.
     NSScanner *scanner = [NSScanner scannerWithString:cleanedString];
-    
+
     // Get hex value.
     [scanner scanHexInt:&rgbValue];
-    
+
     // Create a UIColor.
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0
                            green:((rgbValue & 0xFF00) >> 8)/255.0
@@ -41,16 +41,16 @@
 /// Creates a UIColor from a hex string. Assumes input like "#00FF00" (#RRGGBB).
 + (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha {
     unsigned rgbValue = 0;
-    
+
     // Remove potential "#" character.
     NSString *cleanedString = [hexString stringByReplacingOccurrencesOfString:@"#" withString:@""];
-    
+
     // Create a scanner with string.
     NSScanner *scanner = [NSScanner scannerWithString:cleanedString];
-    
+
     // Get hex value.
     [scanner scanHexInt:&rgbValue];
-    
+
     // Create a UIColor.
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0
                            green:((rgbValue & 0xFF00) >> 8)/255.0

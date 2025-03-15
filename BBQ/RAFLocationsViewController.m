@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     [self configureNavigationBar];
-
+    
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
         /*
@@ -56,12 +56,12 @@
 
 - (void)configureNavigationBar {
     self.title = NSLocalizedString(@"locations_view_title", nil);
-
+    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:nil
                                                                             action:nil];
-
+    
     self.navigationController.navigationBar.standardAppearance = [RAFAppearance navigationBarAppearance];
     self.navigationController.navigationBar.scrollEdgeAppearance = [RAFAppearance navigationBarAppearance];
 }

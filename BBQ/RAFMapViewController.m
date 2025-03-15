@@ -34,7 +34,7 @@
 
     [self configureNavigationBar];
     [self configureAnnotations];
-    
+
     _showUserLocationButton.tintColor = [RAFAppearance secondaryViewColor];
 }
 
@@ -48,7 +48,7 @@
     if (![[RAFAppDelegate sharedInstance] isFirstLaunch]) {
         return;
     }
-    
+
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"warning_alert.title", nil)
                                                                    message:NSLocalizedString(@"warning_alert.message", nil)
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -65,7 +65,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+
     [[RAFTracking sharedInstance] trackPageView:@"MapView"];
 }
 
@@ -94,7 +94,7 @@
     if ([[RAFLocationManager sharedInstance] locationServicesAllowed]) {
         _mapView.showsUserLocation = YES;
     }
-    
+
     [_mapView addAnnotations:(self.fetchedResultsController).fetchedObjects];
 
     [_mapView showAnnotations:_mapView.annotations animated:YES];
@@ -103,7 +103,7 @@
 - (void)zoomToUserLocationOnFirstUpdate {
     if (_shouldZoomToUserLocation) {
         _shouldZoomToUserLocation = NO;
-        
+
         if (_mapView.userLocation) {
             [_mapView showAnnotations:@[_mapView.userLocation] animated:YES];
         }
@@ -120,7 +120,7 @@
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    
+
     NSManagedObjectContext *context = RAFAppDelegate.sharedInstance.dataManager.viewContext;
 
     // Create and configure a fetch request with the Book entity.
@@ -128,21 +128,21 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Placemark"
                                               inManagedObjectContext:context];
     fetchRequest.entity = entity;
-    
+
     // Create the sort descriptors array.
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
                                                                    ascending:YES];
-    
+
     fetchRequest.sortDescriptors = @[nameDescriptor];
-    
+
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                     managedObjectContext:context
                                                                       sectionNameKeyPath:nil
                                                                                cacheName:nil];
-    
+
     [_fetchedResultsController performFetch:nil];
-    
+
     return _fetchedResultsController;
 }
 
@@ -150,7 +150,7 @@
 
 - (IBAction)centerAtUserLocationButtonTapped:(id)sender {
     _mapView.showsUserLocation = YES;
-    
+
     if ([RAFLocationManager sharedInstance].currentLocation) {
         [_mapView showAnnotations:@[_mapView.userLocation] animated:YES];
     }
@@ -161,7 +161,7 @@
                                                  selector:@selector(zoomToUserLocationOnFirstUpdate)
                                                      name:RAFLocationDidChangeNotification
                                                    object:nil];
-        
+
         [[RAFLocationManager sharedInstance] startLocating];
     }
 }
@@ -171,7 +171,7 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation {
     if ([annotation isKindOfClass:[Placemark class]]) {
         MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-        
+
         if (!annotationView) {
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
             annotationView.canShowCallout = YES;
@@ -179,21 +179,21 @@
             annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             annotationView.rightCalloutAccessoryView.tintColor = [UIColor blackColor];
         }
-        
+
         annotationView.annotation = annotation;
-        
+
         return annotationView;
     }
-    
+
     return nil;
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     Placemark *placemark = (Placemark *)view.annotation;
-    
+
     RAFDetailViewController *vc = [RAFDetailViewController controllerWithPlacemark:placemark];
     vc.hidesBottomBarWhenPushed = YES;
-    
+
     [self.navigationController pushViewController:vc
                                          animated:YES];
 }
